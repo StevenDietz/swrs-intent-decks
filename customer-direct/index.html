@@ -204,10 +204,11 @@
     @page{size:A4; margin:13mm 0;}
     @page:first{margin:0;}
     .cover{min-height:100vh; break-after:page;}
-    section{break-inside:auto;}
-    hr.rule{display:block;height:1px;background:#e2e6f0;border:0;margin:26px 64px;}
-    .foot,.cta,.quote,.note-card,.trk,.f,.res-card,.case,.kpi,.costcard,.stat{break-inside:avoid;}
-    h2,h3{break-after:avoid;}
+    section{break-before:auto; break-inside:avoid;}
+    section:has(.spotlight){break-before:page; break-inside:auto;}
+    hr.rule{display:block;height:1px;background:#e2e6f0;border:0;margin:24px 64px;}
+    .foot,.cta,.quote,.note-card,.spotlight,.cases,.feat,.res-grid,.stats,.tracks,.press,.badges,.founder,.trk,.f,.res-card,.case,.kpi,.costcard,.stat{break-inside:avoid;} table{break-inside:avoid;}
+    h2,h3,.sec-num,.lede{break-after:avoid;}
     tr{break-inside:avoid;}
     .foot{break-before:avoid;}
     .pgbreak{break-before:page;}
@@ -287,8 +288,17 @@ section.pad:has(.founder) .founder-photo{width:190px !important;}
 section.pad:has(.founder) .founder p{font-size:13px;line-height:1.5;}
 section.pad:has(.founder) .quote{padding:20px 32px !important;margin-top:12px;}
 section.pad:has(.founder) .quote blockquote{font-size:18px !important;line-height:1.34;}
+@media print{
+  .pad{padding:18px 60px !important;}
+  .cases .case{padding:14px 16px !important;} .cases{gap:13px !important;}
+  .feat:not(.flow) .f{padding:15px 17px !important;} .feat:not(.flow){gap:14px !important;}
+  .spotlight{padding:20px 28px !important;margin-top:14px !important;}
+  .lede{margin:6px 0 12px !important;} hr.rule{margin:18px 60px !important;}
+  .stats{margin:6px 0 12px !important;}
+  table{break-before:avoid;}
+}
 </style>
-<style>@media print{section.pad:has(.founder){break-inside:avoid;}}</style></head>
+</head>
 <body>
 <div class="page">
   <div class="cover">
