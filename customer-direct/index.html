@@ -26,7 +26,7 @@
     max-width:var(--maxw); margin:24px auto; background:var(--paper);
     box-shadow:0 10px 40px rgba(6,10,50,.12);
   }
-  .pad{padding:44px 64px;}
+  .pad{padding:24px 64px;}
   .brandmark{display:block;height:auto;}
 
   /* ---------- COVER ---------- */
@@ -204,9 +204,9 @@
     @page{size:A4; margin:13mm 0;}
     @page:first{margin:0;}
     .cover{min-height:100vh; break-after:page;}
-    section{break-before:page; break-inside:avoid;}
-    hr.rule{display:none;}
-    .avoid,.case,.foot,.cta,.stats,.spotlight,.quote,.note-card,.kpi,.costcard,.cases,.feat,.press,.badges,.tracks,.trk{break-inside:avoid;}
+    section{break-inside:auto;}
+    hr.rule{display:block;height:1px;background:#e2e6f0;border:0;margin:26px 64px;}
+    .foot,.cta,.quote,.note-card,.trk,.f,.res-card,.case,.kpi,.costcard,.stat{break-inside:avoid;}
     h2,h3{break-after:avoid;}
     tr{break-inside:avoid;}
     .foot{break-before:avoid;}
@@ -274,24 +274,21 @@
   .members b{color:var(--navy);}
   /* uniform case-study cards: neutralize the 'sector' highlight so every card has the same fill/border */
   .case.sector{background:#fff;border-top-color:var(--blue);}
-section.pad:has(.founder){break-inside:avoid;page-break-inside:avoid;padding-top:24px;padding-bottom:24px;}
-section.pad:has(.founder) .quote{padding:24px 36px;margin-top:12px;}
-section.pad:has(.founder) .quote blockquote{font-size:20px;line-height:1.35;}
-section.pad:has(.founder) + hr.rule{display:none;}
-section.pad:has(.feat.flow){break-inside:avoid;page-break-inside:avoid;padding-top:22px;padding-bottom:22px;}
-section.pad:has(.feat.flow) .lede{font-size:12.5px;line-height:1.45;}
-section.pad:has(.feat.flow) > div:first-of-type{margin-bottom:16px !important;}
-section.pad:has(.feat.flow) > div:first-of-type > div:last-child{flex:0 0 220px !important;padding:24px 18px !important;}
-section.pad:has(.feat.flow) > div:first-of-type > div:last-child img{max-width:180px !important;}
-.feat.flow{gap:11px !important;margin-top:4px;}
+.feat.flow{gap:11px !important;}
 .feat.flow .f{padding:12px 15px !important;border-radius:12px;}
 .feat.flow .f .ic{width:28px;height:28px;margin-bottom:6px;}
 .feat.flow .f .ic svg{width:16px;height:16px;}
 .feat.flow .f h3{font-size:13px;margin:0 0 3px;}
 .feat.flow .f p{font-size:11.5px;line-height:1.38;}
-section.pad:has(.feat.flow) > p:last-of-type{font-size:12px;margin-top:12px;}
+section.pad:has(.feat.flow) > div:first-of-type > div:last-child{flex:0 0 220px !important;padding:24px 18px !important;}
+section.pad:has(.feat.flow) > div:first-of-type > div:last-child img{max-width:180px !important;}
+section.pad:has(.founder) .founder{grid-template-columns:190px 1fr !important;gap:26px !important;}
+section.pad:has(.founder) .founder-photo{width:190px !important;}
+section.pad:has(.founder) .founder p{font-size:13px;line-height:1.5;}
+section.pad:has(.founder) .quote{padding:20px 32px !important;margin-top:12px;}
+section.pad:has(.founder) .quote blockquote{font-size:18px !important;line-height:1.34;}
 </style>
-</head>
+<style>@media print{section.pad:has(.founder){break-inside:avoid;}}</style></head>
 <body>
 <div class="page">
   <div class="cover">
