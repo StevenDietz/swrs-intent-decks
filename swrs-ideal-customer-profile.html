@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SWRS Ideal Customer Profile — 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #070B97;
+    --blue: #0446F1;
+    --sky: #0495F1;
+    --light-blue: #82CCFA;
+    --deep-navy: #070731;
+    --slate: #3D3D52;
+    --body: #26303B;
+    --bg: #F7F9FF;
+    --white: #ffffff;
+    --light-tint: #E9F3FE;
+    --hairline: #D9DEE3;
+    --amber: #B8790A;
+    --amber-tint: #FCF1DE;
+    --red: #C0392B;
+    --green: #1A7A4A;
+    --green-tint: #E8F5EE;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 400;
+    color: var(--body);
+    background: var(--bg);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* ─── HEADER ─── */
+  .page-header {
+    background: var(--deep-navy);
+    padding: 28px 48px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px solid var(--sky);
+  }
+  .logo-area { display: flex; align-items: center; gap: 14px; }
+  .logo-text { color: var(--white); }
+  .logo-text .brand { font-size: 22px; font-weight: 700; letter-spacing: -0.5px; }
+  .logo-text .brand span { color: var(--sky); }
+  .logo-text .sub { font-size: 10px; font-weight: 300; color: var(--light-blue); letter-spacing: 1.5px; text-transform: uppercase; }
+  .header-meta { text-align: right; color: var(--light-blue); font-size: 11px; font-weight: 300; line-height: 1.8; }
+  .header-meta strong { color: var(--white); font-weight: 600; }
+
+  /* ─── HERO BAND ─── */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 60%, var(--sky) 100%);
+    padding: 48px 48px 44px;
+    color: var(--white);
+  }
+  .hero-eyebrow {
+    font-size: 10px; font-weight: 700; letter-spacing: 2.5px;
+    text-transform: uppercase; color: var(--light-blue); margin-bottom: 10px;
+  }
+  .hero h1 {
+    font-size: 36px; font-weight: 700; line-height: 1.15;
+    max-width: 700px; margin-bottom: 16px;
+  }
+  .hero-sub {
+    font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.85);
+    max-width: 680px; line-height: 1.7;
+  }
+  .hero-stats {
+    display: flex; gap: 40px; margin-top: 36px;
+    padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.2);
+    flex-wrap: wrap;
+  }
+  .hstat { }
+  .hstat-val { font-size: 28px; font-weight: 700; color: var(--white); }
+  .hstat-lbl { font-size: 11px; font-weight: 300; color: var(--light-blue); text-transform: uppercase; letter-spacing: 1px; }
+
+  /* ─── BODY LAYOUT ─── */
+  .main { max-width: 1100px; margin: 0 auto; padding: 40px 48px 60px; }
+
+  /* ─── SECTION HEADERS ─── */
+  .section { margin-bottom: 44px; }
+  .section-title {
+    font-size: 18px; font-weight: 700; color: var(--deep-navy);
+    border-bottom: 2px solid var(--sky);
+    padding-bottom: 8px; margin-bottom: 20px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-title .num {
+    background: var(--navy); color: var(--white);
+    font-size: 11px; font-weight: 700;
+    padding: 2px 8px; border-radius: 2px; letter-spacing: 0.5px;
+  }
+
+  /* ─── ICP TIER CARDS ─── */
+  .tier-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .tier-card {
+    border: 1px solid var(--hairline);
+    border-radius: 4px; overflow: hidden;
+    background: var(--white);
+    box-shadow: 0 1px 4px rgba(7,11,151,0.06);
+  }
+  .tier-header {
+    padding: 14px 18px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .tier-header.t1 { background: var(--navy); }
+  .tier-header.t2 { background: var(--blue); }
+  .tier-header.t3 { background: var(--sky); }
+  .tier-header.t4 { background: var(--slate); }
+  .tier-header h3 { color: var(--white); font-size: 14px; font-weight: 700; }
+  .tier-badge {
+    font-size: 10px; font-weight: 700; letter-spacing: 1px;
+    padding: 3px 8px; border-radius: 2px; text-transform: uppercase;
+  }
+  .t1 .tier-badge { background: rgba(255,255,255,0.2); color: var(--white); }
+  .t2 .tier-badge { background: rgba(255,255,255,0.2); color: var(--white); }
+  .t3 .tier-badge { background: rgba(255,255,255,0.2); color: var(--white); }
+  .t4 .tier-badge { background: rgba(255,255,255,0.2); color: var(--white); }
+  .tier-body { padding: 18px 18px 20px; }
+  .tier-body p { font-size: 13px; color: var(--slate); margin-bottom: 12px; line-height: 1.5; }
+  .tier-metrics {
+    display: flex; gap: 16px; flex-wrap: wrap;
+    background: var(--light-tint); padding: 10px 12px;
+    border-radius: 3px; margin-bottom: 12px;
+  }
+  .tm { text-align: center; }
+  .tm-val { font-size: 17px; font-weight: 700; color: var(--navy); }
+  .tm-lbl { font-size: 10px; color: var(--slate); letter-spacing: 0.5px; }
+  .kw-list { display: flex; flex-wrap: wrap; gap: 6px; }
+  .kw {
+    font-size: 11px; font-weight: 600; background: var(--light-tint);
+    color: var(--navy); padding: 3px 8px; border-radius: 2px;
+  }
+  .kw.red { background: #FDECEA; color: var(--red); }
+  .kw.green { background: var(--green-tint); color: var(--green); }
+  .kw.amber { background: var(--amber-tint); color: var(--amber); }
+
+  /* ─── QUAL / DISQUAL GRID ─── */
+  .qd-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .qd-card {
+    background: var(--white); border: 1px solid var(--hairline);
+    border-radius: 4px; overflow: hidden;
+  }
+  .qd-head {
+    padding: 12px 16px; font-size: 12px; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase; color: var(--white);
+  }
+  .qd-head.q { background: var(--green); }
+  .qd-head.d { background: var(--red); }
+  .qd-list { padding: 14px 16px; list-style: none; }
+  .qd-list li {
+    font-size: 13px; color: var(--body); padding: 7px 0;
+    border-bottom: 1px solid var(--hairline);
+    display: flex; align-items: flex-start; gap: 8px;
+    line-height: 1.4;
+  }
+  .qd-list li:last-child { border-bottom: none; }
+  .qd-list li::before { flex-shrink: 0; margin-top: 2px; font-size: 13px; }
+  .qd-list.q-list li::before { content: "✓"; color: var(--green); font-weight: 700; }
+  .qd-list.d-list li::before { content: "✗"; color: var(--red); font-weight: 700; }
+
+  /* ─── INDUSTRY TABLE ─── */
+  .ind-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .ind-table th {
+    background: var(--deep-navy); color: var(--white);
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; padding: 10px 12px; text-align: left;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .ind-table td {
+    padding: 10px 12px; border: 1px solid var(--hairline);
+    vertical-align: middle;
+  }
+  .ind-table tr:nth-child(even) td { background: #F2F6FE; }
+  .ind-table tr:hover td { background: var(--light-tint); }
+  .priority-badge {
+    display: inline-block; font-size: 10px; font-weight: 700;
+    padding: 2px 7px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .p-high { background: #E8F5EE; color: var(--green); }
+  .p-med { background: var(--amber-tint); color: var(--amber); }
+  .p-low { background: #FDECEA; color: var(--red); }
+  .yield-bar {
+    display: flex; align-items: center; gap: 8px;
+  }
+  .bar-wrap { flex: 1; background: var(--hairline); border-radius: 2px; height: 6px; }
+  .bar-fill { height: 6px; border-radius: 2px; background: var(--blue); }
+
+  /* ─── CALLOUT BOXES ─── */
+  .callout {
+    border-left: 4px solid; padding: 14px 16px;
+    border-radius: 0 4px 4px 0; margin-bottom: 20px;
+    font-size: 13px; line-height: 1.6;
+  }
+  .callout.blue { border-color: var(--blue); background: var(--light-tint); }
+  .callout.amber { border-color: var(--amber); background: var(--amber-tint); }
+  .callout.red { border-color: var(--red); background: #FDECEA; }
+  .callout strong { display: block; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+  .callout.blue strong { color: var(--blue); }
+  .callout.amber strong { color: var(--amber); }
+  .callout.red strong { color: var(--red); }
+
+  /* ─── SCORING TABLE ─── */
+  .score-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .score-table th {
+    background: var(--navy); color: var(--white);
+    font-size: 11px; font-weight: 700; letter-spacing: 0.5px;
+    text-transform: uppercase; padding: 9px 12px; text-align: left;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .score-table td {
+    padding: 9px 12px; border: 1px solid var(--hairline); vertical-align: top;
+  }
+  .score-table tr:nth-child(even) td { background: #F2F6FE; }
+  .pts { font-weight: 700; color: var(--navy); }
+
+  /* ─── PERSONAS ─── */
+  .persona-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .persona {
+    background: var(--white); border: 1px solid var(--hairline);
+    border-radius: 4px; overflow: hidden;
+  }
+  .persona-head {
+    background: var(--navy); color: var(--white);
+    padding: 14px 16px;
+  }
+  .persona-head .role { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--light-blue); margin-bottom: 4px; }
+  .persona-head .name { font-size: 15px; font-weight: 700; }
+  .persona-body { padding: 14px 16px; }
+  .persona-body p { font-size: 12px; color: var(--slate); margin-bottom: 8px; line-height: 1.5; }
+  .persona-body .pains { font-size: 12px; color: var(--body); }
+  .persona-body .pains li { margin-left: 14px; margin-bottom: 4px; }
+  .persona-lbl { font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--blue); letter-spacing: 1px; margin: 10px 0 4px; }
+
+  /* ─── TWO-COL ─── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+  /* ─── MESSAGING TABLE ─── */
+  .msg-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .msg-table th {
+    background: var(--deep-navy); color: var(--white);
+    font-size: 11px; font-weight: 700; letter-spacing: 0.5px;
+    text-transform: uppercase; padding: 9px 12px; text-align: left;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .msg-table td { padding: 10px 12px; border: 1px solid var(--hairline); vertical-align: top; line-height: 1.5; }
+  .msg-table tr:nth-child(even) td { background: #F2F6FE; }
+
+  /* ─── FOOTER ─── */
+  .page-footer {
+    background: var(--deep-navy); color: var(--light-blue);
+    padding: 20px 48px; font-size: 11px; font-weight: 300;
+    border-top: 2px solid var(--sky);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .page-footer strong { color: var(--white); }
+
+  @media print {
+    .hero { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .tier-header, .qd-head, .ind-table th, .score-table th, .msg-table th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="page-header">
+  <div class="logo-area">
+    <div class="logo-text">
+      <div class="brand">SW<span>R</span>S</div>
+      <div class="sub">Southwest Recovery Services, LLC</div>
+    </div>
+  </div>
+  <div class="header-meta">
+    <strong>Ideal Customer Profile</strong><br>
+    Data Source: 10,386-Client Unit Yield File<br>
+    Compiled: July 2026 · Internal Strategy Document
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Client Intelligence · Strategic Targeting</div>
+  <h1>SWRS Ideal Customer Profile</h1>
+  <p class="hero-sub">Built from 22 years of placement data, yield analytics, and the actual client roster — not assumptions. This ICP defines who we recover the most for, at the highest yield rate, with the lowest friction. Use it to score prospects, focus outreach, and disqualify early.</p>
+  <div class="hero-stats">
+    <div class="hstat">
+      <div class="hstat-val">10,386</div>
+      <div class="hstat-lbl">Client Records Analyzed</div>
+    </div>
+    <div class="hstat">
+      <div class="hstat-val">$877M</div>
+      <div class="hstat-lbl">Total Placed (All Time)</div>
+    </div>
+    <div class="hstat">
+      <div class="hstat-val">$77M</div>
+      <div class="hstat-lbl">Total Collected</div>
+    </div>
+    <div class="hstat">
+      <div class="hstat-val">8.8%</div>
+      <div class="hstat-lbl">Overall Portfolio Yield</div>
+    </div>
+    <div class="hstat">
+      <div class="hstat-val">825</div>
+      <div class="hstat-lbl">True B2B Sweet-Spot Clients</div>
+    </div>
+    <div class="hstat">
+      <div class="hstat-val">34%</div>
+      <div class="hstat-lbl">Avg Yield Rate — ICP Segment</div>
+    </div>
+  </div>
+</section>
+
+<div class="main">
+
+  <!-- ─── SECTION 1: SNAPSHOT ─── -->
+  <section class="section">
+    <div class="section-title"><span class="num">01</span> ICP Snapshot — Who We Win For</div>
+
+    <div class="callout blue">
+      <strong>Strategic Insight</strong>
+      The data splits cleanly into two worlds: high-volume consumer paper (low average balance, low unit yield, volume-dependent) and true B2B/commercial accounts (high average balance, high unit yield, relationship-intensive). SWRS's elite yield performance — 50%+ recovery rate — sits almost entirely in the B2B segment with average balances between $10k–$100k and 1–10 placements. That is the ICP.
+    </div>
+
+    <div class="tier-grid">
+      <div class="tier-card">
+        <div class="tier-header t1">
+          <h3>Tier 1 — Ideal (Primary Target)</h3>
+          <span class="tier-badge">CLOSE FAST</span>
+        </div>
+        <div class="tier-body">
+          <p>Single-location or multi-location B2B company. Sells goods or services to other businesses on credit/net terms. Has a defined AR function but lacks a recovery process. Account balances in the $10k–$100k range. Knows they're leaving money on the table.</p>
+          <div class="tier-metrics">
+            <div class="tm"><div class="tm-val">50–100%</div><div class="tm-lbl">Yield Rate</div></div>
+            <div class="tm"><div class="tm-val">$25k–$65k</div><div class="tm-lbl">Unit Yield/Placement</div></div>
+            <div class="tm"><div class="tm-val">1–5</div><div class="tm-lbl">Placements/Yr</div></div>
+          </div>
+          <div class="kw-list">
+            <span class="kw green">Construction / Trades</span>
+            <span class="kw green">Manufacturing</span>
+            <span class="kw green">Industrial Services</span>
+            <span class="kw green">Oil &amp; Gas Services</span>
+            <span class="kw green">B2B Tech / IT</span>
+            <span class="kw green">Food &amp; Bev Distribution</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tier-card">
+        <div class="tier-header t2">
+          <h3>Tier 2 — Strong Fit</h3>
+          <span class="tier-badge">PRIORITIZE</span>
+        </div>
+        <div class="tier-body">
+          <p>Mid-size B2B or hybrid B2B/B2C operator. Recurring AR exposure. Has tried internal collections, written off debt, or had a prior agency relationship that underperformed. Multiple placements per year — consistent pipeline if onboarded correctly.</p>
+          <div class="tier-metrics">
+            <div class="tm"><div class="tm-val">25–50%</div><div class="tm-lbl">Yield Rate</div></div>
+            <div class="tm"><div class="tm-val">$10k–$25k</div><div class="tm-lbl">Unit Yield/Placement</div></div>
+            <div class="tm"><div class="tm-val">3–15</div><div class="tm-lbl">Placements/Yr</div></div>
+          </div>
+          <div class="kw-list">
+            <span class="kw">Property Management</span>
+            <span class="kw">Healthcare / Medical</span>
+            <span class="kw">Logistics / Trucking</span>
+            <span class="kw">Professional Services</span>
+            <span class="kw">Staffing</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tier-card">
+        <div class="tier-header t3">
+          <h3>Tier 3 — Volume Fit</h3>
+          <span class="tier-badge">QUALIFY CAREFULLY</span>
+        </div>
+        <div class="tier-body">
+          <p>High-volume, lower-balance consumer or hybrid portfolios. Unit yield is lower ($300–$700/placement) but total recovery volume can be significant if the client is large enough. Requires operational scale to be worth the relationship. Examples: utilities, clubs, academies.</p>
+          <div class="tier-metrics">
+            <div class="tm"><div class="tm-val">5–20%</div><div class="tm-lbl">Yield Rate</div></div>
+            <div class="tm"><div class="tm-val">$300–$700</div><div class="tm-lbl">Unit Yield/Placement</div></div>
+            <div class="tm"><div class="tm-val">500–50,000+</div><div class="tm-lbl">Placements/Yr</div></div>
+          </div>
+          <div class="kw-list">
+            <span class="kw amber">Utilities / Energy</span>
+            <span class="kw amber">Country Clubs / Golf</span>
+            <span class="kw amber">Academies / Schools</span>
+            <span class="kw amber">Gyms / Fitness</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tier-card">
+        <div class="tier-header t4">
+          <h3>Tier 4 — Poor Fit / Pass</h3>
+          <span class="tier-badge">DISQUALIFY</span>
+        </div>
+        <div class="tier-body">
+          <p>Consumer retail, small-balance consumer portfolios (avg &lt;$200/account), micro-business with no consistent AR workflow, or accounts that are too aged/too small to recover economically. Data shows 2,059 clients placed &gt;$5k but collected &lt;$100 — these profiles destroy yield metrics.</p>
+          <div class="tier-metrics">
+            <div class="tm"><div class="tm-val">&lt;5%</div><div class="tm-lbl">Yield Rate</div></div>
+            <div class="tm"><div class="tm-val">&lt;$50</div><div class="tm-lbl">Unit Yield/Placement</div></div>
+            <div class="tm"><div class="tm-val">$107M+</div><div class="tm-lbl">Unrecovered (Portfolio)</div></div>
+          </div>
+          <div class="kw-list">
+            <span class="kw red">Low-bal Consumer</span>
+            <span class="kw red">Micro / Hobby Business</span>
+            <span class="kw red">No AR Process</span>
+            <span class="kw red">3+ Yr Aged Debt Only</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 2: FIRMOGRAPHICS ─── -->
+  <section class="section">
+    <div class="section-title"><span class="num">02</span> Firmographic Profile — Target Company Attributes</div>
+
+    <div class="two-col">
+      <div>
+        <table class="score-table">
+          <thead>
+            <tr><th>Attribute</th><th>ICP Range</th><th>Why It Matters</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Company Type</strong></td>
+              <td>LLC, Corp, PLLC — established legal entity</td>
+              <td>Enforceable contract, collectible judgment if escalated</td>
+            </tr>
+            <tr>
+              <td><strong>Revenue</strong></td>
+              <td>$1M–$50M annually</td>
+              <td>Large enough for recurring AR exposure; small enough to lack in-house recovery staff</td>
+            </tr>
+            <tr>
+              <td><strong>Employees</strong></td>
+              <td>5–250</td>
+              <td>Has a controller or AR manager but no dedicated recovery function</td>
+            </tr>
+            <tr>
+              <td><strong>Years in Business</strong></td>
+              <td>3+ years</td>
+              <td>Established client relationships — has customers who owe; not a startup with no AR history</td>
+            </tr>
+            <tr>
+              <td><strong>Geography</strong></td>
+              <td>TX, OK, CO, MO, OH, FL, GA (home states); B2B nationwide</td>
+              <td>Home-state advantage for local relationships + compliance; B2B commercial nationwide coverage</td>
+            </tr>
+            <tr>
+              <td><strong>Average Invoice Size</strong></td>
+              <td>$5,000–$200,000</td>
+              <td>The yield data is definitive: avg balance $10k–$100k produces 27–35% recovery rate vs. sub-5% for small-bal consumer</td>
+            </tr>
+            <tr>
+              <td><strong>Billing Model</strong></td>
+              <td>Net 30/60/90 terms, project invoicing, recurring service billing</td>
+              <td>Creates predictable AR delinquency pattern — repeatable placement pipeline for SWRS</td>
+            </tr>
+            <tr>
+              <td><strong>Accounts Receivable Age</strong></td>
+              <td>30–365 days past due (sweet spot: 60–180 days)</td>
+              <td>SWRS collectability decay curve — 88.7% at 30 days, 8.9% at 24 months. Fresh accounts = top unit yield.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <div class="callout blue" style="margin-bottom:18px;">
+          <strong>Key Data Signal: Average Balance Size</strong>
+          The single strongest predictor of SWRS yield is <strong>average balance per account</strong>. Clients in the $25k–$100k average balance range generate 27–35% recovery rates. Below $5k average balance, yield collapses to sub-5% and the relationship costs more to service than it recovers.
+        </div>
+        <div class="callout amber">
+          <strong>Watch Signal: Placement Volume vs. Balance Size</strong>
+          High-volume clients (1,000+ placements/yr) with low average balances dilute yield and strain operations. The elite B2B segment (101 clients with 50%+ yield rate AND $10k+ unit yield) averages <strong>fewer than 10 placements per year</strong> but generates outsized revenue per account. Prioritize depth over volume.
+        </div>
+        <div class="callout blue" style="margin-top:0;">
+          <strong>Repeat Placement Signal</strong>
+          The highest-LTV clients place 2–5× per year consistently. Top performers like United Allergy Services (20 placements, $471k collected, $23.5k/unit yield), KLLM Driving Academy ($700/unit yield across 2,464 placements), and ClubCorp (15,106 accounts) represent the repeat-client flywheel. Ask: "Does this prospect have a recurring AR problem or a one-time write-off?"
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 3: INDUSTRIES ─── -->
+  <section class="section">
+    <div class="section-title"><span class="num">03</span> Industry Targeting — Yield Performance by Vertical</div>
+
+    <table class="ind-table">
+      <thead>
+        <tr>
+          <th>Industry Vertical</th>
+          <th>Priority</th>
+          <th>SWRS Coverage Page</th>
+          <th>Yield Rate (Portfolio)</th>
+          <th>ICP Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Construction / Trades / Restoration</strong><br><small style="color:var(--slate)">Roofing, HVAC, tuckpointing, flooring, restoration, drywall</small></td>
+          <td><span class="priority-badge p-high">Tier 1</span></td>
+          <td>swrecovery.com/industries/construction-collections/</td>
+          <td>
+            <div class="yield-bar">
+              <span>23%</span>
+              <div class="bar-wrap"><div class="bar-fill" style="width:70%;background:var(--green)"></div></div>
+            </div>
+          </td>
+          <td>High avg balance, contract-based, invoiced work — strong documentation trail. TNT Tuckpointing (84% yield), Texas Disaster Restoration (92%), FC Coatings (99%), Conceal Fab (100%). Best-in-portfolio performers.</td>
+        </tr>
+        <tr>
+          <td><strong>Manufacturing / Industrial</strong><br><small style="color:var(--slate)">Fabrication, filtration, precision parts, industrial supply</small></td>
+          <td><span class="priority-badge p-high">Tier 1</span></td>
+          <td>swrecovery.com/industries/commercial-collections/b2b-collections/</td>
+          <td>
+            <div class="yield-bar">
+              <span>78%</span>
+              <div class="bar-wrap"><div class="bar-fill" style="width:95%;background:var(--green)"></div></div>
+            </div>
+          </td>
+          <td>Highest yield rate segment in the data. MP Filtri USA (97%), Midstate Machine &amp; Fab (100%), Armamentarium (94%). Clear purchase orders, defined contracts, B2B-only counterparties.</td>
+        </tr>
+        <tr>
+          <td><strong>Oil &amp; Gas / Energy / Chemicals</strong><br><small style="color:var(--slate)">Tank lines, fluid services, midstream, propane/gas</small></td>
+          <td><span class="priority-badge p-high">Tier 1</span></td>
+          <td>swrecovery.com/industries/oil-and-gas-collections/</td>
+          <td>
+            <div class="yield-bar">
+              <span>6% (portfolio)</span>
+              <div class="bar-wrap"><div class="bar-fill" style="width:30%;background:var(--amber)"></div></div>
+            </div>
+          </td>
+          <td>Portfolio rate misleads — top individual accounts are best performers. Carolina Tank Lines (70%), RINCHEM (100%), Clements Fluids (100%), Goodnight Midstream (67%). Large single accounts, not consumer volume.</td>
+        </tr>
+        <tr>
+          <td><strong>Food &amp; Beverage Distribution</strong><br><small style="color:var(--slate)">Distributors, beverage companies, food service B2B</small></td>
+          <td><span class="priority-badge p-high">Tier 1</span></td>
+          <td>swrecovery.com/industries/commercial-collections/b2b-collections/</td>
+          <td>
+            <div class="yield-bar">
+              <span>44%</span>
+              <div class="bar-wrap"><div class="bar-fill" style="width:80%;background:var(--green)"></div></div>
+            </div>
+          </td>
+          <td>Hill Beverage Co. (100%), Roland Foods (60%), Prodigy Group (100%). Distribution model creates high-value unpaid invoices — strong asset class.</td>
+        </tr>
+        <tr>
+          <td><strong>IT / Technology / Staffing</strong><br><small style="color:var(--slate)">MSPs, staffing agencies, software companies, consultancies</small></td>
+          <td><span class="priority-badge p-high">Tier 1</span></td>
+          <td>swrecovery.com/industries/commercial-collections/staffing-agency-collections/</td>
+          <td>
+            <div class="yield-bar">
+              <span>19%</span>
+              <div class="bar-wrap"><div class="bar-fill" style="width:55%;background:var(--blue)"></div></div>
+            </div>
+          </td>
+          <td>Avant Solutions (100%), Bridgehead IT (76%), Hinovision (48%), SPEARTIP (47%). Service-based, invoice-heavy — clients often dispute but are solvent. Key: get to us before 90 days.</td>
+        </tr>
+        <tr>
+          <td><strong>Healthcare / Medical</strong><br><small style="color:var(--slate)">Therapy, allergy, rehab, physician practices, specialty care</small></td>
+          <td><span class="priority-badge p-med">Tier 2</span></td>
+          <td>swrecovery.com/industries/medical-and-healthcare-collections/</td>
+          <td>
+            <div class="yield-bar">
+              <span>8%</span>
+              <div class="bar-wrap"><div class="bar-fill" style="width:25%;background:var(--amber)"></div></div>
+            </div>
+          </td>
+          <td>High volume, lower average balance pulls the rate down. Best performers: Rehability Therapy (100%), United Allergy Services ($471k total). HIPAA compliance is the differentiator — many competitors can't serve this vertical cleanly.</td>
+        </tr>
+        <tr>
+          <td><strong>Property Management</strong><br><small style="color:var(--slate)">Residential, commercial, multifamily, HOA</small></td>
+          <td><span class="priority-badge p-med">Tier 2</span></td>
+          <td>swrecovery.com/industries/property-management-collections/</td>
+          <td>
+            <div class="yield-bar">
+              <span>7%</span>
+              <div class="bar-wrap"><div class="bar-fill" style="width:22%;background:var(--amber)"></div></div>
+            </div>
+          </td>
+          <td>Chelsea at Brick (61%), Linnemann Realty ($580k total, 1,599 accounts), Aspen Rentals (100%). TAA/AAGD/NARPM memberships give SWRS unique credibility. Experian RentBureau is the key differentiator for this vertical — credit reporting of unpaid rent.</td>
+        </tr>
+        <tr>
+          <td><strong>Logistics / Transportation</strong><br><small style="color:var(--slate)">Trucking, freight, transportation services</small></td>
+          <td><span class="priority-badge p-med">Tier 2</span></td>
+          <td>swrecovery.com/industries/logistics-management-collections/trucking-transportation-collections/</td>
+          <td>
+            <div class="yield-bar">
+              <span>18%</span>
+              <div class="bar-wrap"><div class="bar-fill" style="width:50%;background:var(--blue)"></div></div>
+            </div>
+          </td>
+          <td>Dakron Industries (29%), KLLM Driving Academy ($1.7M total, 2,464 accounts). Large freight invoices are the target — not owner-operator micro-accounts.</td>
+        </tr>
+        <tr>
+          <td><strong>Utilities / Energy (Consumer)</strong><br><small style="color:var(--slate)">Power, gas, water — residential/SMB consumer billing</small></td>
+          <td><span class="priority-badge p-low">Tier 3</span></td>
+          <td>swrecovery.com/industries/utility-collections/</td>
+          <td>
+            <div class="yield-bar">
+              <span>3%</span>
+              <div class="bar-wrap"><div class="bar-fill" style="width:15%;background:var(--red)"></div></div>
+            </div>
+          </td>
+          <td>Pulse Power ($1.1M total but 54,098 accounts = $21/unit yield), AP Gas &amp; Electric ($551k, 28,742 accounts). Volume play only — requires operational scale and dedicated consumer compliance infrastructure. Not a core ICP target.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ─── SECTION 4: QUAL/DISQUAL ─── -->
+  <section class="section">
+    <div class="section-title"><span class="num">04</span> Qualification &amp; Disqualification Criteria</div>
+
+    <div class="qd-grid">
+      <div class="qd-card">
+        <div class="qd-head q">✓ Qualified — Move Forward</div>
+        <ul class="qd-list q-list">
+          <li>B2B company with invoiced receivables owed by other businesses (not consumers)</li>
+          <li>Average outstanding balance $5,000+ per account (sweet spot: $10k–$100k)</li>
+          <li>Debt is 30–365 days past due — still within recovery window</li>
+          <li>Has a signed contract, purchase order, or service agreement documenting the debt</li>
+          <li>Has tried internal collections (phone/email) and debtor has not paid</li>
+          <li>Owner/controller/CFO is the decision maker — can sign a placement agreement</li>
+          <li>Operating in SWRS-licensed states (all 50 for B2B commercial; 47 for consumer)</li>
+          <li>Not currently in active litigation or bankruptcy proceedings on these accounts</li>
+          <li>Willing to provide documentation: invoices, contracts, payment history, contact info</li>
+          <li>Has repeat/recurring AR exposure — not a one-time emergency write-off situation</li>
+          <li>Industry with clean SWRS compliance coverage (HIPAA for healthcare, FDCPA for consumer)</li>
+        </ul>
+      </div>
+
+      <div class="qd-card">
+        <div class="qd-head d">✗ Disqualified — Do Not Pursue</div>
+        <ul class="qd-list d-list">
+          <li>Consumer debt in California, Washington, or Oregon (SWRS does not collect there)</li>
+          <li>Average balance under $500/account with no scale volume (&lt;500 accounts/year)</li>
+          <li>Debt is older than 3 years with no prior collection action (statute of limitations risk)</li>
+          <li>No documentation — verbal agreements only, no invoices or contracts</li>
+          <li>Debtor is already in active Chapter 7 or Chapter 13 bankruptcy</li>
+          <li>Prospect wants SWRS to "buy" the debt (debt purchasing — not our model, contingency only)</li>
+          <li>Primarily individual consumer debts under $1,000 with no volume</li>
+          <li>Industry SWRS is not licensed for in target state</li>
+          <li>Client expects "skip tracing only" or won't authorize full recovery workflow</li>
+          <li>Prospect has already placed accounts with 3+ prior agencies with zero recovery (aged-out portfolio)</li>
+          <li>No legal entity — sole proprietor with no business documentation trail</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 5: BUYER PERSONAS ─── -->
+  <section class="section">
+    <div class="section-title"><span class="num">05</span> Decision Maker Personas</div>
+
+    <div class="persona-grid">
+      <div class="persona">
+        <div class="persona-head">
+          <div class="role">Primary Buyer</div>
+          <div class="name">The Business Owner / CEO</div>
+        </div>
+        <div class="persona-body">
+          <div class="persona-lbl">Profile</div>
+          <p>Founder or owner of a $2M–$20M B2B services or trades company. Personally involved in AR. Knows specific customers who owe money. Takes the write-off personally. Has probably tried calling the debtor themselves.</p>
+          <div class="persona-lbl">Pain Points</div>
+          <ul class="pains">
+            <li>Cash flow impacted by 2–5 large unpaid invoices</li>
+            <li>Doesn't want to "ruin the relationship" by being aggressive</li>
+            <li>Tried internal collection; debtor stopped returning calls</li>
+            <li>Doesn't know if it's even worth hiring a collection firm</li>
+          </ul>
+          <div class="persona-lbl">Trigger Phrase</div>
+          <p><em>"I've got $80,000 sitting out there and I can't get them to respond."</em></p>
+        </div>
+      </div>
+
+      <div class="persona">
+        <div class="persona-head">
+          <div class="role">Economic Buyer</div>
+          <div class="name">The CFO / Controller</div>
+        </div>
+        <div class="persona-body">
+          <div class="persona-lbl">Profile</div>
+          <p>Finance leader at a $10M–$50M company. Manages DSO, approves the agency relationship. Wants a process — not a one-time miracle. Comfortable with contingency model. Will compare SWRS to 1–2 other firms.</p>
+          <div class="persona-lbl">Pain Points</div>
+          <ul class="pains">
+            <li>DSO creeping up; aging bucket over 90 days is growing</li>
+            <li>Prior agency relationship underperformed — no visibility, no results</li>
+            <li>Needs compliance comfort (FDCPA, HIPAA, state licensing)</li>
+            <li>Wants reporting/portal access without manual effort</li>
+          </ul>
+          <div class="persona-lbl">Trigger Phrase</div>
+          <p><em>"Our 90-day bucket has grown 30% this year. We need a reliable third-party partner."</em></p>
+        </div>
+      </div>
+
+      <div class="persona">
+        <div class="persona-head">
+          <div class="role">Influencer / Champion</div>
+          <div class="name">The AR Manager / Office Manager</div>
+        </div>
+        <div class="persona-body">
+          <div class="persona-lbl">Profile</div>
+          <p>Day-to-day AR contact at a 10–100 employee firm. Will use the SWRS client portal. Evaluates ease of placement, communication, and follow-through. Has been burned by agencies that disappear after intake. Will recommend SWRS upward if onboarding is smooth.</p>
+          <div class="persona-lbl">Pain Points</div>
+          <ul class="pains">
+            <li>Prior agencies required excessive documentation upfront</li>
+            <li>No status updates after placement — "black hole" experience</li>
+            <li>Manual processes — fax, email, spreadsheets</li>
+            <li>Owner is asking for updates she can't provide</li>
+          </ul>
+          <div class="persona-lbl">Trigger Phrase</div>
+          <p><em>"The last agency we used never gave us updates. We had no idea what was happening."</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 6: MESSAGING ─── -->
+  <section class="section">
+    <div class="section-title"><span class="num">06</span> ICP-Specific Messaging by Vertical</div>
+
+    <table class="msg-table">
+      <thead>
+        <tr>
+          <th>Vertical</th>
+          <th>Lead Hook</th>
+          <th>Key Differentiator to Mention</th>
+          <th>Objection to Pre-empt</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Construction / Restoration</strong></td>
+          <td>"You finished the job. You deserve to get paid."</td>
+          <td>SWRS understands contractor payment chains — subcontractor disputes, retainage, lien law</td>
+          <td>"I don't want to lose the GC relationship" → Our approach recovers money <em>and</em> preserves the relationship</td>
+        </tr>
+        <tr>
+          <td><strong>Oil &amp; Gas / Industrial</strong></td>
+          <td>"One invoice at $200k unpaid can destroy your Q. We recover that."</td>
+          <td>22 years of large-balance commercial recovery; carrier &amp; supplier invoice expertise</td>
+          <td>"It's a large account, I'm nervous about legal exposure" → Contingency-only, you pay nothing unless we recover</td>
+        </tr>
+        <tr>
+          <td><strong>Healthcare</strong></td>
+          <td>"HIPAA-compliant recovery that protects your practice and your patients."</td>
+          <td>HIPAA-trained collectors; Experian credit reporting for medical debt; licensed all 50 states for B2B medical</td>
+          <td>"What if the patient disputes it?" → We handle disputes within FDCPA / CFPB Regulation F framework</td>
+        </tr>
+        <tr>
+          <td><strong>Property Management</strong></td>
+          <td>"Turn your move-out AR into recovered rent — reported to Experian RentBureau."</td>
+          <td>Experian RentBureau integration — unpaid rent appears on tenant credit, incentivizes payment; TAA/AAGD/NARPM member</td>
+          <td>"The tenant moved out, they're unreachable" → Skip tracing + credit reporting is the lever that re-engages them</td>
+        </tr>
+        <tr>
+          <td><strong>IT / Staffing / Tech</strong></td>
+          <td>"Your biggest customers owe you money. We'll get it back without the lawsuit."</td>
+          <td>B2B-specialized collectors who understand software/staffing contracts; no consumer tactics on business debtors</td>
+          <td>"They're a current client and might place more business" → We work confidentially; we protect the ongoing relationship</td>
+        </tr>
+        <tr>
+          <td><strong>Logistics / Trucking</strong></td>
+          <td>"Freight delivered. Invoice unpaid. That's our cue."</td>
+          <td>Nationwide commercial coverage; understands broker/carrier payment terms; $700 unit yield at KLLM validates scale</td>
+          <td>"It's not worth the commission" → Contingency means no upfront cost; any recovery is pure margin</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ─── SECTION 7: SCORING ─── -->
+  <section class="section">
+    <div class="section-title"><span class="num">07</span> Prospect Scoring Card</div>
+
+    <div class="callout blue">
+      <strong>How to Use This Scorecard</strong>
+      Score any inbound or outbound prospect before investing sales time. 70+ = immediate priority. 40–69 = qualify further. Below 40 = deprioritize or disqualify. Max score: 100 points.
+    </div>
+
+    <table class="score-table">
+      <thead>
+        <tr><th>Criterion</th><th>Score If True</th><th>Score If False / Unknown</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Average outstanding balance ≥$10,000 per account</td>
+          <td class="pts">+20</td>
+          <td>0 (if &lt;$5k, −10)</td>
+          <td>Single strongest yield predictor in the data</td>
+        </tr>
+        <tr>
+          <td>Debt is &lt;12 months old (placed within collectability window)</td>
+          <td class="pts">+15</td>
+          <td>0 (if &gt;24 months, −10)</td>
+          <td>Decay curve drops to 8.9% at 24 months — freshness matters</td>
+        </tr>
+        <tr>
+          <td>Has written documentation (contracts, POs, invoices)</td>
+          <td class="pts">+15</td>
+          <td>−15</td>
+          <td>No documentation = very low recovery probability</td>
+        </tr>
+        <tr>
+          <td>B2B commercial debt (not consumer)</td>
+          <td class="pts">+10</td>
+          <td>0</td>
+          <td>B2B delivers 3–4× higher unit yield than consumer equivalents</td>
+        </tr>
+        <tr>
+          <td>Potential for recurring placements (&gt;1× per year)</td>
+          <td class="pts">+10</td>
+          <td>0</td>
+          <td>LTV multiplier — repeat clients are the core of SWRS revenue</td>
+        </tr>
+        <tr>
+          <td>In a primary SWRS vertical (construction, manufacturing, oil&amp;gas, food/bev, IT)</td>
+          <td class="pts">+10</td>
+          <td>0</td>
+          <td>Domain expertise = faster resolution, higher yield rate</td>
+        </tr>
+        <tr>
+          <td>Decision maker is reachable and has authority to sign</td>
+          <td class="pts">+10</td>
+          <td>0</td>
+          <td>Can't close without the right contact</td>
+        </tr>
+        <tr>
+          <td>Operating in SWRS home states (TX, OK, CO, MO, OH, FL, GA)</td>
+          <td class="pts">+5</td>
+          <td>0</td>
+          <td>Local relationship advantage; not a hard requirement for B2B</td>
+        </tr>
+        <tr>
+          <td>Has had a prior agency relationship that underperformed</td>
+          <td class="pts">+5</td>
+          <td>0</td>
+          <td>Built-in comparison opportunity; pain is already defined</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ─── SECTION 8: ANTI-ICP ─── -->
+  <section class="section">
+    <div class="section-title"><span class="num">08</span> Anti-ICP — Clients We Should Not Take</div>
+
+    <div class="callout red">
+      <strong>Revenue Warning</strong>
+      The data reveals $107M+ placed by clients who generated near-zero collections. These accounts consume operational capacity, damage yield metrics, and provide no revenue. The pattern is clear: small-balance consumer micro-accounts placed by businesses with no recurring AR process. Avoid onboarding these — even when they ask.
+    </div>
+
+    <div class="two-col">
+      <div>
+        <table class="score-table">
+          <thead>
+            <tr><th>Client Profile</th><th>Why to Avoid</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Child care / tutoring / small consumer service (&lt;$200/account, 10–50 accounts)</td>
+              <td>Yield collapses. Kinderoo Learning Academy: 40 placements, $0 collected. KFM Martial Arts: $10 unit yield.</td>
+            </tr>
+            <tr>
+              <td>Solo medical practice placing consumer health debt &lt;$500/account</td>
+              <td>HIPAA overhead + small balance = uneconomical. Multiple dental/MD practices in the $0-$35 yield bucket.</td>
+            </tr>
+            <tr>
+              <td>Consumer-only portfolio &gt;2 years aged, no prior action</td>
+              <td>88.7% of recovery happens in the first 30 days. 2-year-aged consumer = single-digit probability.</td>
+            </tr>
+            <tr>
+              <td>Real estate investors seeking to collect from tenants in CA/WA/OR</td>
+              <td>SWRS does not collect consumer debt in these states. Hard stop.</td>
+            </tr>
+            <tr>
+              <td>Business looking to sell/factor their receivables (not contingency model)</td>
+              <td>SWRS is contingency-only. No debt purchasing, no factoring.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <div class="callout amber">
+          <strong>The Yield Math</strong>
+          A client placing 200 accounts at $150 average balance generates, at 8% yield: $2,400 collected on $30,000 placed. At 30% fee: $720 revenue. At 12 months of collector time. vs. a Tier 1 B2B client placing one $65,000 invoice at 100% yield: $65,000 collected, $19,500 revenue. One account, one phone call. This is why balance size is everything.
+        </div>
+        <div class="callout blue">
+          <strong>The Right Redirect</strong>
+          When a small-balance consumer prospect contacts SWRS, don't just turn them away — qualify for minimum portfolio size. If they have 500+ accounts annually even at low balance, that may reach Tier 3 threshold. If not, refer out and focus on the relationship for when they have a bigger commercial problem.
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="page-footer">
+  <div>
+    <strong>Southwest Recovery Services, LLC</strong> · 16200 Addison Road, Suite 260, Addison, TX 75001 · swrecovery.com<br>
+    New Business: (866) 551-4684 · info@swrecovery.com · ACA International Member A-13083551
+  </div>
+  <div style="text-align:right;">
+    Internal Strategy Document · Not for Distribution<br>
+    Data: Unit Yield File · July 2026
+  </div>
+</footer>
+
+</body>
+</html>
