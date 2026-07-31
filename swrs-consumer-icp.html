@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SWRS Consumer Collections — Ideal Customer Profile 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #070B97;
+    --blue: #0446F1;
+    --sky: #0495F1;
+    --light-blue: #82CCFA;
+    --deep-navy: #070731;
+    --slate: #3D3D52;
+    --body: #26303B;
+    --bg: #F7F9FF;
+    --white: #ffffff;
+    --light-tint: #E9F3FE;
+    --hairline: #D9DEE3;
+    --amber: #B8790A;
+    --amber-tint: #FCF1DE;
+    --red: #C0392B;
+    --green: #1A7A4A;
+    --green-tint: #E8F5EE;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Fira Sans', sans-serif; font-weight: 400; color: var(--body); background: var(--bg); font-size: 15px; line-height: 1.6; }
+
+  .page-header { background: var(--deep-navy); padding: 28px 48px 24px; display: flex; align-items: center; justify-content: space-between; border-bottom: 3px solid var(--sky); }
+  .logo-text .brand { font-size: 22px; font-weight: 700; letter-spacing: -0.5px; color: var(--white); }
+  .logo-text .brand span { color: var(--sky); }
+  .logo-text .sub { font-size: 10px; font-weight: 300; color: var(--light-blue); letter-spacing: 1.5px; text-transform: uppercase; }
+  .header-meta { text-align: right; color: var(--light-blue); font-size: 11px; font-weight: 300; line-height: 1.8; }
+  .header-meta strong { color: var(--white); font-weight: 600; }
+
+  .hero { background: linear-gradient(135deg, #050870 0%, var(--navy) 40%, var(--blue) 80%, var(--sky) 100%); padding: 48px 48px 44px; color: var(--white); }
+  .hero-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--light-blue); margin-bottom: 10px; }
+  .hero h1 { font-size: 36px; font-weight: 700; line-height: 1.15; max-width: 700px; margin-bottom: 16px; }
+  .hero-sub { font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.85); max-width: 680px; line-height: 1.7; }
+  .hero-stats { display: flex; gap: 40px; margin-top: 36px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.2); flex-wrap: wrap; }
+  .hstat-val { font-size: 28px; font-weight: 700; color: var(--white); }
+  .hstat-lbl { font-size: 11px; font-weight: 300; color: var(--light-blue); text-transform: uppercase; letter-spacing: 1px; }
+
+  .main { max-width: 1100px; margin: 0 auto; padding: 40px 48px 60px; }
+  .section { margin-bottom: 44px; }
+  .section-title { font-size: 18px; font-weight: 700; color: var(--deep-navy); border-bottom: 2px solid var(--sky); padding-bottom: 8px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .section-title .num { background: var(--navy); color: var(--white); font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 2px; letter-spacing: 0.5px; }
+
+  .tier-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .tier-card { border: 1px solid var(--hairline); border-radius: 4px; overflow: hidden; background: var(--white); box-shadow: 0 1px 4px rgba(7,11,151,0.06); }
+  .tier-header { padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; }
+  .tier-header.t1 { background: var(--navy); }
+  .tier-header.t2 { background: var(--blue); }
+  .tier-header.t3 { background: var(--sky); }
+  .tier-header.t4 { background: var(--slate); }
+  .tier-header h3 { color: var(--white); font-size: 14px; font-weight: 700; }
+  .tier-badge { font-size: 10px; font-weight: 700; letter-spacing: 1px; padding: 3px 8px; border-radius: 2px; text-transform: uppercase; background: rgba(255,255,255,0.2); color: var(--white); }
+  .tier-body { padding: 18px 18px 20px; }
+  .tier-body p { font-size: 13px; color: var(--slate); margin-bottom: 12px; line-height: 1.5; }
+  .tier-metrics { display: flex; gap: 16px; flex-wrap: wrap; background: var(--light-tint); padding: 10px 12px; border-radius: 3px; margin-bottom: 12px; }
+  .tm-val { font-size: 17px; font-weight: 700; color: var(--navy); }
+  .tm-lbl { font-size: 10px; color: var(--slate); letter-spacing: 0.5px; }
+  .kw-list { display: flex; flex-wrap: wrap; gap: 6px; }
+  .kw { font-size: 11px; font-weight: 600; background: var(--light-tint); color: var(--navy); padding: 3px 8px; border-radius: 2px; }
+  .kw.red { background: #FDECEA; color: var(--red); }
+  .kw.green { background: var(--green-tint); color: var(--green); }
+  .kw.amber { background: var(--amber-tint); color: var(--amber); }
+
+  .callout { border-left: 4px solid; padding: 14px 16px; border-radius: 0 4px 4px 0; margin-bottom: 20px; font-size: 13px; line-height: 1.6; }
+  .callout.blue { border-color: var(--blue); background: var(--light-tint); }
+  .callout.amber { border-color: var(--amber); background: var(--amber-tint); }
+  .callout.red { border-color: var(--red); background: #FDECEA; }
+  .callout strong { display: block; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+  .callout.blue strong { color: var(--blue); }
+  .callout.amber strong { color: var(--amber); }
+  .callout.red strong { color: var(--red); }
+
+  .ind-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .ind-table th { background: var(--deep-navy); color: var(--white); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 10px 12px; text-align: left; border: 1px solid rgba(255,255,255,0.1); }
+  .ind-table td { padding: 10px 12px; border: 1px solid var(--hairline); vertical-align: top; }
+  .ind-table tr:nth-child(even) td { background: #F2F6FE; }
+  .ind-table tr:hover td { background: var(--light-tint); }
+
+  .priority-badge { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .p-high { background: #E8F5EE; color: var(--green); }
+  .p-med { background: var(--amber-tint); color: var(--amber); }
+  .p-low { background: #FDECEA; color: var(--red); }
+
+  .yield-bar { display: flex; align-items: center; gap: 8px; }
+  .bar-wrap { flex: 1; background: var(--hairline); border-radius: 2px; height: 6px; min-width: 60px; }
+  .bar-fill { height: 6px; border-radius: 2px; }
+
+  .score-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .score-table th { background: var(--navy); color: var(--white); font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; padding: 9px 12px; text-align: left; border: 1px solid rgba(255,255,255,0.1); }
+  .score-table td { padding: 9px 12px; border: 1px solid var(--hairline); vertical-align: top; }
+  .score-table tr:nth-child(even) td { background: #F2F6FE; }
+  .pts { font-weight: 700; color: var(--navy); }
+
+  .qd-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .qd-card { background: var(--white); border: 1px solid var(--hairline); border-radius: 4px; overflow: hidden; }
+  .qd-head { padding: 12px 16px; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--white); }
+  .qd-head.q { background: var(--green); }
+  .qd-head.d { background: var(--red); }
+  .qd-list { padding: 14px 16px; list-style: none; }
+  .qd-list li { font-size: 13px; color: var(--body); padding: 7px 0; border-bottom: 1px solid var(--hairline); display: flex; align-items: flex-start; gap: 8px; line-height: 1.4; }
+  .qd-list li:last-child { border-bottom: none; }
+  .qd-list li::before { flex-shrink: 0; margin-top: 2px; font-size: 13px; }
+  .qd-list.q-list li::before { content: "✓"; color: var(--green); font-weight: 700; }
+  .qd-list.d-list li::before { content: "✗"; color: var(--red); font-weight: 700; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .persona-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .persona { background: var(--white); border: 1px solid var(--hairline); border-radius: 4px; overflow: hidden; }
+  .persona-head { background: var(--navy); color: var(--white); padding: 14px 16px; }
+  .persona-head .role { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--light-blue); margin-bottom: 4px; }
+  .persona-head .name { font-size: 15px; font-weight: 700; }
+  .persona-body { padding: 14px 16px; }
+  .persona-body p { font-size: 12px; color: var(--slate); margin-bottom: 8px; line-height: 1.5; }
+  .persona-lbl { font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--blue); letter-spacing: 1px; margin: 10px 0 4px; }
+  .persona-body ul { font-size: 12px; color: var(--body); }
+  .persona-body ul li { margin-left: 14px; margin-bottom: 4px; }
+
+  .vol-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 20px; }
+  .vol-card { background: var(--white); border: 1px solid var(--hairline); border-radius: 4px; padding: 16px; text-align: center; }
+  .vol-card .vc-val { font-size: 22px; font-weight: 700; color: var(--navy); }
+  .vol-card .vc-sub { font-size: 11px; color: var(--slate); margin: 2px 0 6px; }
+  .vol-card .vc-stat { font-size: 12px; color: var(--body); }
+  .vol-card .vc-rate { font-size: 13px; font-weight: 700; }
+  .rate-high { color: var(--green); }
+  .rate-med { color: var(--amber); }
+  .rate-low { color: var(--red); }
+
+  .msg-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .msg-table th { background: var(--deep-navy); color: var(--white); font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; padding: 9px 12px; text-align: left; border: 1px solid rgba(255,255,255,0.1); }
+  .msg-table td { padding: 10px 12px; border: 1px solid var(--hairline); vertical-align: top; line-height: 1.5; }
+  .msg-table tr:nth-child(even) td { background: #F2F6FE; }
+
+  .compliance-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .comp-card { background: var(--white); border: 1px solid var(--hairline); border-radius: 4px; overflow: hidden; }
+  .comp-head { background: var(--deep-navy); color: var(--white); padding: 10px 14px; font-size: 12px; font-weight: 700; }
+  .comp-body { padding: 12px 14px; font-size: 12px; color: var(--body); line-height: 1.6; }
+  .comp-body ul { margin-left: 14px; }
+  .comp-body ul li { margin-bottom: 3px; }
+
+  .page-footer { background: var(--deep-navy); color: var(--light-blue); padding: 20px 48px; font-size: 11px; font-weight: 300; border-top: 2px solid var(--sky); display: flex; align-items: center; justify-content: space-between; }
+  .page-footer strong { color: var(--white); }
+
+  @media print {
+    .hero, .tier-header, .qd-head, .ind-table th, .score-table th, .msg-table th, .comp-head { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div>
+    <div class="logo-text">
+      <div class="brand">SW<span>R</span>S</div>
+      <div class="sub">Southwest Recovery Services, LLC</div>
+    </div>
+  </div>
+  <div class="header-meta">
+    <strong>Consumer Collections — Ideal Customer Profile</strong><br>
+    Data Source: 10,386-Client Unit Yield File · 1,216 Consumer Clients<br>
+    Compiled: July 2026 · Internal Strategy Document
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-eyebrow">Consumer Collections · Client Intelligence · Strategic Targeting</div>
+  <h1>SWRS Consumer Collections ICP</h1>
+  <p class="hero-sub">Consumer collections is a volume game — unit yield is lower, compliance overhead is higher, and the right client looks completely different from B2B. This ICP defines who we win for on the consumer side: the verticals, volume thresholds, balance profiles, and compliance readiness that separate high-LTV consumer clients from capacity-draining low-yield ones.</p>
+  <div class="hero-stats">
+    <div class="hstat">
+      <div class="hstat-val">1,216</div>
+      <div class="hstat-lbl">Consumer Clients Analyzed</div>
+    </div>
+    <div class="hstat">
+      <div class="hstat-val">$610M</div>
+      <div class="hstat-lbl">Total Placed</div>
+    </div>
+    <div class="hstat">
+      <div class="hstat-val">$50M</div>
+      <div class="hstat-lbl">Total Collected</div>
+    </div>
+    <div class="hstat">
+      <div class="hstat-val">8.2%</div>
+      <div class="hstat-lbl">Overall Consumer Yield</div>
+    </div>
+    <div class="hstat">
+      <div class="hstat-val">$423</div>
+      <div class="hstat-lbl">Best-in-Class Unit Yield (ClubCorp)</div>
+    </div>
+    <div class="hstat">
+      <div class="hstat-val">47</div>
+      <div class="hstat-lbl">States Licensed (Consumer)</div>
+    </div>
+  </div>
+</section>
+
+<div class="main">
+
+  <!-- 01 SNAPSHOT -->
+  <section class="section">
+    <div class="section-title"><span class="num">01</span> Consumer ICP Snapshot — The Fundamental Difference from B2B</div>
+
+    <div class="callout blue">
+      <strong>Strategic Framing</strong>
+      Consumer collections is NOT a smaller version of B2B. The entire model flips: volume replaces balance size as the yield driver, compliance complexity multiplies (FDCPA, CFPB Regulation F, TCPA, state overlays), and the right client relationship lasts years with thousands of placements — not one or two invoices. The ICP here is built around <strong>volume thresholds, vertical compliance fit, and unit yield floors</strong>, not individual account balance.
+    </div>
+
+    <div class="tier-grid">
+      <div class="tier-card">
+        <div class="tier-header t1">
+          <h3>Tier 1 — Ideal Consumer Client</h3>
+          <span class="tier-badge">CLOSE FAST</span>
+        </div>
+        <div class="tier-body">
+          <p>High-volume consumer operator with recurring monthly placements, clean documentation, and an existing AR workflow. Places 1,000–15,000+ accounts per year. Unit yield $300–$700+. Has tried in-house collections or a prior agency that underperformed on compliance or results.</p>
+          <div class="tier-metrics">
+            <div class="tm"><div class="tm-val">15–28%</div><div class="tm-lbl">Yield Rate</div></div>
+            <div class="tm"><div class="tm-val">$300–$700</div><div class="tm-lbl">Unit Yield</div></div>
+            <div class="tm"><div class="tm-val">1,000+</div><div class="tm-lbl">Placements/Yr</div></div>
+          </div>
+          <div class="kw-list">
+            <span class="kw green">Fitness / Country Clubs</span>
+            <span class="kw green">Driving Academies</span>
+            <span class="kw green">Community Hospitals</span>
+            <span class="kw green">ER / Urgent Care</span>
+            <span class="kw green">Portable Sanitation</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tier-card">
+        <div class="tier-header t2">
+          <h3>Tier 2 — Strong Fit</h3>
+          <span class="tier-badge">PRIORITIZE</span>
+        </div>
+        <div class="tier-body">
+          <p>Mid-volume consumer operator. 500–2,000 placements/year. Average balance $500–$3,500. Consistent placements monthly. May be newer to outsourced collections. Key verticals: property management, education, specialty medical groups, subscription services.</p>
+          <div class="tier-metrics">
+            <div class="tm"><div class="tm-val">8–16%</div><div class="tm-lbl">Yield Rate</div></div>
+            <div class="tm"><div class="tm-val">$200–$400</div><div class="tm-lbl">Unit Yield</div></div>
+            <div class="tm"><div class="tm-val">500–2,000</div><div class="tm-lbl">Placements/Yr</div></div>
+          </div>
+          <div class="kw-list">
+            <span class="kw">Property Management</span>
+            <span class="kw">Education / Academies</span>
+            <span class="kw">Specialty Medical</span>
+            <span class="kw">Legal Services</span>
+            <span class="kw">Subscription / SaaS</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tier-card">
+        <div class="tier-header t3">
+          <h3>Tier 3 — High Volume, Low Yield</h3>
+          <span class="tier-badge">QUALIFY ON VOLUME</span>
+        </div>
+        <div class="tier-body">
+          <p>Mass-volume consumer operators (10,000–150,000+ placements/year) with low average balances under $1,000. Unit yield $20–$90 but total revenue can still be significant at scale. Examples: utilities, energy providers, payment processors. Requires dedicated operational infrastructure.</p>
+          <div class="tier-metrics">
+            <div class="tm"><div class="tm-val">3–8%</div><div class="tm-lbl">Yield Rate</div></div>
+            <div class="tm"><div class="tm-val">$20–$90</div><div class="tm-lbl">Unit Yield</div></div>
+            <div class="tm"><div class="tm-val">10,000+</div><div class="tm-lbl">Placements/Yr</div></div>
+          </div>
+          <div class="kw-list">
+            <span class="kw amber">Utilities / Energy</span>
+            <span class="kw amber">Payment Processors</span>
+            <span class="kw amber">Large Healthcare Systems</span>
+            <span class="kw amber">Telecom / Subscription</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tier-card">
+        <div class="tier-header t4">
+          <h3>Tier 4 — Pass</h3>
+          <span class="tier-badge">DISQUALIFY</span>
+        </div>
+        <div class="tier-body">
+          <p>Low-volume consumer accounts (under 100 placements/year) with small balances. The math never works. Childcare centers placing 10–40 accounts/year, solo medical practices, small gyms. Data shows hundreds of these clients generating single-digit or zero collections.</p>
+          <div class="tier-metrics">
+            <div class="tm"><div class="tm-val">&lt;5%</div><div class="tm-lbl">Yield Rate</div></div>
+            <div class="tm"><div class="tm-val">&lt;$50</div><div class="tm-lbl">Unit Yield</div></div>
+            <div class="tm"><div class="tm-val">&lt;100</div><div class="tm-lbl">Placements/Yr</div></div>
+          </div>
+          <div class="kw-list">
+            <span class="kw red">Micro-volume Consumer</span>
+            <span class="kw red">Solo Practices</span>
+            <span class="kw red">Small Childcare</span>
+            <span class="kw red">CA / WA / OR Debt</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 VOLUME THRESHOLD -->
+  <section class="section">
+    <div class="section-title"><span class="num">02</span> Volume Threshold Analysis — The Revenue Engine</div>
+
+    <div class="callout blue">
+      <strong>The Consumer Revenue Rule</strong>
+      In consumer collections, volume IS the ICP filter. The data is definitive: 17 clients with 10,000+ placements/year generated $22.3M collected — 44% of all consumer revenue. The minimum viable consumer client places at least 500 accounts per year. Below that, the relationship costs more to service than it generates.
+    </div>
+
+    <div class="vol-grid">
+      <div class="vol-card">
+        <div class="vc-val">$22.3M</div>
+        <div class="vc-sub">17 clients · 10,000+ placements/yr</div>
+        <div class="vc-stat">Avg unit yield: $190–$423</div>
+        <div class="vc-rate rate-med">7% overall yield rate</div>
+      </div>
+      <div class="vol-card">
+        <div class="vc-val">$11.5M</div>
+        <div class="vc-sub">52 clients · 1,000–10,000 placements/yr</div>
+        <div class="vc-stat">Avg unit yield: $96–$700</div>
+        <div class="vc-rate rate-high">9% overall yield rate</div>
+      </div>
+      <div class="vol-card">
+        <div class="vc-val">$3.7M</div>
+        <div class="vc-sub">58 clients · 500–1,000 placements/yr</div>
+        <div class="vc-stat">Avg unit yield: $276–$559</div>
+        <div class="vc-rate rate-high">10% overall yield rate</div>
+      </div>
+      <div class="vol-card">
+        <div class="vc-val">$6.4M</div>
+        <div class="vc-sub">329 clients · 100–500 placements/yr</div>
+        <div class="vc-stat">Avg unit yield: $272–$644</div>
+        <div class="vc-rate rate-med">7% overall yield rate</div>
+      </div>
+    </div>
+
+    <div class="callout amber">
+      <strong>Unit Yield Sweet Spot</strong>
+      The highest unit yield in consumer collections belongs to mid-volume clients (100–2,500 placements/year) with average balances of $1,500–$3,500. KLLM Driving Academy: $700/unit yield at 28% recovery. ClubCorp: $423/unit at 18%. TOI TOI USA: $356/unit at 27%. These clients produce B2B-like returns at consumer volume. They are the real consumer ICP target.
+    </div>
+  </section>
+
+  <!-- 03 INDUSTRY BREAKDOWN -->
+  <section class="section">
+    <div class="section-title"><span class="num">03</span> Consumer Vertical Performance</div>
+
+    <table class="ind-table">
+      <thead>
+        <tr>
+          <th>Vertical</th>
+          <th>Priority</th>
+          <th>Yield Rate</th>
+          <th>Unit Yield</th>
+          <th>Key Clients &amp; Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Fitness / Country Clubs / Recreation</strong><br><small style="color:var(--slate)">Gyms, golf, country clubs, sports platforms</small></td>
+          <td><span class="priority-badge p-high">Tier 1</span></td>
+          <td><div class="yield-bar"><span>17%</span><div class="bar-wrap"><div class="bar-fill" style="width:65%;background:var(--green)"></div></div></div></td>
+          <td><strong>$328</strong></td>
+          <td>ClubCorp: $6.4M collected, 15,106 accounts, $423/unit, 18% yield. Stack Sports: $272/unit, 17%. LEAFLY: $268/unit, 11%. High avg balance ($2,000–$2,500) + membership contract documentation = best consumer yield profile.</td>
+        </tr>
+        <tr>
+          <td><strong>Education / Childcare (Mid-Large)</strong><br><small style="color:var(--slate)">Driving academies, private schools, academies</small></td>
+          <td><span class="priority-badge p-high">Tier 1</span></td>
+          <td><div class="yield-bar"><span>20%</span><div class="bar-wrap"><div class="bar-fill" style="width:75%;background:var(--green)"></div></div></div></td>
+          <td><strong>$428</strong></td>
+          <td>KLLM Driving Academy: $1.7M collected, $700/unit yield, 28% rate — best consumer unit yield in the portfolio. Abeka Academy: $485k collected. Dollar Driver Club: $75/unit. Key: tuition-based, signed enrollment contracts.</td>
+        </tr>
+        <tr>
+          <td><strong>Healthcare / Medical (Hospital &amp; ER)</strong><br><small style="color:var(--slate)">Community hospitals, ERs, specialty groups, anesthesia</small></td>
+          <td><span class="priority-badge p-high">Tier 1</span></td>
+          <td><div class="yield-bar"><span>9%</span><div class="bar-wrap"><div class="bar-fill" style="width:35%;background:var(--blue)"></div></div></div></td>
+          <td><strong>$85</strong></td>
+          <td>Community Hospital: $1.46M collected, 4,083 accounts, $357/unit, 28%. Phoenix ER: $545k, $559/unit, 16%. Tulsa ER: $378k. Texas Colon &amp; Rectal: $657k. Key differentiator: HIPAA compliance + hospital billing expertise. Highest-volume consumer vertical.</td>
+        </tr>
+        <tr>
+          <td><strong>Property Management / Residential</strong><br><small style="color:var(--slate)">Apartments, residential PM, HOA, multifamily</small></td>
+          <td><span class="priority-badge p-med">Tier 2</span></td>
+          <td><div class="yield-bar"><span>7%</span><div class="bar-wrap"><div class="bar-fill" style="width:27%;background:var(--amber)"></div></div></div></td>
+          <td><strong>$260</strong></td>
+          <td>Linnemann Realty: $580k, $363/unit. Property Frameworks DFW: $317k, $343/unit. Classic Property Mgmt: $373/unit. Key differentiator: Experian RentBureau credit reporting — unpaid rent on tenant's credit report is the collection lever competitors can't match.</td>
+        </tr>
+        <tr>
+          <td><strong>Utilities / Energy (Consumer)</strong><br><small style="color:var(--slate)">Power, gas, electric — residential/SMB accounts</small></td>
+          <td><span class="priority-badge p-med">Tier 2/3</span></td>
+          <td><div class="yield-bar"><span>4%</span><div class="bar-wrap"><div class="bar-fill" style="width:16%;background:var(--amber)"></div></div></div></td>
+          <td><strong>$27</strong></td>
+          <td>Pulse Power: $1.15M collected, 54,098 accounts, $21/unit, 3%. Pulse Power PowerNext: $821k, $67/unit. AP Gas &amp; Electric: $551k, $19/unit. Tiger Sanitation: $738k, $36/unit. Pure volume play — only viable at 10,000+ placements/yr with dedicated infrastructure.</td>
+        </tr>
+        <tr>
+          <td><strong>Legal Services / Law Firm Clients</strong><br><small style="color:var(--slate)">Attorney firms collecting on behalf of clients</small></td>
+          <td><span class="priority-badge p-med">Tier 2</span></td>
+          <td><div class="yield-bar"><span>7%</span><div class="bar-wrap"><div class="bar-fill" style="width:27%;background:var(--amber)"></div></div></div></td>
+          <td><strong>$195</strong></td>
+          <td>Bailey &amp; Galyen: $1.02M collected, 4,632 accounts, $220/unit, 7%. Large volume, moderate yield. Law firm relationships tend to be sticky — once placed, they continue placing monthly.</td>
+        </tr>
+        <tr>
+          <td><strong>Portable Sanitation / Waste Services</strong><br><small style="color:var(--slate)">Porta-potty rental, waste management, sanitation</small></td>
+          <td><span class="priority-badge p-high">Tier 1</span></td>
+          <td><div class="yield-bar"><span>27%</span><div class="bar-wrap"><div class="bar-fill" style="width:85%;background:var(--green)"></div></div></div></td>
+          <td><strong>$356</strong></td>
+          <td>TOI TOI USA: $916k collected, 2,571 accounts, $356/unit yield, 27% recovery rate. Underrated vertical — contract-based rental billing, clear documentation, recurring B2B-style invoicing makes this consumer-classified debt highly collectible.</td>
+        </tr>
+        <tr>
+          <td><strong>Small Childcare / Solo Medical (micro-volume)</strong><br><small style="color:var(--slate)">Single-location practices, small daycares, solo providers</small></td>
+          <td><span class="priority-badge p-low">Tier 4</span></td>
+          <td><div class="yield-bar"><span>&lt;5%</span><div class="bar-wrap"><div class="bar-fill" style="width:10%;background:var(--red)"></div></div></div></td>
+          <td><strong>&lt;$35</strong></td>
+          <td>Kinderoo Learning Academy: 40 placements, $0 collected. KFM Martial Arts: $10/unit. William Mania MD: $3/unit. Schoolhouse 226: $9/unit. The volume math never works. HIPAA + FDCPA overhead + low balance + low volume = operational loss. Do not onboard.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 04 FIRMOGRAPHICS -->
+  <section class="section">
+    <div class="section-title"><span class="num">04</span> Firmographic Profile — Target Consumer Client Attributes</div>
+
+    <div class="two-col">
+      <table class="score-table">
+        <thead>
+          <tr><th>Attribute</th><th>ICP Range</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Annual Placements</strong></td><td>500+ minimum · Sweet spot: 1,000–15,000/yr</td></tr>
+          <tr><td><strong>Average Balance per Account</strong></td><td>$500–$3,500 (optimal) · Under $300 = volume-only play</td></tr>
+          <tr><td><strong>Account Age at Placement</strong></td><td>30–180 days past due · Fresh paper only</td></tr>
+          <tr><td><strong>Billing Documentation</strong></td><td>Itemized bills, signed agreements, enrollment forms — not verbal</td></tr>
+          <tr><td><strong>Geographic Placement</strong></td><td>Any of 47 states (not CA, WA, OR for consumer)</td></tr>
+          <tr><td><strong>Existing Collections Process</strong></td><td>Has tried internal or prior agency — knows the problem</td></tr>
+          <tr><td><strong>Consumer Debt Type</strong></td><td>Service-rendered (not predatory lending, payday, or subprime)</td></tr>
+          <tr><td><strong>HIPAA Applicability</strong></td><td>Healthcare clients: must confirm HIPAA BAA willingness</td></tr>
+          <tr><td><strong>Placement Frequency</strong></td><td>Monthly recurring preferred — not one-time portfolio dumps</td></tr>
+          <tr><td><strong>Company Size</strong></td><td>Multi-location or regional operators preferred over single-unit</td></tr>
+        </tbody>
+      </table>
+
+      <div>
+        <div class="callout blue">
+          <strong>The Volume-Balance Matrix</strong>
+          The real consumer ICP is defined by two axes: volume and average balance. High volume + high balance = best case (ClubCorp, KLLM). High volume + low balance = viable only at extreme scale (utilities). Low volume + high balance = look again — this is probably a B2B account, not consumer. Low volume + low balance = hard pass every time.
+        </div>
+        <div class="callout amber">
+          <strong>Freshness is Non-Negotiable</strong>
+          Consumer accounts age out faster than B2B. The collectability decay curve hits harder on consumer paper — right-party contact (RPC) data degrades quickly, debtors move, change phones. A consumer client placing 12-month-aged debt will have half the yield of one placing 60-day-aged debt. Always ask: when was it last worked? When was it originated?
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 QUAL/DISQUAL -->
+  <section class="section">
+    <div class="section-title"><span class="num">05</span> Qualification &amp; Disqualification Criteria</div>
+    <div class="qd-grid">
+      <div class="qd-card">
+        <div class="qd-head q">✓ Qualified — Move Forward</div>
+        <ul class="qd-list q-list">
+          <li>Recurring monthly placements of 500+ accounts minimum</li>
+          <li>Average account balance $500+ (sweet spot $1,000–$3,500)</li>
+          <li>Debt originated in the last 12 months — not a portfolio dump</li>
+          <li>Clean consumer documentation: signed agreements, itemized bills, enrollment forms</li>
+          <li>Operating in SWRS-licensed consumer states (not CA, WA, OR)</li>
+          <li>HIPAA BAA-ready (healthcare clients) — willing to execute before placement</li>
+          <li>Has tried internal collections or prior agency with unsatisfactory results</li>
+          <li>Service-rendered debt (not predatory lending or payday loans)</li>
+          <li>Multi-location or regional operator — not a single-unit micro-business</li>
+          <li>Comfortable with Regulation F compliance (digital notices, itemization)</li>
+          <li>Decision maker is AR director, CFO, or revenue cycle manager — has authority</li>
+        </ul>
+      </div>
+      <div class="qd-card">
+        <div class="qd-head d">✗ Disqualified — Do Not Pursue</div>
+        <ul class="qd-list d-list">
+          <li>Consumer debt in California, Washington, or Oregon — hard stop, no exceptions</li>
+          <li>Under 100 placements per year with no scale growth path</li>
+          <li>Average balance under $200/account</li>
+          <li>Debt is older than 24 months with no prior collection action</li>
+          <li>No signed documentation — verbal agreements, informal billing</li>
+          <li>Predatory lending, payday loans, high-interest consumer lending — compliance risk</li>
+          <li>Single-location micro-business (solo practitioner, small daycare, single gym)</li>
+          <li>Healthcare client unwilling to execute HIPAA BAA</li>
+          <li>Wants to place consumer debt as a one-time portfolio dump only</li>
+          <li>Prior regulatory action (CFPB consent order, state AG complaint) on their portfolio</li>
+          <li>Accounts already in bankruptcy proceedings</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 COMPLIANCE -->
+  <section class="section">
+    <div class="section-title"><span class="num">06</span> Consumer Compliance Framework — SWRS Differentiators</div>
+
+    <div class="callout blue">
+      <strong>Compliance IS the Sales Pitch for Consumer</strong>
+      In consumer collections, compliance competence is not a checkbox — it is the primary reason clients choose SWRS over a cheaper competitor. Every vertical below has a specific compliance overlay. A prospect that doesn't ask about compliance in the first conversation is a red flag, not a green light.
+    </div>
+
+    <div class="compliance-grid">
+      <div class="comp-card">
+        <div class="comp-head">FDCPA + CFPB Regulation F</div>
+        <div class="comp-body">
+          Applies to all consumer collections. Regulation F (2021) adds:
+          <ul>
+            <li>Electronic communication opt-in/opt-out rules</li>
+            <li>Itemization date requirement on validation notices</li>
+            <li>7-in-7 call frequency limit per debtor per week</li>
+            <li>Social media contact restrictions</li>
+            <li>Model validation notice compliance</li>
+          </ul>
+          SWRS differentiator: all collectors trained on Regulation F; model notices implemented.
+        </div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-head">HIPAA (Healthcare Clients)</div>
+        <div class="comp-body">
+          Required for all medical, dental, behavioral health, hospital clients. SWRS obligations:
+          <ul>
+            <li>Business Associate Agreement (BAA) executed before first placement</li>
+            <li>PHI handled under HIPAA minimum necessary standard</li>
+            <li>Breach notification procedures in place</li>
+            <li>Collector training on PHI non-disclosure</li>
+            <li>Secure data transmission for placement files</li>
+          </ul>
+          SWRS differentiator: HIPAA-trained collectors; BAA standard in all healthcare contracts.
+        </div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-head">TCPA (Phone &amp; Text)</div>
+        <div class="comp-body">
+          Governs all phone and text contact with consumers. Key rules:
+          <ul>
+            <li>Prior express consent required for autodialed/prerecorded calls to cell phones</li>
+            <li>Do-Not-Call list scrubbing mandatory</li>
+            <li>Time-of-day restrictions (8am–9pm local debtor time)</li>
+            <li>Text opt-out honor required</li>
+            <li>Documented consent records required</li>
+          </ul>
+          SWRS differentiator: TCN + Skit.ai compliance layer; consent tracking built into workflow.
+        </div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-head">State-Level Overlays</div>
+        <div class="comp-body">
+          Licensed in 47 states for consumer. Key state overlays:
+          <ul>
+            <li>TX: TDCA licensing + biennial renewal</li>
+            <li>FL: OFR licensure requirements</li>
+            <li>CO: CO FDCPA state overlay (stronger than federal)</li>
+            <li>NY/NJ: NYC/NJ local rules if debtor resides there</li>
+            <li>MN: Restricted placement — verify before accepting</li>
+            <li>CA, WA, OR: NO consumer collections — hard stop</li>
+          </ul>
+        </div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-head">Experian RentBureau (PM Vertical)</div>
+        <div class="comp-body">
+          Property management exclusive differentiator:
+          <ul>
+            <li>Unpaid rent reported directly to Experian RentBureau</li>
+            <li>Appears on tenant screening reports — not just standard credit pulls</li>
+            <li>Creates payment incentive without litigation</li>
+            <li>FCRA compliance required for all reported balances</li>
+            <li>Dispute handling under FCRA Section 623</li>
+          </ul>
+          Competitors who cannot report to RentBureau lose on this vertical.
+        </div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-head">FCRA (Credit Reporting)</div>
+        <div class="comp-body">
+          Applies when SWRS reports consumer accounts to credit bureaus:
+          <ul>
+            <li>Data furnisher obligations under FCRA Section 623</li>
+            <li>Dispute investigation and response within 30 days</li>
+            <li>Accuracy requirements on all reported tradelines</li>
+            <li>Experian data furnisher relationship maintained</li>
+            <li>Medical debt reporting rules (CFPB 2024 rulemaking — track for changes)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 PERSONAS -->
+  <section class="section">
+    <div class="section-title"><span class="num">07</span> Decision Maker Personas — Consumer Side</div>
+    <div class="persona-grid">
+      <div class="persona">
+        <div class="persona-head">
+          <div class="role">Primary Buyer</div>
+          <div class="name">Revenue Cycle Director</div>
+        </div>
+        <div class="persona-body">
+          <div class="persona-lbl">Profile</div>
+          <p>Healthcare, hospital, or large consumer services operator. Owns the full AR cycle from billing through collections. Evaluates agencies on compliance track record, recovery rate, and patient/member experience impact. Reports to CFO.</p>
+          <div class="persona-lbl">Pain Points</div>
+          <ul>
+            <li>Prior agency had TCPA/FDCPA complaints that created liability</li>
+            <li>Collection rates declining; aged bucket growing</li>
+            <li>No visibility into what agency is doing or saying to patients/members</li>
+            <li>Need HIPAA BAA and audit trail</li>
+          </ul>
+          <div class="persona-lbl">Trigger</div>
+          <p><em>"We had a compliance incident with our last vendor. We need someone we can trust."</em></p>
+        </div>
+      </div>
+
+      <div class="persona">
+        <div class="persona-head">
+          <div class="role">Economic Buyer</div>
+          <div class="name">CFO / VP Finance</div>
+        </div>
+        <div class="persona-body">
+          <div class="persona-lbl">Profile</div>
+          <p>Multi-location consumer operator (gym chain, PM company, driving school). Makes the vendor decision based on recovery rate, fee structure, and compliance risk. Compares SWRS to 2–3 other agencies. Contingency model resonates immediately.</p>
+          <div class="persona-lbl">Pain Points</div>
+          <ul>
+            <li>Writing off 8–12% of annual revenue to bad debt</li>
+            <li>Prior agency fees felt high for results delivered</li>
+            <li>Board/ownership asking why collections aren't higher</li>
+            <li>No benchmarking data on what's achievable</li>
+          </ul>
+          <div class="persona-lbl">Trigger</div>
+          <p><em>"We're writing off $2M a year. I know we should be recovering more of that."</em></p>
+        </div>
+      </div>
+
+      <div class="persona">
+        <div class="persona-head">
+          <div class="role">Day-to-Day Contact</div>
+          <div class="name">AR Manager / Office Manager</div>
+        </div>
+        <div class="persona-body">
+          <div class="persona-lbl">Profile</div>
+          <p>Handles the actual placement workflow. Manages file uploads, monitors recovery reports, fields debtor callbacks escalated from SWRS. Evaluates the agency on ease of use, communication, and portal functionality. Will champion SWRS internally if the experience is smooth.</p>
+          <div class="persona-lbl">Pain Points</div>
+          <ul>
+            <li>Prior agency required complex file formats with no help</li>
+            <li>Couldn't get status updates on specific accounts</li>
+            <li>Angry patients/members called the practice about collection calls</li>
+            <li>Manual monthly reporting with no portal access</li>
+          </ul>
+          <div class="persona-lbl">Trigger</div>
+          <p><em>"I just need a system that works and doesn't create more work for me."</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 MESSAGING -->
+  <section class="section">
+    <div class="section-title"><span class="num">08</span> Vertical-Specific Messaging</div>
+    <table class="msg-table">
+      <thead>
+        <tr><th>Vertical</th><th>Lead Hook</th><th>SWRS Differentiator</th><th>Objection to Pre-empt</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Healthcare / Hospital / ER</strong></td>
+          <td>"HIPAA-compliant collections that protect your patients and your practice."</td>
+          <td>HIPAA-trained collectors, BAA standard, CFPB Regulation F itemization compliance</td>
+          <td>"We're worried about patient experience" → Diplomatic recovery that preserves the relationship; we treat your patients like future patients</td>
+        </tr>
+        <tr>
+          <td><strong>Fitness / Country Clubs</strong></td>
+          <td>"Recover dues and fees without burning the membership relationship."</td>
+          <td>Membership contract expertise; non-adversarial recovery approach; ClubCorp proof point ($6.4M collected)</td>
+          <td>"We don't want to damage our brand" → 18% recovery at ClubCorp scale, zero brand incidents; we protect the member relationship first</td>
+        </tr>
+        <tr>
+          <td><strong>Property Management</strong></td>
+          <td>"Turn move-out debt into recovered rent — and put it on their credit."</td>
+          <td>Experian RentBureau credit reporting — the only lever that re-engages vanished tenants; TAA/AAGD/NARPM member</td>
+          <td>"They moved out, they're unreachable" → Credit reporting creates the payment motivation even without direct contact</td>
+        </tr>
+        <tr>
+          <td><strong>Driving Academies / Education</strong></td>
+          <td>"Tuition unpaid doesn't mean it's gone. We recover it."</td>
+          <td>Tuition/enrollment contract collection expertise; KLLM proof point ($1.7M, $700/unit yield)</td>
+          <td>"These are small balances" → KLLM: $700 per placement recovered at 28% rate proves the math works at volume</td>
+        </tr>
+        <tr>
+          <td><strong>Utilities / Energy</strong></td>
+          <td>"Volume collections at scale — with the compliance infrastructure to back it up."</td>
+          <td>TCN + Skit.ai dialer infrastructure built for mass-volume; TCPA compliance layer; 47-state consumer licensing</td>
+          <td>"We've tried agencies before and the yield is always low" → Our tech stack (Skit.ai AI, TCN) reaches more debtors compliantly at lower cost per contact</td>
+        </tr>
+        <tr>
+          <td><strong>Portable Sanitation / Waste</strong></td>
+          <td>"Contract work. Clean billing. Uncollected invoices. We get them paid."</td>
+          <td>TOI TOI proof point ($916k, 27% yield) — higher than most consumer verticals; contract documentation makes this collectible</td>
+          <td>"We didn't think a collection agency handled this vertical" → We do, and we're proven at scale</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 09 SCORING -->
+  <section class="section">
+    <div class="section-title"><span class="num">09</span> Consumer Prospect Scoring Card</div>
+    <div class="callout blue">
+      <strong>How to Use</strong>
+      Score any consumer prospect before investing sales time. 70+ = immediate priority. 40–69 = qualify further. Below 40 = deprioritize. Max: 100 points.
+    </div>
+    <table class="score-table">
+      <thead>
+        <tr><th>Criterion</th><th>Points If True</th><th>Points If False</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>500+ placements per year (minimum viable volume)</td><td class="pts">+20</td><td>−20 (hard disqualifier below 100)</td><td>Volume is the entire consumer yield model</td></tr>
+        <tr><td>Average balance $500+ per account</td><td class="pts">+15</td><td>0 (if &lt;$200, −10)</td><td>Below $200 avg balance almost never pencils out</td></tr>
+        <tr><td>Debt is &lt;12 months old at placement</td><td class="pts">+15</td><td>0 (if &gt;24 months, −10)</td><td>Consumer freshness decay is steep</td></tr>
+        <tr><td>Clean documentation (signed agreements, itemized bills)</td><td class="pts">+10</td><td>−15</td><td>No documentation = no FDCPA-defensible collection</td></tr>
+        <tr><td>NOT in CA, WA, or OR (consumer)</td><td class="pts">+10</td><td>−50 (hard stop)</td><td>SWRS does not hold consumer licenses in these states</td></tr>
+        <tr><td>Healthcare client willing to sign HIPAA BAA</td><td class="pts">+10</td><td>−20 (if healthcare and refuses)</td><td>No BAA = no healthcare consumer placement, period</td></tr>
+        <tr><td>Monthly recurring placements (not one-time dump)</td><td class="pts">+10</td><td>0</td><td>LTV multiplier — recurring clients are the revenue engine</td></tr>
+        <tr><td>In Tier 1 consumer vertical (fitness, driving academy, hospital/ER, sanitation)</td><td class="pts">+5</td><td>0</td><td>Vertical yield history matters</td></tr>
+        <tr><td>Prior agency relationship that underperformed</td><td class="pts">+5</td><td>0</td><td>Built-in comparison opportunity; pain already defined</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</div>
+
+<footer class="page-footer">
+  <div>
+    <strong>Southwest Recovery Services, LLC</strong> · 16200 Addison Road, Suite 260, Addison, TX 75001 · swrecovery.com<br>
+    New Business: (866) 551-4684 · info@swrecovery.com · Consumer licensed in 47 states (not CA, WA, OR)
+  </div>
+  <div style="text-align:right;">
+    Internal Strategy Document · Not for Distribution<br>
+    Data: Unit Yield File · July 2026
+  </div>
+</footer>
+
+</body>
+</html>
