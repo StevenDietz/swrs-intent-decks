@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Collection Opportunity Brief · Avangard Logistics Co, LLC</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Fira Sans',sans-serif;color:#26303B;background:#eef1f6;line-height:1.5}
+.page{max-width:900px;margin:24px auto;background:#fff;box-shadow:0 6px 30px rgba(7,7,49,.10);border-radius:14px;overflow:hidden}
+.hero{background:linear-gradient(135deg,#070731,#070B97 70%);color:#fff;padding:34px 44px}
+.hero .logo{width:210px;margin-bottom:20px}
+.hero .logo svg{width:210px;height:auto;display:block;filter:brightness(0) invert(1)}
+.eyebrow{color:#82CCFA;font-weight:700;letter-spacing:2px;font-size:12px;text-transform:uppercase}
+.hero h1{font-size:30px;font-weight:700;margin:8px 0 6px;letter-spacing:-.5px}
+.hero .sub{color:#c8d3ea;font-size:15px;font-weight:300}
+.prepared{margin-top:18px;font-size:13px;color:#aebbdb}
+.prepared b{color:#fff;font-weight:500}
+.body{padding:36px 44px}
+h2{font-size:20px;font-weight:700;color:#070B97;margin:34px 0 4px}
+h2:first-child{margin-top:0}
+.rule{height:3px;width:54px;background:#0495F1;border-radius:2px;margin-bottom:16px}
+p{margin:10px 0;font-size:15px}
+.lead{font-size:16px;color:#3D3D52}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0}
+.stat{background:#f6f8fc;border:1px solid #D9DEE3;border-radius:10px;padding:14px 16px}
+.stat .k{font-size:11px;letter-spacing:.5px;text-transform:uppercase;color:#3D3D52;font-weight:500}
+.stat .v{font-size:22px;font-weight:700;color:#070731;margin-top:4px}
+.stat .v.warn{color:#C0392B}
+.stat small{display:block;font-size:11px;color:#3D3D52;font-weight:400;margin-top:2px}
+.callout{background:#E9F3FE;border-left:5px solid #0446F1;border-radius:0 8px 8px 0;padding:16px 20px;margin:20px 0}
+.callout .lbl{color:#0446F1;font-weight:700;font-size:12px;letter-spacing:1px;text-transform:uppercase}
+.chartwrap{background:#fff;border:1px solid #D9DEE3;border-radius:12px;padding:22px;text-align:center;margin:16px 0}
+.chartwrap .cap{font-size:13px;color:#3D3D52;margin-top:6px}
+.chartwrap .title{font-weight:700;color:#070731;font-size:15px;margin-bottom:14px}
+.model{background:linear-gradient(135deg,#f3f7ff,#eaf1ff);border:1px solid #82CCFA;border-radius:14px;padding:24px;margin:16px 0}
+.controls{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;align-items:end}
+.controls label{font-size:12px;font-weight:600;color:#070B97;text-transform:uppercase;letter-spacing:.5px}
+.controls input[type=number],.controls select{width:100%;padding:10px 12px;border:1.5px solid #82CCFA;border-radius:8px;font-family:inherit;font-size:16px;font-weight:600;color:#070731;margin-top:6px}
+.controls .rng{margin-top:14px}
+.controls input[type=range]{width:100%}
+.out{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+.out .card{background:#fff;border-radius:10px;padding:16px;text-align:center;border:1px solid #D9DEE3}
+.out .card .lab{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:#3D3D52;font-weight:600}
+.out .card .num{font-size:26px;font-weight:700;color:#070B97;margin-top:6px}
+.out .card.net .num{color:#1a7a3c}
+table.cmp{width:100%;border-collapse:collapse;margin-top:18px;font-size:14px}
+table.cmp th{background:#070731;color:#fff;font-weight:600;font-size:12px;letter-spacing:.5px;text-transform:uppercase;padding:10px 12px;text-align:left}
+table.cmp td{padding:10px 12px;border-bottom:1px solid #D9DEE3}
+table.cmp tr.best td{background:#E9F3FE;font-weight:700}
+.note{font-size:12px;color:#3D3D52;font-style:italic;margin-top:10px}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.feat .f{border:1px solid #D9DEE3;border-radius:10px;padding:16px}
+.feat .f b{color:#070B97;display:block;margin-bottom:4px;font-size:15px}
+.feat .f span{font-size:13.5px;color:#3D3D52}
+.announce{background:linear-gradient(135deg,#070B97,#0446F1);color:#fff;border-radius:14px;padding:26px 28px;margin:20px 0}
+.announce .tag{display:inline-block;background:rgba(255,255,255,.18);color:#fff;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;border-radius:20px}
+.announce h3{font-size:22px;margin:12px 0 8px;font-weight:700}
+.announce p{color:#dbe4ff;font-size:15px}
+.cta{background:#070731;color:#fff;border-radius:14px;padding:28px;text-align:center;margin:22px 0}
+.cta h3{font-size:22px;margin-bottom:6px}
+.cta p{color:#c8d3ea;margin-bottom:16px}
+.btn{display:inline-block;background:#0495F1;color:#fff;text-decoration:none;font-weight:700;padding:14px 30px;border-radius:9px;font-size:16px}
+.cta .alt{margin-top:14px;font-size:13px;color:#aebbdb}
+.cta .alt a{color:#82CCFA}
+.foot{background:#f6f8fc;border-top:1px solid #D9DEE3;padding:20px 44px;font-size:11.5px;color:#3D3D52;line-height:1.6}
+@media(max-width:680px){.grid{grid-template-columns:repeat(2,1fr)}.controls,.out{grid-template-columns:1fr}.feat{grid-template-columns:1fr}.body,.hero,.foot{padding-left:22px;padding-right:22px}}
+
+.glance{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0 4px}
+.glance .g{background:#070731;color:#fff;border-radius:10px;padding:14px 12px;text-align:center}
+.glance .gn{font-size:24px;font-weight:700;color:#fff}
+.glance .gn small{font-size:14px;color:#0495F1;font-weight:700}
+.glance .gl{font-size:11px;color:#c8d3ea;margin-top:4px;line-height:1.35}
+.featured{margin:18px 0 4px;padding-top:14px;border-top:1px solid #D9DEE3;font-size:13px;color:#3D3D52}
+.featured .fl{display:block;text-transform:uppercase;letter-spacing:1px;font-size:11px;font-weight:700;color:#070B97;margin-bottom:8px}
+.featured a{color:#0446F1;text-decoration:none;font-weight:500;margin-right:16px;white-space:nowrap;line-height:2}
+.featured a:hover{text-decoration:underline}
+@media(max-width:680px){.glance{grid-template-columns:repeat(2,1fr)}}
+</style></head>
+<body>
+<div class="page">
+  <div class="hero">
+    <div class="logo"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.5.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 531 103.9" style="enable-background:new 0 0 531 103.9;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#060A92;}
+	.st1{fill:#0746ED;}
+	.st2{fill:#80C7F5;}
+</style>
+<g>
+	<path class="st0" d="M66.7,43.1c-4.6-1.5-8-2.7-10.3-3.8c-2.3-1.1-3.9-2.2-4.8-3.4c-0.9-1.2-1.3-2.7-1.3-4.6c0-2.7,1-4.8,3.1-6.2
+		c2-1.4,4.8-2.1,8.3-2.1c6.6,0,12.8,2.4,18.6,7.1l9.3-10.9c-3.8-3.7-8.1-6.4-12.8-8.2c-4.7-1.8-10.2-2.7-16.6-2.7
+		c-5.9,0-11.1,1-15.8,3c-4.7,2-8.3,4.9-10.9,8.6c-2.6,3.7-3.9,8-3.9,12.9c0,6.4,2,11.6,5.9,15.8c4,4.2,10.6,7.7,20,10.5
+		c4.2,1.3,7.3,2.5,9.5,3.7c2.2,1.1,3.8,2.4,4.7,3.9c0.9,1.4,1.3,3.2,1.3,5.3c0,3.3-1.2,5.8-3.6,7.7c-2.4,1.8-5.7,2.8-9.9,2.8
+		c-4.1,0-7.9-0.7-11.3-2.1c-3.5-1.4-6.8-3.5-10.1-6.2L26.1,85.3c3.8,3.7,8.4,6.6,13.8,8.8c5.3,2.2,11.5,3.3,18.4,3.3
+		c6.9,0,12.9-1.1,18-3.4c5.1-2.2,8.9-5.4,11.6-9.4s4-8.7,4-14c0-7.4-2-13.2-6.1-17.2C81.7,49.3,75.3,45.9,66.7,43.1z"/>
+	<polygon class="st0" points="167.2,80.1 156.2,10.5 135.1,10.5 123.4,80.1 114.9,10.5 94.9,10.5 108.8,95.3 134.3,95.3 145.4,30.5 
+		155.9,95.3 182,95.3 196.2,10.5 177.1,10.5 	"/>
+	<path class="st1" d="M332.7,53.4c-4.1-4-10.4-7.4-19.1-10.2c-4.6-1.5-8-2.7-10.3-3.8c-2.3-1.1-3.9-2.2-4.8-3.4
+		c-0.9-1.2-1.3-2.7-1.3-4.6c0-2.7,1-4.8,3.1-6.2c2-1.4,4.8-2.1,8.3-2.1c6.6,0,12.8,2.4,18.6,7.1l9.3-10.9c-3.8-3.7-8.1-6.4-12.8-8.2
+		c-4.7-1.8-10.2-2.7-16.6-2.7c-5.9,0-11.1,1-15.8,3c-4.7,2-8.3,4.9-10.9,8.6c-2.6,3.7-3.9,8-3.9,12.9c0,6.4,2,11.6,5.9,15.8
+		c4,4.2,10.6,7.7,20,10.5c4.2,1.3,7.3,2.5,9.5,3.7c2.2,1.1,3.8,2.4,4.7,3.9c0.9,1.4,1.3,3.2,1.3,5.3c0,3.3-1.2,5.8-3.6,7.7
+		s-5.7,2.8-9.9,2.8c-4.1,0-7.9-0.7-11.3-2.1c-3.5-1.4-6.8-3.5-10.1-6.2L273,85.3c3.8,3.7,8.4,6.6,13.8,8.8
+		c5.3,2.2,11.5,3.3,18.4,3.3c6.9,0,12.9-1.1,18-3.4c5.1-2.2,8.9-5.4,11.6-9.4s4-8.7,4-14C338.8,63.1,336.8,57.4,332.7,53.4z"/>
+	<polygon class="st2" points="233.2,18.6 217.8,52.1 250.9,36.5 233.1,36.6 	"/>
+	<path class="st1" d="M251.2,59.3c5.6-2.5,9.6-5.6,12.2-9.2c2.6-3.6,3.9-8.2,3.9-13.6c0-8.7-2.9-15.2-8.6-19.4
+		c-5.8-4.3-14.3-6.4-25.8-6.4h-27.4v84.6h19.8V62.9h7.7L250,95.3h22.3L251.2,59.3z M250.9,36.5l-33.2,15.6l15.4-33.5l-0.1,18
+		L250.9,36.5z"/>
+	<g>
+		<path class="st1" d="M378.7,19.8c-0.1-1.1-0.6-1.9-1.6-2.5c-0.9-0.6-2-0.9-3.3-0.9c-1,0-1.8,0.2-2.5,0.5s-1.3,0.7-1.7,1.3
+			c-0.4,0.5-0.6,1.2-0.6,1.9c0,0.6,0.1,1.1,0.4,1.5c0.3,0.4,0.6,0.8,1.1,1s0.9,0.5,1.4,0.7c0.5,0.2,0.9,0.3,1.3,0.4l2.2,0.6
+			c0.6,0.1,1.2,0.4,1.9,0.6s1.4,0.6,2,1.1s1.2,1,1.6,1.7s0.6,1.6,0.6,2.6c0,1.2-0.3,2.2-0.9,3.2c-0.6,1-1.5,1.7-2.7,2.3
+			c-1.2,0.6-2.6,0.8-4.3,0.8c-1.6,0-2.9-0.3-4.1-0.8s-2-1.2-2.7-2.1c-0.7-0.9-1-1.9-1.1-3.1h2.7c0.1,0.8,0.3,1.5,0.8,2
+			s1.1,0.9,1.9,1.2c0.8,0.3,1.6,0.4,2.4,0.4c1,0,1.9-0.2,2.7-0.5s1.4-0.8,1.9-1.4c0.5-0.6,0.7-1.3,0.7-2.1c0-0.7-0.2-1.3-0.6-1.8
+			c-0.4-0.5-0.9-0.8-1.6-1.1c-0.7-0.3-1.4-0.5-2.1-0.7l-2.7-0.8c-1.7-0.5-3.1-1.2-4-2.1c-1-0.9-1.5-2.1-1.5-3.6c0-1.2,0.3-2.3,1-3.2
+			c0.7-0.9,1.6-1.6,2.7-2.1s2.4-0.8,3.8-0.8c1.4,0,2.7,0.2,3.8,0.8s2,1.2,2.6,2.1c0.6,0.9,1,1.8,1,3H378.7z"/>
+		<path class="st1" d="M392.2,36.5c-1.5,0-2.8-0.4-3.9-1.1c-1.1-0.7-2-1.7-2.6-3c-0.6-1.3-0.9-2.7-0.9-4.4c0-1.7,0.3-3.2,0.9-4.5
+			c0.6-1.3,1.5-2.3,2.6-3c1.1-0.7,2.4-1.1,3.9-1.1c1.5,0,2.8,0.4,3.9,1.1s2,1.7,2.6,3s0.9,2.8,0.9,4.5c0,1.7-0.3,3.2-0.9,4.4
+			c-0.6,1.3-1.5,2.2-2.6,3S393.7,36.5,392.2,36.5z M392.2,34.3c1.1,0,2-0.3,2.8-0.9s1.3-1.3,1.6-2.3c0.3-0.9,0.5-2,0.5-3
+			s-0.2-2.1-0.5-3.1c-0.3-0.9-0.9-1.7-1.6-2.3c-0.7-0.6-1.6-0.9-2.8-0.9c-1.1,0-2,0.3-2.8,0.9c-0.7,0.6-1.3,1.3-1.6,2.3
+			c-0.3,0.9-0.5,2-0.5,3.1s0.2,2.1,0.5,3s0.9,1.7,1.6,2.3C390.2,34,391.1,34.3,392.2,34.3z"/>
+		<path class="st1" d="M413.8,29.5v-9.7h2.5v16.4h-2.5v-2.8h-0.2c-0.4,0.8-1,1.5-1.8,2.1s-1.8,0.9-3.1,0.9c-1,0-1.9-0.2-2.7-0.7
+			c-0.8-0.5-1.4-1.1-1.9-2c-0.5-0.9-0.7-2.1-0.7-3.5V19.8h2.5v10.2c0,1.2,0.3,2.1,1,2.9s1.5,1.1,2.6,1.1c0.6,0,1.3-0.2,1.9-0.5
+			c0.6-0.3,1.2-0.8,1.6-1.5C413.6,31.4,413.8,30.5,413.8,29.5z"/>
+		<path class="st1" d="M428,19.8V22h-8.5v-2.1H428z M422,15.9h2.5v15.6c0,0.7,0.1,1.2,0.3,1.6c0.2,0.4,0.5,0.6,0.8,0.7
+			s0.7,0.2,1,0.2c0.3,0,0.5,0,0.7,0s0.3-0.1,0.4-0.1l0.5,2.3c-0.2,0.1-0.4,0.1-0.7,0.2c-0.3,0.1-0.7,0.1-1.2,0.1
+			c-0.7,0-1.4-0.2-2.1-0.5c-0.7-0.3-1.2-0.8-1.7-1.4c-0.4-0.6-0.7-1.4-0.7-2.4V15.9z"/>
+		<path class="st1" d="M434.7,26.4v9.8h-2.5V14.4h2.5v8h0.2c0.4-0.8,1-1.5,1.7-2c0.8-0.5,1.8-0.8,3.1-0.8c1.1,0,2.1,0.2,2.9,0.7
+			c0.8,0.4,1.5,1.1,2,2s0.7,2.1,0.7,3.5v10.4h-2.5V26c0-1.3-0.3-2.3-1-3c-0.7-0.7-1.6-1.1-2.8-1.1c-0.8,0-1.6,0.2-2.2,0.5
+			c-0.6,0.3-1.2,0.9-1.5,1.5C434.8,24.6,434.7,25.4,434.7,26.4z"/>
+		<path class="st1" d="M453.6,36.2l-5-16.4h2.6l3.5,12.5h0.2l3.5-12.5h2.7l3.5,12.5h0.2l3.5-12.5h2.6l-5,16.4h-2.5l-3.6-12.6h-0.3
+			l-3.6,12.6H453.6z"/>
+		<path class="st1" d="M480.6,36.5c-1.6,0-2.9-0.3-4.1-1c-1.1-0.7-2-1.7-2.6-2.9c-0.6-1.3-0.9-2.7-0.9-4.4c0-1.7,0.3-3.2,0.9-4.4
+			c0.6-1.3,1.5-2.3,2.6-3c1.1-0.7,2.4-1.1,3.9-1.1c0.9,0,1.7,0.1,2.5,0.4c0.8,0.3,1.6,0.7,2.3,1.4s1.2,1.5,1.6,2.5
+			c0.4,1,0.6,2.3,0.6,3.9v1.1h-12.6v-2.2h10.1c0-0.9-0.2-1.7-0.5-2.5s-0.9-1.3-1.6-1.7c-0.7-0.4-1.5-0.6-2.4-0.6
+			c-1,0-1.9,0.2-2.6,0.7c-0.7,0.5-1.3,1.1-1.7,1.9c-0.4,0.8-0.6,1.6-0.6,2.5v1.4c0,1.2,0.2,2.3,0.6,3.1c0.4,0.9,1,1.5,1.8,2
+			c0.8,0.4,1.7,0.7,2.7,0.7c0.7,0,1.3-0.1,1.8-0.3c0.5-0.2,1-0.5,1.4-0.9s0.7-0.9,0.9-1.4l2.4,0.7c-0.3,0.8-0.7,1.5-1.3,2.2
+			c-0.6,0.6-1.3,1.1-2.2,1.4C482.7,36.4,481.7,36.5,480.6,36.5z"/>
+		<path class="st1" d="M502.8,23.5l-2.3,0.6c-0.1-0.4-0.3-0.7-0.6-1.1s-0.6-0.7-1.1-0.9s-1.1-0.4-1.8-0.4c-1,0-1.8,0.2-2.5,0.7
+			c-0.7,0.5-1,1-1,1.7c0,0.6,0.2,1.1,0.7,1.5c0.5,0.4,1.2,0.7,2.1,0.9l2.4,0.6c1.5,0.4,2.6,0.9,3.3,1.6c0.7,0.7,1.1,1.7,1.1,2.8
+			c0,0.9-0.3,1.8-0.8,2.5c-0.5,0.7-1.3,1.3-2.2,1.7c-1,0.4-2.1,0.6-3.3,0.6c-1.7,0-3.1-0.4-4.1-1.1c-1.1-0.7-1.8-1.8-2.1-3.2
+			l2.4-0.6c0.2,0.9,0.7,1.5,1.3,2s1.5,0.7,2.5,0.7c1.2,0,2.1-0.2,2.8-0.8s1-1.1,1-1.8c0-0.6-0.2-1-0.6-1.4c-0.4-0.4-1-0.7-1.8-0.9
+			l-2.7-0.6c-1.5-0.4-2.6-0.9-3.3-1.7c-0.7-0.8-1-1.7-1-2.8c0-0.9,0.3-1.7,0.8-2.5c0.5-0.7,1.2-1.3,2.1-1.7c0.9-0.4,1.9-0.6,3.1-0.6
+			c1.6,0,2.9,0.4,3.8,1.1C501.7,21.4,502.4,22.3,502.8,23.5z"/>
+		<path class="st1" d="M514,19.8V22h-8.5v-2.1H514z M508,15.9h2.5v15.6c0,0.7,0.1,1.2,0.3,1.6c0.2,0.4,0.5,0.6,0.8,0.7
+			s0.7,0.2,1,0.2c0.3,0,0.5,0,0.7,0s0.3-0.1,0.4-0.1l0.5,2.3c-0.2,0.1-0.4,0.1-0.7,0.2c-0.3,0.1-0.7,0.1-1.2,0.1
+			c-0.7,0-1.4-0.2-2.1-0.5s-1.2-0.8-1.7-1.4s-0.7-1.4-0.7-2.4V15.9z"/>
+		<path class="st1" d="M366.8,65.2V43.4h7.4c1.7,0,3.1,0.3,4.2,0.9c1.1,0.6,1.9,1.4,2.4,2.4c0.5,1,0.8,2.2,0.8,3.4
+			c0,1.3-0.3,2.4-0.8,3.4c-0.5,1-1.3,1.8-2.4,2.3c-1.1,0.6-2.5,0.8-4.2,0.8h-6v-2.4h5.9c1.2,0,2.1-0.2,2.8-0.5
+			c0.7-0.3,1.2-0.8,1.6-1.5c0.3-0.6,0.5-1.4,0.5-2.3c0-0.9-0.2-1.6-0.5-2.3s-0.8-1.2-1.6-1.5c-0.7-0.4-1.7-0.5-2.8-0.5h-4.6v19.5
+			H366.8z M377,55.4l5.4,9.8h-3.1l-5.3-9.8H377z"/>
+		<path class="st1" d="M392.3,65.5c-1.6,0-2.9-0.3-4.1-1c-1.1-0.7-2-1.7-2.6-2.9c-0.6-1.3-0.9-2.7-0.9-4.4c0-1.7,0.3-3.2,0.9-4.4
+			c0.6-1.3,1.5-2.3,2.6-3c1.1-0.7,2.4-1.1,3.9-1.1c0.9,0,1.7,0.1,2.5,0.4c0.8,0.3,1.6,0.7,2.3,1.4s1.2,1.5,1.6,2.5
+			c0.4,1,0.6,2.3,0.6,3.9v1.1h-12.6v-2.2h10.1c0-0.9-0.2-1.7-0.5-2.5s-0.9-1.3-1.6-1.7c-0.7-0.4-1.5-0.6-2.4-0.6
+			c-1,0-1.9,0.2-2.6,0.7c-0.7,0.5-1.3,1.1-1.7,1.9c-0.4,0.8-0.6,1.6-0.6,2.5v1.4c0,1.2,0.2,2.3,0.6,3.1c0.4,0.9,1,1.5,1.8,2
+			c0.8,0.4,1.7,0.7,2.7,0.7c0.7,0,1.3-0.1,1.8-0.3c0.5-0.2,1-0.5,1.4-0.9s0.7-0.9,0.9-1.4l2.4,0.7c-0.3,0.8-0.7,1.5-1.3,2.2
+			c-0.6,0.6-1.3,1.1-2.2,1.4C394.4,65.4,393.4,65.5,392.3,65.5z"/>
+		<path class="st1" d="M409.6,65.5c-1.5,0-2.9-0.4-4-1.1c-1.1-0.7-2-1.7-2.6-3c-0.6-1.3-0.9-2.7-0.9-4.4c0-1.7,0.3-3.1,0.9-4.4
+			c0.6-1.3,1.5-2.3,2.6-3c1.1-0.7,2.4-1.1,3.9-1.1c1.2,0,2.2,0.2,3.1,0.6c0.9,0.4,1.7,1,2.3,1.8c0.6,0.8,1,1.7,1.1,2.7h-2.5
+			c-0.2-0.7-0.6-1.4-1.3-2c-0.7-0.6-1.5-0.9-2.6-0.9c-1,0-1.8,0.3-2.6,0.8s-1.3,1.2-1.7,2.1c-0.4,0.9-0.6,2-0.6,3.2
+			c0,1.3,0.2,2.4,0.6,3.3c0.4,0.9,1,1.7,1.7,2.2c0.7,0.5,1.6,0.8,2.6,0.8c0.7,0,1.2-0.1,1.8-0.3c0.5-0.2,1-0.6,1.4-1
+			c0.4-0.4,0.6-0.9,0.8-1.5h2.5c-0.1,1-0.5,1.8-1,2.6s-1.3,1.4-2.2,1.8C411.8,65.3,410.8,65.5,409.6,65.5z"/>
+		<path class="st1" d="M426.3,65.5c-1.5,0-2.8-0.4-3.9-1.1s-2-1.7-2.6-3c-0.6-1.3-0.9-2.7-0.9-4.4c0-1.7,0.3-3.2,0.9-4.5
+			s1.5-2.3,2.6-3s2.4-1.1,3.9-1.1s2.8,0.4,3.9,1.1s2,1.7,2.6,3s0.9,2.8,0.9,4.5c0,1.7-0.3,3.2-0.9,4.4c-0.6,1.3-1.5,2.2-2.6,3
+			S427.8,65.5,426.3,65.5z M426.3,63.3c1.1,0,2-0.3,2.8-0.9s1.3-1.3,1.6-2.3s0.5-2,0.5-3S431,55,430.7,54c-0.3-0.9-0.9-1.7-1.6-2.3
+			c-0.7-0.6-1.6-0.9-2.8-0.9s-2,0.3-2.8,0.9c-0.7,0.6-1.3,1.3-1.6,2.3c-0.3,0.9-0.5,2-0.5,3.1s0.2,2.1,0.5,3s0.9,1.7,1.6,2.3
+			S425.2,63.3,426.3,63.3z"/>
+		<path class="st1" d="M450.3,48.8l-6.1,16.4h-2.6l-6.1-16.4h2.7l4.5,13h0.2l4.5-13H450.3z"/>
+		<path class="st1" d="M459.9,65.5c-1.6,0-2.9-0.3-4.1-1c-1.1-0.7-2-1.7-2.6-2.9s-0.9-2.7-0.9-4.4c0-1.7,0.3-3.2,0.9-4.4
+			s1.5-2.3,2.6-3s2.4-1.1,3.9-1.1c0.9,0,1.7,0.1,2.5,0.4s1.6,0.7,2.3,1.4c0.7,0.6,1.2,1.5,1.6,2.5c0.4,1,0.6,2.3,0.6,3.9v1.1h-12.6
+			v-2.2h10.1c0-0.9-0.2-1.7-0.5-2.5c-0.4-0.7-0.9-1.3-1.6-1.7s-1.5-0.6-2.4-0.6c-1,0-1.9,0.2-2.6,0.7c-0.7,0.5-1.3,1.1-1.7,1.9
+			c-0.4,0.8-0.6,1.6-0.6,2.5v1.4c0,1.2,0.2,2.3,0.6,3.1c0.4,0.9,1,1.5,1.8,2c0.8,0.4,1.7,0.7,2.7,0.7c0.7,0,1.3-0.1,1.8-0.3
+			c0.5-0.2,1-0.5,1.4-0.9s0.7-0.9,0.9-1.4l2.4,0.7c-0.3,0.8-0.7,1.5-1.3,2.2c-0.6,0.6-1.3,1.1-2.2,1.4S461,65.5,459.9,65.5z"/>
+		<path class="st1" d="M470.5,65.2V48.8h2.4v2.5h0.2c0.3-0.8,0.8-1.5,1.6-2c0.8-0.5,1.7-0.8,2.6-0.8c0.2,0,0.4,0,0.7,0s0.5,0,0.6,0
+			v2.6c-0.1,0-0.3-0.1-0.6-0.1s-0.6-0.1-1-0.1c-0.8,0-1.5,0.2-2.1,0.5c-0.6,0.3-1.1,0.8-1.5,1.4c-0.4,0.6-0.5,1.2-0.5,2v10.4H470.5z
+			"/>
+		<path class="st1" d="M483.8,71.3c-0.4,0-0.8,0-1.1-0.1c-0.3-0.1-0.6-0.1-0.7-0.2l0.6-2.2c0.9,0.2,1.7,0.2,2.3,0s1.1-1,1.6-2.2
+			l0.5-1.3l-6.1-16.4h2.7l4.5,13h0.2l4.5-13l2.7,0l-7,18.7c-0.3,0.8-0.7,1.5-1.2,2.1c-0.5,0.6-1,1-1.6,1.2
+			C485.3,71.2,484.6,71.3,483.8,71.3z"/>
+		<path class="st1" d="M378.7,77.8c-0.1-1.1-0.6-1.9-1.6-2.5c-0.9-0.6-2-0.9-3.3-0.9c-1,0-1.8,0.2-2.5,0.5s-1.3,0.7-1.7,1.3
+			c-0.4,0.5-0.6,1.2-0.6,1.9c0,0.6,0.1,1.1,0.4,1.5c0.3,0.4,0.6,0.8,1.1,1s0.9,0.5,1.4,0.7c0.5,0.2,0.9,0.3,1.3,0.4l2.2,0.6
+			c0.6,0.2,1.2,0.4,1.9,0.6c0.7,0.3,1.4,0.6,2,1.1s1.2,1,1.6,1.7s0.6,1.6,0.6,2.6c0,1.2-0.3,2.2-0.9,3.2s-1.5,1.7-2.7,2.3
+			c-1.2,0.6-2.6,0.8-4.3,0.8c-1.6,0-2.9-0.3-4.1-0.8s-2-1.2-2.7-2.1c-0.7-0.9-1-1.9-1.1-3.1h2.7c0.1,0.8,0.3,1.5,0.8,2
+			c0.5,0.5,1.1,0.9,1.9,1.2c0.8,0.3,1.6,0.4,2.4,0.4c1,0,1.9-0.2,2.7-0.5s1.4-0.8,1.9-1.4s0.7-1.3,0.7-2.1c0-0.7-0.2-1.3-0.6-1.8
+			c-0.4-0.5-0.9-0.8-1.6-1.1c-0.7-0.3-1.4-0.5-2.1-0.7l-2.7-0.8c-1.7-0.5-3.1-1.2-4-2.1c-1-0.9-1.5-2.1-1.5-3.6c0-1.2,0.3-2.3,1-3.2
+			c0.7-0.9,1.6-1.6,2.7-2.1s2.4-0.8,3.8-0.8c1.4,0,2.7,0.2,3.8,0.8c1.1,0.5,2,1.2,2.6,2.1c0.6,0.9,1,1.8,1,3H378.7z"/>
+		<path class="st1" d="M392.4,94.5c-1.6,0-2.9-0.3-4.1-1c-1.1-0.7-2-1.7-2.6-2.9c-0.6-1.3-0.9-2.7-0.9-4.4c0-1.7,0.3-3.2,0.9-4.4
+			c0.6-1.3,1.5-2.3,2.6-3c1.1-0.7,2.4-1.1,3.9-1.1c0.9,0,1.7,0.1,2.5,0.4c0.8,0.3,1.6,0.7,2.3,1.4c0.7,0.6,1.2,1.5,1.6,2.5
+			c0.4,1,0.6,2.3,0.6,3.9v1.1h-12.6v-2.2h10.1c0-0.9-0.2-1.7-0.5-2.5s-0.9-1.3-1.6-1.7c-0.7-0.4-1.5-0.6-2.4-0.6
+			c-1,0-1.9,0.2-2.6,0.7c-0.7,0.5-1.3,1.1-1.7,1.9s-0.6,1.6-0.6,2.5v1.4c0,1.2,0.2,2.3,0.6,3.1c0.4,0.9,1,1.5,1.8,2
+			c0.8,0.4,1.7,0.7,2.7,0.7c0.7,0,1.3-0.1,1.8-0.3s1-0.5,1.4-0.9c0.4-0.4,0.7-0.9,0.9-1.4l2.4,0.7c-0.3,0.8-0.7,1.5-1.3,2.2
+			c-0.6,0.6-1.3,1.1-2.2,1.4C394.5,94.4,393.5,94.5,392.4,94.5z"/>
+		<path class="st1" d="M403,94.2V77.8h2.4v2.5h0.2c0.3-0.8,0.8-1.5,1.6-2c0.8-0.5,1.7-0.8,2.6-0.8c0.2,0,0.4,0,0.7,0
+			c0.3,0,0.5,0,0.6,0v2.6c-0.1,0-0.3-0.1-0.6-0.1c-0.3,0-0.6-0.1-1-0.1c-0.8,0-1.5,0.2-2.1,0.5c-0.6,0.3-1.1,0.8-1.5,1.4
+			c-0.4,0.6-0.5,1.2-0.5,2v10.4H403z"/>
+		<path class="st1" d="M428.1,77.8L422,94.2h-2.6l-6.1-16.4h2.7l4.5,13h0.2l4.5-13H428.1z"/>
+		<path class="st1" d="M432.7,75.1c-0.5,0-0.9-0.2-1.3-0.5s-0.5-0.7-0.5-1.2s0.2-0.9,0.5-1.2s0.8-0.5,1.3-0.5s0.9,0.2,1.3,0.5
+			s0.5,0.7,0.5,1.2s-0.2,0.9-0.5,1.2S433.2,75.1,432.7,75.1z M431.4,94.2V77.8h2.5v16.4H431.4z"/>
+		<path class="st1" d="M445.2,94.5c-1.5,0-2.9-0.4-4-1.1c-1.1-0.7-2-1.7-2.6-3c-0.6-1.3-0.9-2.7-0.9-4.4c0-1.7,0.3-3.1,0.9-4.4
+			c0.6-1.3,1.5-2.3,2.6-3c1.1-0.7,2.4-1.1,3.9-1.1c1.2,0,2.2,0.2,3.1,0.6c0.9,0.4,1.7,1,2.3,1.8c0.6,0.8,1,1.7,1.1,2.7h-2.5
+			c-0.2-0.7-0.6-1.4-1.3-2c-0.7-0.6-1.5-0.9-2.6-0.9c-1,0-1.8,0.3-2.6,0.8c-0.7,0.5-1.3,1.2-1.7,2.1s-0.6,2-0.6,3.2
+			c0,1.3,0.2,2.4,0.6,3.3s1,1.7,1.7,2.2c0.7,0.5,1.6,0.8,2.6,0.8c0.7,0,1.2-0.1,1.8-0.3c0.5-0.2,1-0.6,1.4-1s0.6-0.9,0.8-1.5h2.5
+			c-0.1,1-0.5,1.8-1,2.6c-0.6,0.8-1.3,1.4-2.2,1.8C447.5,94.3,446.4,94.5,445.2,94.5z"/>
+		<path class="st1" d="M462.1,94.5c-1.6,0-2.9-0.3-4.1-1c-1.1-0.7-2-1.7-2.6-2.9c-0.6-1.3-0.9-2.7-0.9-4.4c0-1.7,0.3-3.2,0.9-4.4
+			c0.6-1.3,1.5-2.3,2.6-3s2.4-1.1,3.9-1.1c0.9,0,1.7,0.1,2.5,0.4c0.8,0.3,1.6,0.7,2.3,1.4c0.7,0.6,1.2,1.5,1.6,2.5
+			c0.4,1,0.6,2.3,0.6,3.9v1.1h-12.6v-2.2h10.1c0-0.9-0.2-1.7-0.5-2.5c-0.4-0.7-0.9-1.3-1.6-1.7c-0.7-0.4-1.5-0.6-2.4-0.6
+			c-1,0-1.9,0.2-2.6,0.7c-0.7,0.5-1.3,1.1-1.7,1.9s-0.6,1.6-0.6,2.5v1.4c0,1.2,0.2,2.3,0.6,3.1c0.4,0.9,1,1.5,1.8,2
+			c0.8,0.4,1.7,0.7,2.7,0.7c0.7,0,1.3-0.1,1.8-0.3c0.5-0.2,1-0.5,1.4-0.9c0.4-0.4,0.7-0.9,0.9-1.4l2.4,0.7c-0.3,0.8-0.7,1.5-1.3,2.2
+			c-0.6,0.6-1.3,1.1-2.2,1.4C464.3,94.4,463.3,94.5,462.1,94.5z"/>
+		<path class="st1" d="M484.3,81.5l-2.3,0.6c-0.1-0.4-0.3-0.7-0.6-1.1c-0.3-0.4-0.6-0.7-1.1-0.9s-1.1-0.4-1.8-0.4
+			c-1,0-1.8,0.2-2.5,0.7c-0.7,0.5-1,1-1,1.7c0,0.6,0.2,1.1,0.7,1.5c0.5,0.4,1.2,0.7,2.1,0.9l2.4,0.6c1.5,0.4,2.6,0.9,3.3,1.6
+			c0.7,0.7,1.1,1.7,1.1,2.8c0,0.9-0.3,1.8-0.8,2.5c-0.5,0.7-1.3,1.3-2.2,1.7c-1,0.4-2.1,0.6-3.3,0.6c-1.7,0-3.1-0.4-4.1-1.1
+			c-1.1-0.7-1.8-1.8-2.1-3.2l2.4-0.6c0.2,0.9,0.7,1.5,1.3,2c0.6,0.4,1.5,0.7,2.5,0.7c1.2,0,2.1-0.2,2.8-0.8c0.7-0.5,1-1.1,1-1.8
+			c0-0.6-0.2-1-0.6-1.4c-0.4-0.4-1-0.7-1.8-0.9l-2.7-0.6c-1.5-0.4-2.6-0.9-3.3-1.7c-0.7-0.8-1-1.7-1-2.8c0-0.9,0.3-1.7,0.8-2.5
+			c0.5-0.7,1.2-1.3,2.1-1.7s1.9-0.6,3.1-0.6c1.6,0,2.9,0.4,3.8,1.1C483.3,79.4,484,80.3,484.3,81.5z"/>
+	</g>
+</g>
+</svg>
+</div>
+    <div class="eyebrow">Collection Performance &amp; Opportunity Brief</div>
+    <h1>Avangard Logistics Co, LLC</h1>
+    <div class="sub">Logistics & Transportation (Commercial / B2B)</div>
+    <div class="prepared">Prepared for <b>Isaac Razumovsky</b> &nbsp;·&nbsp; Client #9827 &nbsp;·&nbsp; <b>August 5, 2026</b></div>
+  </div>
+  <div class="body">
+
+    <h2>Your account snapshot</h2><div class="rule"></div>
+    <p class="lead">You reached out for an update — here it is, straight, along with what the numbers say is possible from here.</p>
+    <div class="grid">
+      <div class="stat"><div class="k">Accounts placed</div><div class="v">2</div><small>latest September 2023</small></div>
+      <div class="stat"><div class="k">Total placed</div><div class="v">$10,596</div></div>
+      <div class="stat"><div class="k">Recovered for you</div><div class="v" style="color:#1a7a3c">$2,638</div><small>~24.9% yield</small></div>
+      <div class="stat"><div class="k">Active placements now</div><div class="v warn">0</div><small>dormant ~23 months</small></div>
+    </div>
+    <div class="callout"><span class="lbl">The short version</span>
+      <p style="margin-top:6px"><b>When you last used us, it worked</b> — you placed 2 accounts totaling $10,596 and we recovered <b>$2,638 for you, roughly a 24.9% return</b> on what you handed over. Then the placements stopped, nearly two years ago. The question this brief answers: what would that same performance look like applied to your <i>full</i> past-due AR, placed on time — instead of two accounts placed late and nothing since?</p>
+    </div>
+
+    <h2>Why timing decides how much you recover</h2><div class="rule"></div>
+    <p>Commercial receivables lose collectability fast — and predictably. This is the industry benchmark curve (Commercial Collection Agencies of America, via the Credit Research Foundation): the probability a delinquent commercial account is collected, by its age past due when it's placed.</p>
+    <div class="chartwrap">
+      <div class="title">Collectability of delinquent commercial debt, by age at placement</div>
+      <svg viewBox="0 0 798 290" width="100%" style="max-width:760px"><line x1="56" y1="250" x2="788" y2="250" stroke="#D9DEE3" stroke-width="2"/><rect x="70" y="55" width="78" height="195" rx="4" fill="#070B97"/><text x="109" y="47" text-anchor="middle" font-size="15" font-weight="700" fill="#070731">88.7%</text><text x="109" y="270" text-anchor="middle" font-size="12" fill="#3D3D52">30d</text><rect x="174" y="98" width="78" height="152" rx="4" fill="#070B97"/><text x="213" y="90" text-anchor="middle" font-size="15" font-weight="700" fill="#070731">68.9%</text><text x="213" y="270" text-anchor="middle" font-size="12" fill="#3D3D52">90d</text><rect x="278" y="137" width="78" height="113" rx="4" fill="#0446F1"/><text x="317" y="129" text-anchor="middle" font-size="15" font-weight="700" fill="#070731">51.3%</text><text x="317" y="270" text-anchor="middle" font-size="12" fill="#3D3D52">6mo</text><rect x="382" y="168" width="78" height="82" rx="4" fill="#0446F1"/><text x="421" y="160" text-anchor="middle" font-size="15" font-weight="700" fill="#070731">37.5%</text><text x="421" y="270" text-anchor="middle" font-size="12" fill="#3D3D52">9mo</text><rect x="486" y="203" width="78" height="47" rx="4" fill="#0495F1"/><text x="525" y="195" text-anchor="middle" font-size="15" font-weight="700" fill="#070731">21.4%</text><text x="525" y="270" text-anchor="middle" font-size="12" fill="#3D3D52">1yr</text><rect x="590" y="217" width="78" height="33" rx="4" fill="#0495F1"/><text x="629" y="209" text-anchor="middle" font-size="15" font-weight="700" fill="#070731">15.2%</text><text x="629" y="270" text-anchor="middle" font-size="12" fill="#3D3D52">18mo</text><rect x="694" y="230" width="78" height="20" rx="4" fill="#0495F1"/><text x="733" y="222" text-anchor="middle" font-size="15" font-weight="700" fill="#070731">8.9%</text><text x="733" y="270" text-anchor="middle" font-size="12" fill="#3D3D52">2yr</text><text x="30" y="36" font-size="11" fill="#3D3D52">100%</text><text x="40" y="254" font-size="11" fill="#3D3D52">0%</text></svg>
+      <div class="cap">The single biggest lever you control is <b>how fast you place</b>. Placing at 90 days vs. letting an account age past a year is a ~47-point swing in recovery odds.</div>
+    </div>
+    <div class="callout"><span class="lbl">The 90-day rule</span>
+      <p style="margin-top:6px">Accounts placed around <b>90 days past due carry a ~69% recovery probability</b>. Wait to 120 days and it slips to ~63%; let them drift to 6 months and you're near a coin flip. Most businesses place too late — the accounts that "aged out" were usually recoverable if they'd moved sooner.</p>
+    </div>
+
+    <h2>What this could mean for you</h2><div class="rule"></div>
+    <p>Plug in your typical <b>monthly past-due AR</b> and this models expected recovery at each placement age, your net after our contingency fee, and the annualized picture of placing on a regular cadence. <b>The starting figure is illustrative</b> — replace it with your real monthly past-due number.</p>
+    <div class="model">
+      <div class="controls">
+        <div><label>Monthly past-due AR placed</label><input type="number" id="ar" value="25000" step="1000" min="0"></div>
+        <div><label>Placement age</label>
+          <select id="age">
+            <option value="3">90 days past due</option>
+            <option value="4" selected>120 days past due</option>
+            <option value="6">180+ days past due</option>
+          </select></div>
+        <div><label>Contingency fee <span id="feeLbl">(30%)</span></label>
+          <div class="rng"><input type="range" id="fee" min="18" max="45" value="30"></div></div>
+      </div>
+      <div class="out">
+        <div class="card"><div class="lab">Expected recovered / mo</div><div class="num" id="oRec">—</div></div>
+        <div class="card net"><div class="lab">Your net / mo</div><div class="num" id="oNet">—</div></div>
+        <div class="card"><div class="lab">Your net / year</div><div class="num" id="oYear">—</div></div>
+      </div>
+      <table class="cmp">
+        <thead><tr><th>If you place…</th><th>Recovery odds</th><th>Recovered /mo</th><th>Your net /mo</th><th>Your net /yr</th></tr></thead>
+        <tbody id="cmpBody"></tbody>
+      </table>
+      <div class="note">Illustrative model built on the CCAoA commercial collectability curve and your inputs; not a guarantee. Actual results vary by account age, documentation, and debtor. SWRS is contingency-only — no recovery, no fee.</div>
+    </div>
+
+    <h2>Placing has never been easier — the new client portal</h2><div class="rule"></div>
+    <p>Since you last placed, we rebuilt the client experience end-to-end. The portal at <b>portal.swrecovery.com</b> is now the front door for everything:</p>
+    <div class="feat">
+      <div class="f"><b>Place in minutes, work in 24–48h</b><span>Upload a single account or a full batch; most placements are actively worked within one to two business days.</span></div>
+      <div class="f"><b>Live status &amp; recovery visibility</b><span>See placement status, activity, and payments as they happen — no more emailing for an update.</span></div>
+      <div class="f"><b>Document vault</b><span>Every monthly remittance statement is delivered straight to your vault — searchable, downloadable, audit-ready.</span></div>
+      <div class="f"><b>Multiple intake paths</b><span>Portal, secure FTP, web form, or direct API/CRM integration — custom integrations built at no charge.</span></div>
+    </div>
+
+    <div class="announce">
+      <span class="tag">Coming January 1, 2027</span>
+      <h3>Place accounts straight from QuickBooks</h3>
+      <p>We're building a QuickBooks developer application that connects your books directly to the SWRS portal. Flag a past-due invoice in QuickBooks and place it for collection in one click — no exports, no re-keying, no missed timing. It's the easiest way yet to keep placements moving at 90 days instead of letting them age. Available <b>1/1/2027</b>; ask us to add you to the early-access list.</p>
+    </div>
+
+    
+    <h2>Why SWRS</h2><div class="rule"></div>
+    <p>You're not starting a relationship — you're restarting one with a firm that's been doing this since 2004.</p>
+    <div class="glance">
+      <div class="g"><div class="gn">2004</div><div class="gl">Recovering commercial debt since</div></div>
+      <div class="g"><div class="gn">$975<small>M+</small></div><div class="gl">Receivables placed</div></div>
+      <div class="g"><div class="gn">$76<small>M+</small></div><div class="gl">Recovered for clients</div></div>
+      <div class="g"><div class="gn">800<small>K+</small></div><div class="gl">Accounts worked</div></div>
+      <div class="g"><div class="gn">52<small>%</small></div><div class="gl">of placed accounts see a recovery</div></div>
+      <div class="g"><div class="gn">50</div><div class="gl">states — nationwide reach</div></div>
+      <div class="g"><div class="gn">4.9<small>★</small></div><div class="gl">Google client rating</div></div>
+      <div class="g"><div class="gn">$0</div><div class="gl">upfront — no recovery, no fee</div></div>
+    </div>
+    <div class="featured">
+      <span class="fl">Recognized &amp; featured by</span>
+      <a href="https://www.usatoday.com/story/special/contributor-content/2026/03/02/strengthening-cash-flow-and-client-trust-through-strategic-recovery-with-southwest-recovery-services/88949990007/">USA&nbsp;Today</a>
+      <a href="https://www.financialservicesreview.com/southwest-recovery-services">Financial Services Review</a>
+      <a href="https://debt-collection-agencies.financialservicesreview.com/vendors/top-debt-collection-companies.html">FSR Top&nbsp;10</a>
+      <a href="https://www.ibtimes.com/steven-dietz-building-people-focused-path-receivables-management-through-southwest-recovery-3796344">International Business Times</a>
+      <a href="https://accounts-receivable.cfotechoutlook.com/vendor/southwest-recovery-services-aienabled-ethical-debt-collection-services-cid-483-mid-58.html">CFO Tech Outlook</a>
+      <a href="https://www.insidearm.com/news/00049622-southwest-recovery-services-achieves-10x/">insideARM</a>
+      <a href="https://www.bbb.org/us/tx/addison/profile/commercial-collection-agency/southwest-recovery-services-llc-0875-90016921">BBB A+</a>
+    </div>
+
+    <div class="cta">
+      <h3>Let's get your accounts moving again</h3>
+      <p>Every month an account waits, the odds drop. Reactivate today.</p>
+      <a class="btn" href="https://portal.swrecovery.com">Place accounts in the portal →</a>
+      <div class="alt">Prefer to talk it through? Reply to this email, write <a href="mailto:info@swrecovery.com">info@swrecovery.com</a>, or call New Business at <b>(866) 551-4684</b>.</div>
+    </div>
+  </div>
+  <div class="foot">
+    <b>Southwest Recovery Services, LLC</b> · 16200 Addison Road, Suite 260, Addison, TX 75001 · portal.swrecovery.com · info@swrecovery.com<br>
+    Contingency-only recovery (18%–45% by account age, debt type, and portfolio) — no upfront fees, no setup costs. Commercial/B2B collected in all 50 states. Compliant with FDCPA, FCRA, TCPA, and CFPB Reg F. Figures herein are illustrative industry-benchmark models, not guarantees of recovery.
+  </div>
+</div>
+<script>
+const CURVE=[[1, 88.7], [3, 68.9], [6, 51.3], [9, 37.5], [12, 21.4], [18, 15.2], [24, 8.9]];
+function prob(m){const k=CURVE;if(m<=k[0][0])return k[0][1];if(m>=k[k.length-1][0])return k[k.length-1][1];
+  for(let i=0;i<k.length-1;i++){const[a,pa]=k[i],[b,pb]=k[i+1];if(m>=a&&m<=b)return pa+(pb-pa)*(m-a)/(b-a);}}
+const $=id=>document.getElementById(id);
+const usd=v=>'$'+Math.round(v).toLocaleString('en-US');
+function calc(){
+  const ar=+$('ar').value||0, fee=(+$('fee').value)/100, age=+$('age').value;
+  $('feeLbl').textContent='('+$('fee').value+'%)';
+  const p=prob(age)/100, rec=ar*p, net=rec*(1-fee);
+  $('oRec').textContent=usd(rec); $('oNet').textContent=usd(net); $('oYear').textContent=usd(net*12);
+  const rows=[['At 90 days',3],['At 120 days',4],['At 180+ days',6]];
+  $('cmpBody').innerHTML=rows.map(([lab,m])=>{
+    const pp=prob(m)/100, r=ar*pp, nt=r*(1-fee);
+    const best=(m===age)?' class="best"':'';
+    return `<tr${best}><td>${lab}</td><td>${(pp*100).toFixed(1)}%</td><td>${usd(r)}</td><td>${usd(nt)}</td><td>${usd(nt*12)}</td></tr>`;
+  }).join('');
+}
+['ar','fee','age'].forEach(id=>$(id).addEventListener('input',calc));
+calc();
+</script>
+</body></html>
