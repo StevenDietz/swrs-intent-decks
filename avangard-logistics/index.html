@@ -79,10 +79,12 @@ table.cmp tr.best td{background:#E9F3FE;font-weight:700}
 .glance .gl{font-size:11px;color:#c8d3ea;margin-top:4px;line-height:1.35}
 .featured{margin:22px 0 4px;padding-top:16px;border-top:1px solid #D9DEE3}
 .featured .fl{display:block;text-transform:uppercase;letter-spacing:1px;font-size:11px;font-weight:700;color:#070B97;margin-bottom:14px}
-.featured .press{display:flex;flex-wrap:wrap;align-items:center;gap:26px;margin-bottom:18px}
-.featured .press img{height:26px;width:auto;opacity:.9}
-.featured .badges{display:flex;flex-wrap:wrap;align-items:center;gap:22px}
-.featured .badges img{height:52px;width:auto}
+.featured .press{display:grid;grid-template-columns:repeat(3,1fr);gap:22px 28px;margin-bottom:22px;align-items:center;justify-items:center}
+.featured .press a{display:flex;align-items:center;justify-content:center;height:34px;width:100%}
+.featured .press img{max-height:30px;max-width:100%;width:auto;height:auto;opacity:.92}
+.featured .badges{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:center;justify-items:center}
+.featured .badges a{display:flex;align-items:center;justify-content:center;height:60px}
+.featured .badges img{height:56px;width:auto;max-width:100%;display:block}
 @media(max-width:680px){.cases,.glance{grid-template-columns:repeat(2,1fr)}}
 </style></head>
 <body>
