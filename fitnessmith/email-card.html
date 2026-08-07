@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="robots" content="noindex"/>
+<title>Fitnessmith — email card for Outlook</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#060A92;--blue:#0746ED;--sky:#80C7F5;--ink:#1c2333;--mist:#f4f7fe}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--mist);color:var(--ink);
+       font-family:'Fira Sans',-apple-system,Segoe UI,Roboto,sans-serif;padding:32px 20px 60px}
+  .wrap{max-width:760px;margin:0 auto}
+  h1{font-size:22px;font-weight:700;margin:0 0 6px;color:var(--navy)}
+  .sub{font-size:15px;color:#5a6478;margin:0 0 24px}
+  .stage{background:#fff;border:1px solid #dde4f5;border-radius:10px;padding:22px;margin-bottom:18px}
+  .btnrow{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:26px}
+  button{font-family:inherit;font-size:15px;font-weight:600;border:0;border-radius:8px;
+         padding:13px 22px;cursor:pointer;background:var(--blue);color:#fff}
+  button:hover{background:var(--navy)}
+  button.alt{background:#fff;color:var(--blue);border:1px solid var(--blue)}
+  #status{font-size:14px;font-weight:600;color:#0a7d32}
+  ol{font-size:15px;line-height:1.75;padding-left:20px;margin:0}
+  li{margin-bottom:4px}
+  code{background:#eef2fb;padding:2px 6px;border-radius:4px;font-size:13px}
+  .note{font-size:13.5px;color:#5a6478;margin-top:18px;line-height:1.6}
+  h2{font-size:15px;text-transform:uppercase;letter-spacing:.08em;color:var(--navy);margin:26px 0 10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Fitnessmith — email card</h1>
+  <p class="sub">Copies as a clickable image. Pasting it into Outlook keeps the link to the capabilities overview.</p>
+
+  <div class="btnrow">
+    <button id="copy">Copy for Outlook</button>
+    <button class="alt" id="selectBtn">Select it instead</button>
+    <span id="status"></span>
+  </div>
+
+  <!-- everything inside #card is what gets copied -->
+  <div class="stage">
+    <div id="card">
+      <a href="https://stevendietz.github.io/swrs-intent-decks/fitnessmith/" target="_blank" rel="noopener" style="text-decoration:none;border:0;">
+        <img src="https://stevendietz.github.io/swrs-intent-decks/fitnessmith/fitnessmith-cover.jpg"
+             alt="Southwest Recovery Services — Accounts Receivable Management for Businesses — capabilities overview prepared for Fitnessmith"
+             width="600"
+             style="display:block;width:100%;max-width:600px;height:auto;border:0;outline:none;text-decoration:none;border-radius:6px;"/>
+      </a>
+      <p style="margin:12px 0 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.5;color:#444;">
+        <a href="https://stevendietz.github.io/swrs-intent-decks/fitnessmith/" style="color:#0746ED;font-weight:bold;">View the capabilities overview</a>
+        &nbsp;&middot;&nbsp;
+        <a href="https://stevendietz.github.io/swrs-intent-decks/fitnessmith/SWRS-Capabilities-fitnessmith.pdf" style="color:#0746ED;">Download the PDF</a>
+      </p>
+    </div>
+  </div>
+
+  <h2>How to use it</h2>
+  <ol>
+    <li>Click <b>Copy for Outlook</b>.</li>
+    <li>In Outlook, put the cursor where you want it and press <code>Ctrl + V</code>.</li>
+    <li>The image lands as a clickable link — clicking it opens the deck.</li>
+  </ol>
+
+  <p class="note">
+    If the button is blocked by your browser, use <b>Select it instead</b>, then <code>Ctrl + C</code>, then paste.
+    Paste with <code>Ctrl + V</code>, not <i>Paste Special &rarr; Picture</i> — Picture strips the hyperlink.
+    Recipients whose mail client blocks images see the alt text and the two text links underneath, so the message still lands.
+  </p>
+
+</div>
+
+<script>
+  const card = document.getElementById('card');
+  const status = document.getElementById('status');
+  const say = m => { status.textContent = m; setTimeout(() => status.textContent = '', 4000); };
+
+  document.getElementById('copy').addEventListener('click', async () => {
+    const html = card.innerHTML;
+    const text = 'SWRS capabilities overview prepared for Fitnessmith — https://stevendietz.github.io/swrs-intent-decks/fitnessmith/';
+    try {
+      await navigator.clipboard.write([new ClipboardItem({
+        'text/html': new Blob([html], {type: 'text/html'}),
+        'text/plain': new Blob([text], {type: 'text/plain'})
+      })]);
+      say('Copied — paste into Outlook with Ctrl+V');
+    } catch (e) {
+      selectCard();
+      say('Press Ctrl+C to copy');
+    }
+  });
+
+  function selectCard() {
+    const r = document.createRange();
+    r.selectNodeContents(card);
+    const s = window.getSelection();
+    s.removeAllRanges();
+    s.addRange(r);
+  }
+  document.getElementById('selectBtn').addEventListener('click', () => {
+    selectCard();
+    say('Selected — press Ctrl+C');
+  });
+</script>
+</body>
+</html>
