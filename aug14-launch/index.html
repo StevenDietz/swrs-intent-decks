@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SWRS Aug 14 Launch — FAQ Block + Social Queue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 400;
+    background: #f4f6fa;
+    color: #26303B;
+    padding: 2rem 1rem;
+  }
+
+  .page-wrap { max-width: 860px; margin: 0 auto; }
+
+  /* ── Header ── */
+  .hdr {
+    background: #070731;
+    border-radius: 10px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.75rem;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+  .hdr-logo {
+    flex-shrink: 0;
+    width: 120px;
+  }
+  .hdr-logo svg { width: 100%; height: auto; }
+  .hdr-text h1 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.3;
+  }
+  .hdr-text p {
+    font-size: 0.82rem;
+    color: #82CCFA;
+    margin-top: 4px;
+    font-weight: 300;
+  }
+
+  /* ── Section ── */
+  .section {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1.75rem 2rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #dde3ef;
+  }
+  .section-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: #0495F1;
+    margin-bottom: 0.35rem;
+  }
+  .section-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #070731;
+    margin-bottom: 0.25rem;
+  }
+  .section-sub {
+    font-size: 0.83rem;
+    color: #3D3D52;
+    font-weight: 300;
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+  }
+  .divider {
+    border: none;
+    border-top: 1px solid #dde3ef;
+    margin: 1.25rem 0;
+  }
+
+  /* ── Callout ── */
+  .callout {
+    background: #E9F3FE;
+    border-left: 4px solid #0446F1;
+    border-radius: 0 6px 6px 0;
+    padding: 0.9rem 1.1rem;
+    margin-bottom: 1.25rem;
+    font-size: 0.85rem;
+    line-height: 1.55;
+    color: #070731;
+  }
+  .callout strong { color: #0446F1; }
+
+  /* ── FAQ item ── */
+  .faq-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eef0f5;
+  }
+  .faq-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+  .faq-num {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: #070B97;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 24px;
+    margin-right: 8px;
+    flex-shrink: 0;
+  }
+  .faq-q-row {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0.55rem;
+  }
+  .faq-q {
+    font-size: 0.97rem;
+    font-weight: 700;
+    color: #070731;
+    line-height: 1.4;
+    flex: 1;
+  }
+  .faq-a {
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: #26303B;
+    padding-left: 32px;
+  }
+  .faq-a a { color: #0446F1; text-decoration: none; }
+  .faq-a a:hover { text-decoration: underline; }
+
+  .badge {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-left: 8px;
+    vertical-align: middle;
+    flex-shrink: 0;
+  }
+  .badge-ai { background: #e8e6fd; color: #3C3489; }
+  .badge-new { background: #d6f0e0; color: #1a7a3f; }
+  .badge-cta { background: #fff0cc; color: #7a5200; }
+
+  /* ── Copy block ── */
+  .copy-block {
+    background: #f8f9fc;
+    border: 1px solid #dde3ef;
+    border-radius: 7px;
+    padding: 1rem 1.15rem;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: #26303B;
+    position: relative;
+    white-space: pre-wrap;
+    font-family: 'Fira Sans', sans-serif;
+  }
+
+  .copy-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.65rem;
+  }
+  .copy-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+  .copy-label.linkedin { color: #0a66c2; }
+  .copy-label.facebook { color: #1877f2; }
+  .copy-label.x { color: #14171a; }
+  .copy-label.gbp { color: #34a853; }
+
+  .copy-btn {
+    background: #070B97;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 13px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Fira Sans', sans-serif;
+    transition: background 0.15s;
+  }
+  .copy-btn:hover { background: #0446F1; }
+  .copy-btn.copied { background: #1a7a3f; }
+
+  .char-count {
+    font-size: 0.72rem;
+    color: #3D3D52;
+    font-weight: 300;
+    margin-top: 0.5rem;
+    text-align: right;
+  }
+  .char-count.warn { color: #B8790A; font-weight: 700; }
+
+  .platform-card { margin-bottom: 1.5rem; }
+  .platform-card:last-child { margin-bottom: 0; }
+
+  /* ── Schema block ── */
+  .schema-wrap {
+    background: #f0f4ff;
+    border: 1px solid #c5d3f5;
+    border-radius: 7px;
+    padding: 1rem 1.15rem;
+    font-size: 0.78rem;
+    line-height: 1.6;
+    font-family: 'Courier New', monospace;
+    color: #1a2340;
+    white-space: pre-wrap;
+    overflow-x: auto;
+  }
+
+  /* ── Note ── */
+  .note {
+    font-size: 0.78rem;
+    color: #3D3D52;
+    font-style: italic;
+    margin-top: 0.75rem;
+    line-height: 1.5;
+  }
+
+  /* ── TOC ── */
+  .toc {
+    background: #fff;
+    border: 1px solid #dde3ef;
+    border-radius: 10px;
+    padding: 1.25rem 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .toc p { font-size: 0.8rem; font-weight: 700; color: #070731; margin-bottom: 0.6rem; text-transform: uppercase; letter-spacing: 0.07em; }
+  .toc ol { padding-left: 1.2rem; }
+  .toc li { font-size: 0.85rem; color: #0446F1; margin-bottom: 0.3rem; }
+  .toc li a { color: #0446F1; text-decoration: none; }
+  .toc li a:hover { text-decoration: underline; }
+
+  @media (max-width: 600px) {
+    .hdr { flex-direction: column; gap: 0.75rem; }
+    .section { padding: 1.25rem 1.1rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- Header -->
+  <div class="hdr">
+    <div class="hdr-logo">
+      <svg viewBox="0 0 220 45" xmlns="http://www.w3.org/2000/svg">
+        <text x="0" y="34" font-family="'Fira Sans', sans-serif" font-weight="700" font-size="32" fill="#0746ED">SW</text>
+        <text x="54" y="34" font-family="'Fira Sans', sans-serif" font-weight="700" font-size="32" fill="#80C7F5">R</text>
+        <text x="74" y="34" font-family="'Fira Sans', sans-serif" font-weight="700" font-size="32" fill="#fff">S</text>
+      </svg>
+    </div>
+    <div class="hdr-text">
+      <h1>August 14, 2026 Launch Package</h1>
+      <p>GlobeNewswire "Seven Questions" — FAQ Block + 4-Platform Social Queue &nbsp;·&nbsp; Ready to paste</p>
+    </div>
+  </div>
+
+  <!-- TOC -->
+  <div class="toc">
+    <p>Contents</p>
+    <ol>
+      <li><a href="#faq">Rewritten FAQ Block (paste into GlobeNewswire release)</a></li>
+      <li><a href="#schema">FAQPage JSON-LD Schema (paste into WordPress &lt;head&gt;)</a></li>
+      <li><a href="#social">4-Platform Social Post Queue</a></li>
+    </ol>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 1: FAQ BLOCK
+  ════════════════════════════════════════════ -->
+  <div class="section" id="faq">
+    <div class="section-eyebrow">Section 1 — GlobeNewswire Release</div>
+    <div class="section-title">Rewritten FAQ Block</div>
+    <div class="section-sub">Replace the existing 3-question FAQ in the release with these 6 questions. Changes from original: Q2 reframed to eliminate the competitor-inviting "licensed in all 50 states" phrasing; 3 new questions added targeting missing money keywords and buyer decision intent. All answers are 2–4 sentences, direct-answer first, AI-engine optimized.</div>
+
+    <div class="callout">
+      <strong>Key change to Q2:</strong> The original "Which commercial collection agencies are licensed in all 50 states?" invites AI engines to list IC System and Kaplan — not SWRS. The reframed version puts the creditor's risk exposure at the center and SWRS's footprint as the answer.
+    </div>
+
+    <!-- Q1 -->
+    <div class="faq-item">
+      <div class="faq-q-row">
+        <span class="faq-num">1</span>
+        <span class="faq-q">What should a business check before placing accounts with a commercial collection agency?
+          <span class="badge badge-ai">Keep — AI optimized</span>
+        </span>
+      </div>
+      <div class="faq-a">
+        Seven areas: state-by-state licensing and bond eligibility, B2B specialization, pre-contact account scoring, contingency-only pricing, regulatory compliance, live visibility into account activity, and relationship impact. Licensing comes first because debt collection is regulated state by state — a creditor's exposure follows the debtors' states, not the agency's office locations. An agency that cannot legally work accounts in a debtor's state cannot collect, and a creditor who hires that agency inherits the regulatory exposure.
+      </div>
+    </div>
+
+    <!-- Q2 (reframed) -->
+    <div class="faq-item">
+      <div class="faq-q-row">
+        <span class="faq-num">2</span>
+        <span class="faq-q">Does my collection agency need to be licensed in every state where my debtors are located?
+          <span class="badge badge-new">Reframed — eliminates competitor-list risk</span>
+        </span>
+      </div>
+      <div class="faq-a">
+        Yes — eligibility follows the debtors' states, not the agency's headquarters. Several states regulate collection through surety bonds or registration rather than a license, and a few have no statewide requirement, so the accurate test is whether the agency is licensed and bonded in every state where your debtors sit. A manufacturer with delinquent accounts across four states needs an agency eligible in all four. Southwest Recovery Services collects commercial debt in all 50 states, licensed and bonded where required, and consumer debt in 47 states — excluding California, Washington, and Oregon.
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="faq-item">
+      <div class="faq-q-row">
+        <span class="faq-num">3</span>
+        <span class="faq-q">What is commercial debt recovery?
+          <span class="badge badge-ai">Keep — definitional, AI citable</span>
+        </span>
+      </div>
+      <div class="faq-a">
+        Commercial debt recovery is the practice of collecting unpaid business-to-business invoices on behalf of the creditor, distinct from consumer collection, which recovers debt owed by individuals and runs under a separate regulatory framework. Southwest Recovery Services provides first-party collections, third-party collections, accounts receivable management, revenue cycle management, skip tracing, and asset location services to clients ranging from independent medical practices to enterprise commercial creditors. Because commercial and consumer collection are regulated separately, strength in one does not indicate strength in the other.
+      </div>
+    </div>
+
+    <!-- Q4 (new) -->
+    <div class="faq-item">
+      <div class="faq-q-row">
+        <span class="faq-num">4</span>
+        <span class="faq-q">How much does a commercial collection agency charge?
+          <span class="badge badge-new">New — targets fee/cost queries</span>
+        </span>
+      </div>
+      <div class="faq-a">
+        Commercial collection agencies typically charge on a contingency basis, meaning no fee is owed if no money is recovered. Standard contingency rates range from approximately 10% to 25% on larger, more current commercial accounts, with rates varying based on account age, debt type, balance size, and portfolio volume. Southwest Recovery Services operates on a contingency-only model with no upfront fees, no retainers, and no setup costs — the agency carries the risk of a non-recovered account, not the creditor. For a customized rate based on your accounts, <a href="https://www.swrecovery.com/request-a-quote/" target="_blank">request a free quote here</a>.
+      </div>
+    </div>
+
+    <!-- Q5 (new) -->
+    <div class="faq-item">
+      <div class="faq-q-row">
+        <span class="faq-num">5</span>
+        <span class="faq-q">When should a business send a commercial invoice to collections?
+          <span class="badge badge-new">New — targets invoice timing intent</span>
+        </span>
+      </div>
+      <div class="faq-a">
+        Most commercial creditors place accounts after 60 to 90 days past due, once internal follow-up has been exhausted. Recovery probability declines sharply with age: industry data from the Commercial Collection Agencies of America indicates that the likelihood of collecting a commercial account falls from roughly 69% at 90 days past due to approximately 51% at six months, and to around 21% at one year. Earlier placement preserves both recovery probability and the commercial relationship. Southwest Recovery Services uses diplomatic negotiation designed to recover the balance without damaging the customer relationship a creditor has built over years.
+      </div>
+    </div>
+
+    <!-- Q6 (new) -->
+    <div class="faq-item">
+      <div class="faq-q-row">
+        <span class="faq-num">6</span>
+        <span class="faq-q">What is the difference between a commercial and consumer collection agency?
+          <span class="badge badge-new">New — B2B specialization differentiator</span>
+        </span>
+      </div>
+      <div class="faq-a">
+        Commercial collection involves recovering unpaid business-to-business invoices under contract law and applicable state commercial statutes, while consumer collection recovers debt owed by individuals and is governed primarily by the Fair Debt Collection Practices Act (FDCPA) and CFPB Regulation F. Agencies specializing in commercial debt understand invoice disputes, purchase order discrepancies, net payment terms, and the relationship dynamics of B2B transactions that consumer-focused agencies typically do not. Southwest Recovery Services focuses on <a href="https://www.swrecovery.com/industries/commercial-collections/" target="_blank">commercial debt collection</a> and B2B accounts receivable management, ensuring every account is handled by collectors experienced in business-to-business recovery.
+      </div>
+    </div>
+
+    <hr class="divider">
+    <p class="note">Paste this block directly into the GlobeNewswire submission under "Frequently Asked Questions." The Q2 reframe is the single most important change — do not revert to the original "licensed in all 50 states" phrasing.</p>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 2: SCHEMA
+  ════════════════════════════════════════════ -->
+  <div class="section" id="schema">
+    <div class="section-eyebrow">Section 2 — WordPress</div>
+    <div class="section-title">FAQPage + Article JSON-LD Schema</div>
+    <div class="section-sub">Paste both blocks into the WordPress &lt;head&gt; of the on-site blog post that mirrors the Seven Questions content. Use Yoast SEO → Schema → Custom Schema, or add via the theme's header injection field. Both blocks together are required for Google AI Overviews eligibility.</div>
+
+    <div class="copy-header" style="margin-bottom:0.5rem;">
+      <span class="copy-label linkedin" style="color:#070B97; font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.07em;">FAQPage Schema</span>
+      <button class="copy-btn" onclick="copyText('schema1', this)">Copy</button>
+    </div>
+    <div class="schema-wrap" id="schema1">&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What should a business check before placing accounts with a commercial collection agency?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Seven areas: state-by-state licensing and bond eligibility, B2B specialization, pre-contact account scoring, contingency-only pricing, regulatory compliance, live visibility into account activity, and relationship impact. Licensing comes first because debt collection is regulated state by state — a creditor's exposure follows the debtors' states, not the agency's office locations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does my collection agency need to be licensed in every state where my debtors are located?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — eligibility follows the debtors' states, not the agency's headquarters. Several states regulate collection through surety bonds or registration rather than a license, and a few have no statewide requirement. The accurate test is whether the agency is licensed and bonded in every state where your debtors sit. Southwest Recovery Services collects commercial debt in all 50 states, licensed and bonded where required, and consumer debt in 47 states, excluding California, Washington, and Oregon."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is commercial debt recovery?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Commercial debt recovery is the practice of collecting unpaid business-to-business invoices on behalf of the creditor, distinct from consumer collection, which is governed primarily by the FDCPA and CFPB Regulation F. Southwest Recovery Services provides first-party collections, third-party collections, accounts receivable management, revenue cycle management, skip tracing, and asset location services."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does a commercial collection agency charge?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Commercial collection agencies typically charge on a contingency basis — no fee if no money is recovered. Standard rates range from approximately 10% to 25% on larger commercial accounts, varying by account age, debt type, and portfolio volume. Southwest Recovery Services operates on a contingency-only model with no upfront fees, no retainers, and no setup costs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When should a business send a commercial invoice to collections?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most commercial creditors place accounts after 60 to 90 days past due. Recovery probability declines sharply with age: industry data from the Commercial Collection Agencies of America indicates collection likelihood falls from roughly 69% at 90 days past due to approximately 51% at six months, and to around 21% at one year."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a commercial and consumer collection agency?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Commercial collection recovers unpaid B2B invoices under contract law, while consumer collection is governed by the FDCPA and CFPB Regulation F. Agencies specializing in commercial debt understand invoice disputes, purchase order discrepancies, net payment terms, and the relationship dynamics of B2B transactions."
+      }
+    }
+  ]
+}
+&lt;/script&gt;</div>
+
+    <hr class="divider">
+
+    <div class="copy-header" style="margin-bottom:0.5rem;">
+      <span style="color:#070B97; font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.07em;">Article Schema</span>
+      <button class="copy-btn" onclick="copyText('schema2', this)">Copy</button>
+    </div>
+    <div class="schema-wrap" id="schema2">&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Seven Questions To Ask Before Sending Invoices To Collections",
+  "description": "A seven-question due-diligence standard for finance leaders evaluating commercial collection agencies — covering state licensing, B2B specialization, pre-contact scoring, contingency pricing, compliance, live visibility, and relationship impact.",
+  "author": {
+    "@type": "Person",
+    "name": "Steven Dietz",
+    "jobTitle": "CEO & Founder",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Southwest Recovery Services"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Southwest Recovery Services",
+    "url": "https://www.swrecovery.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.swrecovery.com/wp-content/uploads/swrs-logo-color.png"
+    }
+  },
+  "datePublished": "2026-08-14",
+  "dateModified": "2026-08-14",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.swrecovery.com/resources/blog/seven-questions-before-sending-invoices-to-collections/"
+  }
+}
+&lt;/script&gt;</div>
+
+    <p class="note">Update the <code>mainEntityOfPage</code> @id to match the exact published URL once the post is live. The logo URL may need updating to match your CDN path in WordPress media.</p>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 3: SOCIAL QUEUE
+  ════════════════════════════════════════════ -->
+  <div class="section" id="social">
+    <div class="section-eyebrow">Section 3 — Social Media</div>
+    <div class="section-title">4-Platform Social Post Queue</div>
+    <div class="section-sub">Post in this order: LinkedIn → X → Google Business Profile → Facebook. LinkedIn and X go live Aug 14 at launch. GBP within 24 hours. Facebook within 48 hours. Update all [BLOG URL] placeholders with the published swrecovery.com post URL before scheduling.</div>
+
+    <div class="callout">
+      <strong>Rule:</strong> LinkedIn link goes at the <strong>END of the post body</strong> — LinkedIn suppresses reach when a URL appears in the first line. All other platforms: link can appear mid-post or at end.
+    </div>
+
+    <!-- LinkedIn -->
+    <div class="platform-card">
+      <div class="copy-header">
+        <span class="copy-label linkedin">LinkedIn · Post 1 of 2 · Aug 14</span>
+        <button class="copy-btn" onclick="copyText('li1', this)">Copy</button>
+      </div>
+      <div class="copy-block" id="li1">Most finance leaders negotiate the collection agency's rate.
+
+Almost nobody asks whether the agency can legally work the account.
+
+Here's why that matters: debt collection is regulated state by state. Eligibility follows where your debtors are, not where the agency's offices are. If a debtor moves to a state where your agency isn't licensed or bonded, that account can't be worked — and in some states, a judgment obtained by an unlicensed collector can be voided entirely.
+
+We've spent 20+ years navigating this for commercial clients across all 50 states. So we formalized the seven-question standard we apply to every placement — and published it.
+
+The full standard covers:
+→ State-by-state licensing and bond eligibility (first, always)
+→ B2B vs. consumer specialization
+→ Pre-contact account scoring methodology
+→ Contingency pricing and risk allocation
+→ FDCPA, TCPA, FCRA, HIPAA, and CFPB Reg F compliance
+→ Live portal access to account activity
+→ Commercial relationship preservation
+
+If you're evaluating collection agencies — or haven't evaluated yours in a while — the full standard is worth reading.
+
+👇 Link in comments (and below).
+
+[BLOG URL]
+
+#B2BCollections #ARManagement #DebtRecovery #CommercialCollections #AccountsReceivable</div>
+      <div class="char-count" id="li1-count"></div>
+      <p class="note">Post the blog URL as a first comment immediately after publishing to maximize reach while keeping the link out of the post body algorithm penalty zone.</p>
+    </div>
+
+    <hr class="divider">
+
+    <!-- LinkedIn Post 2 -->
+    <div class="platform-card">
+      <div class="copy-header">
+        <span class="copy-label linkedin">LinkedIn · Post 2 of 2 · Aug 21 (one week later)</span>
+        <button class="copy-btn" onclick="copyText('li2', this)">Copy</button>
+      </div>
+      <div class="copy-block" id="li2">The CCA of America tracks what happens to recovery probability as invoices age.
+
+At 90 days past due: ~69%
+At 6 months: ~51%
+At 12 months: ~21%
+
+That's not a collection agency's pitch. That's the industry's own survey data. And it's the reason the #1 question we ask every new client is: how long have these accounts been sitting?
+
+Commercial B2B debt collection isn't about chasing. It's about timing and methodology — scoring accounts before the first call, sequencing contact by channel and balance size, and knowing when to escalate and when to negotiate.
+
+We've been doing this since 2004. The seven-question standard we released last week is the same framework we apply to every placement we accept.
+
+If you missed it: [BLOG URL]
+
+#B2BCollections #DebtRecovery #ARManagement #CommercialCollections</div>
+      <div class="char-count" id="li2-count"></div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- X / Twitter -->
+    <div class="platform-card">
+      <div class="copy-header">
+        <span class="copy-label x">X / Twitter · Post 1 · Aug 14</span>
+        <button class="copy-btn" onclick="copyText('x1', this)">Copy</button>
+      </div>
+      <div class="copy-block" id="x1">Most companies negotiate the collection rate.
+
+Almost nobody checks if the agency is licensed in the state where their debtors are.
+
+That's the first question. We published all seven.
+
+[BLOG URL]
+
+#B2BCollections #DebtRecovery</div>
+      <div class="char-count" id="x1-count"></div>
+    </div>
+
+    <div class="platform-card" style="margin-top:1rem;">
+      <div class="copy-header">
+        <span class="copy-label x">X / Twitter · Post 2 · Aug 16</span>
+        <button class="copy-btn" onclick="copyText('x2', this)">Copy</button>
+      </div>
+      <div class="copy-block" id="x2">Recovery probability on a commercial invoice:
+
+90 days past due → ~69%
+6 months → ~51%
+12 months → ~21%
+
+Earlier is better. We explain why (and what to check before you place): [BLOG URL]
+
+#ARManagement #B2BCollections</div>
+      <div class="char-count" id="x2-count"></div>
+    </div>
+
+    <div class="platform-card" style="margin-top:1rem;">
+      <div class="copy-header">
+        <span class="copy-label x">X / Twitter · Post 3 · Aug 19</span>
+        <button class="copy-btn" onclick="copyText('x3', this)">Copy</button>
+      </div>
+      <div class="copy-block" id="x3">Contingency-only B2B collection: no recovery, no fee.
+
+That's how the risk should be structured. The agency carries it — not you.
+
+The full 7-question vetting standard: [BLOG URL] #B2BCollections</div>
+      <div class="char-count" id="x3-count"></div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Google Business Profile -->
+    <div class="platform-card">
+      <div class="copy-header">
+        <span class="copy-label gbp">Google Business Profile · Aug 14–15</span>
+        <button class="copy-btn" onclick="copyText('gbp1', this)">Copy</button>
+      </div>
+      <div class="copy-block" id="gbp1">Commercial collection agency vetting: seven questions every finance leader should ask before placing B2B invoices. We published the full standard — covering licensing, pricing, compliance, and relationship impact. Read it: [BLOG URL]</div>
+      <div class="char-count" id="gbp1-count"></div>
+      <p class="note">GBP posts must have the target keyword ("commercial collection agency") in the first 100 characters for indexing. This post hits it at character 22. Keep under 300 characters.</p>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Facebook -->
+    <div class="platform-card">
+      <div class="copy-header">
+        <span class="copy-label facebook">Facebook · Aug 15–16</span>
+        <button class="copy-btn" onclick="copyText('fb1', this)">Copy</button>
+      </div>
+      <div class="copy-block" id="fb1">Hiring a collection agency? Most companies focus on the rate — but miss the question that matters most: is the agency even licensed to collect in the states where your debtors are?
+
+Debt collection is regulated state by state. An agency that can't legally work an account in a debtor's state can't collect it — and you carry the exposure.
+
+We've worked commercial debt across all 50 states for 20+ years. Here's the seven-question standard we use for every placement — now published so any creditor can use it to vet any agency: [BLOG URL]
+
+(No catch. We just think the standard should be public.)</div>
+      <div class="char-count" id="fb1-count"></div>
+      <p class="note">Use the Calameo or ibb.co infographic from the May Ampifire campaign as the visual for this Facebook post — it'll drive higher organic reach than a text-only post.</p>
+    </div>
+
+  </div><!-- /section -->
+
+  <div class="section" style="background:#f0f4ff; border-color:#c5d3f5;">
+    <div class="section-eyebrow">Pre-Publish Checklist</div>
+    <div class="section-title">Before Aug 14 7:00 AM ET</div>
+    <div style="margin-top:1rem; display:flex; flex-direction:column; gap:0.6rem;">
+      <label style="display:flex;align-items:flex-start;gap:10px;font-size:0.88rem;cursor:pointer;"><input type="checkbox" style="margin-top:2px; accent-color:#070B97;"> Replace all [BLOG URL] placeholders with the published swrecovery.com post URL</label>
+      <label style="display:flex;align-items:flex-start;gap:10px;font-size:0.88rem;cursor:pointer;"><input type="checkbox" style="margin-top:2px; accent-color:#070B97;"> Paste the rewritten FAQ block (Section 1) into the GlobeNewswire submission</label>
+      <label style="display:flex;align-items:flex-start;gap:10px;font-size:0.88rem;cursor:pointer;"><input type="checkbox" style="margin-top:2px; accent-color:#070B97;"> Legal-verify the 50-state commercial licensing claim before it publishes in the release</label>
+      <label style="display:flex;align-items:flex-start;gap:10px;font-size:0.88rem;cursor:pointer;"><input type="checkbox" style="margin-top:2px; accent-color:#070B97;"> Add FAQPage + Article schema blocks to WordPress &lt;head&gt; (Section 2)</label>
+      <label style="display:flex;align-items:flex-start;gap:10px;font-size:0.88rem;cursor:pointer;"><input type="checkbox" style="margin-top:2px; accent-color:#070B97;"> Add internal links: /resources/best-collection-agency/ and /industries/commercial-collections/ in post body</label>
+      <label style="display:flex;align-items:flex-start;gap:10px;font-size:0.88rem;cursor:pointer;"><input type="checkbox" style="margin-top:2px; accent-color:#070B97;"> Schedule LinkedIn Post 1 for 8:00 AM ET Aug 14 (link in first comment)</label>
+      <label style="display:flex;align-items:flex-start;gap=10px;font-size:0.88rem;cursor:pointer;"><input type="checkbox" style="margin-top:2px; accent-color:#070B97;"> Schedule X Post 1 for 8:00 AM ET Aug 14</label>
+      <label style="display:flex;align-items:flex-start;gap:10px;font-size:0.88rem;cursor:pointer;"><input type="checkbox" style="margin-top:2px; accent-color:#070B97;"> Publish GBP post Aug 14–15</label>
+      <label style="display:flex;align-items:flex-start;gap:10px;font-size:0.88rem;cursor:pointer;"><input type="checkbox" style="margin-top:2px; accent-color:#070B97;"> Publish Facebook post Aug 15–16 with Ampifire infographic as visual</label>
+      <label style="display:flex;align-items:flex-start;gap:10px;font-size:0.88rem;cursor:pointer;"><input type="checkbox" style="margin-top:2px; accent-color:#070B97;"> Edit podcast show notes (Buzzsprout) to add 3 dofollow links → propagates to Amazon Music DA 96 + Spotify DA 94</label>
+    </div>
+  </div>
+
+</div><!-- /page-wrap -->
+
+<script>
+function copyText(id, btn) {
+  const el = document.getElementById(id);
+  const text = el.innerText || el.textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'Copied ✓';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = 'Copy';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+
+// Character counts
+const counts = {
+  'li1': { el: 'li1', target: 'li1-count', limit: 3000, label: 'LinkedIn (recommended: 200–250 words)' },
+  'li2': { el: 'li2', target: 'li2-count', limit: 3000, label: 'LinkedIn' },
+  'x1':  { el: 'x1',  target: 'x1-count',  limit: 280,  label: 'X/Twitter limit: 280' },
+  'x2':  { el: 'x2',  target: 'x2-count',  limit: 280,  label: 'X/Twitter limit: 280' },
+  'x3':  { el: 'x3',  target: 'x3-count',  limit: 280,  label: 'X/Twitter limit: 280' },
+  'gbp1':{ el: 'gbp1',target: 'gbp1-count',limit: 300,  label: 'GBP limit: 300' },
+  'fb1': { el: 'fb1', target: 'fb1-count',  limit: 500,  label: 'Facebook' },
+};
+Object.values(counts).forEach(c => {
+  const el = document.getElementById(c.el);
+  const out = document.getElementById(c.target);
+  if (!el || !out) return;
+  const len = (el.innerText || el.textContent).length;
+  out.textContent = `${len} characters · ${c.label}`;
+  if (c.limit <= 300 && len > c.limit) out.classList.add('warn');
+});
+</script>
+</body>
+</html>
