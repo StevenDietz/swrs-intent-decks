@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--
+  Copy-to-Outlook page template.
+
+  Replace:
+    Relavix Health Group — email card        page title, e.g. "Fitnessmith — email card"
+    https://stevendietz.github.io/swrs-intent-decks/relavix/      absolute https URL the image should link to
+    https://stevendietz.github.io/swrs-intent-decks/relavix/relavix-cover.jpg    absolute https URL of the 1200x630 cover jpg
+    https://stevendietz.github.io/swrs-intent-decks/relavix/SWRS-Capabilities-relavix.pdf      absolute https URL of the PDF (or delete that link)
+    Southwest Recovery Services — recovering patient balances, recovery not billing — capabilities overview prepared for Relavix Health Group          real alt text — shown when images are blocked
+    SWRS capabilities overview prepared for Relavix Health Group \u2014 https://stevendietz.github.io/swrs-intent-decks/relavix/        one-line plain-text fallback, ending in the URL
+
+  RULES:
+    - Host over HTTPS. navigator.clipboard.write() needs a secure context.
+    - Every src/href inside #card MUST be absolute https.
+    - Anything you don't want in the email goes OUTSIDE #card.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="robots" content="noindex"/>
+<title>Relavix Health Group — email card</title>
+<style>
+  :root{--brand:#0746ED;--brand-dk:#060A92;--ink:#1c2333;--mist:#f4f7fe}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--mist);color:var(--ink);
+       font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;padding:32px 20px 60px}
+  .wrap{max-width:760px;margin:0 auto}
+  h1{font-size:22px;font-weight:700;margin:0 0 6px;color:var(--brand-dk)}
+  .sub{font-size:15px;color:#5a6478;margin:0 0 24px}
+  .stage{background:#fff;border:1px solid #dde4f5;border-radius:10px;padding:22px;margin-bottom:18px}
+  .btnrow{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:26px}
+  button{font-family:inherit;font-size:15px;font-weight:600;border:0;border-radius:8px;
+         padding:13px 22px;cursor:pointer;background:var(--brand);color:#fff}
+  button:hover{background:var(--brand-dk)}
+  button.alt{background:#fff;color:var(--brand);border:1px solid var(--brand)}
+  #status{font-size:14px;font-weight:600;color:#0a7d32}
+  ol{font-size:15px;line-height:1.75;padding-left:20px;margin:0}
+  code{background:#eef2fb;padding:2px 6px;border-radius:4px;font-size:13px}
+  .note{font-size:13.5px;color:#5a6478;margin-top:18px;line-height:1.6}
+  h2{font-size:15px;text-transform:uppercase;letter-spacing:.08em;color:var(--brand-dk);margin:26px 0 10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Relavix Health Group — email card</h1>
+  <p class="sub">Copies as a clickable image. Pasting into Outlook keeps the link.</p>
+
+  <div class="btnrow">
+    <button id="copy">Copy for Outlook</button>
+    <button class="alt" id="selectBtn">Select it instead</button>
+    <span id="status"></span>
+  </div>
+
+  <div class="stage">
+    <div id="card">
+      <a href="https://stevendietz.github.io/swrs-intent-decks/relavix/" target="_blank" rel="noopener" style="text-decoration:none;border:0;">
+        <img src="https://stevendietz.github.io/swrs-intent-decks/relavix/relavix-cover.jpg" alt="Southwest Recovery Services — recovering patient balances, recovery not billing — capabilities overview prepared for Relavix Health Group" width="600"
+             style="display:block;width:100%;max-width:600px;height:auto;border:0;outline:none;text-decoration:none;border-radius:6px;"/>
+      </a>
+      <p style="margin:12px 0 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.5;color:#444;">
+        <a href="https://stevendietz.github.io/swrs-intent-decks/relavix/" style="color:#0746ED;font-weight:bold;">View the overview</a>
+        &nbsp;&middot;&nbsp;
+        <a href="https://stevendietz.github.io/swrs-intent-decks/relavix/SWRS-Capabilities-relavix.pdf" style="color:#0746ED;">Download the PDF</a>
+      </p>
+    </div><!-- /card -->
+  </div>
+
+  <h2>How to use it</h2>
+  <ol>
+    <li>Click <b>Copy for Outlook</b>.</li>
+    <li>In Outlook, place the cursor and press <code>Ctrl + V</code>.</li>
+    <li>The image lands as a clickable link.</li>
+  </ol>
+
+  <p class="note">
+    Blocked button? Use <b>Select it instead</b>, then <code>Ctrl + C</code>.
+    Paste with <code>Ctrl + V</code>, never <i>Paste Special &rarr; Picture</i> — that strips the hyperlink.
+    Recipients with images blocked see the alt text and the text links, so the message still lands.
+  </p>
+</div>
+
+<script>
+  const card = document.getElementById('card');
+  const status = document.getElementById('status');
+  const say = m => { status.textContent = m; setTimeout(() => status.textContent = '', 4000); };
+
+  function selectCard(){
+    const r = document.createRange();
+    r.selectNodeContents(card);
+    const s = window.getSelection();
+    s.removeAllRanges(); s.addRange(r);
+  }
+
+  document.getElementById('copy').addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.write([new ClipboardItem({
+        'text/html':  new Blob([card.innerHTML], {type:'text/html'}),
+        'text/plain': new Blob(['SWRS capabilities overview prepared for Relavix Health Group \u2014 https://stevendietz.github.io/swrs-intent-decks/relavix/'],    {type:'text/plain'})
+      })]);
+      say('Copied — paste with Ctrl+V');
+    } catch (e) {
+      selectCard();
+      say('Press Ctrl+C to copy');
+    }
+  });
+
+  document.getElementById('selectBtn').addEventListener('click', () => {
+    selectCard(); say('Selected — press Ctrl+C');
+  });
+</script>
+</body>
+</html>
