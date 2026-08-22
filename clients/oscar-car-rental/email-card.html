@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<style>
+body{font-family:Arial,sans-serif;background:#f0f4ff;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;margin:0;gap:20px}
+h2{color:#070B97;margin:0}p{color:#3D3D52;font-size:14px;text-align:center;max-width:500px;margin:0}
+.btn{background:#0446F1;color:#fff;border:none;padding:14px 32px;font-size:16px;font-weight:700;border-radius:8px;cursor:pointer;font-family:Arial}
+.btn:hover{background:#070B97}
+.fallback{font-size:13px;color:#0446F1;cursor:pointer;text-decoration:underline}
+#card a img{display:block;width:600px;border-radius:8px;box-shadow:0 8px 32px rgba(7,11,151,0.2)}
+#card{display:none}
+</style></head>
+<body>
+<h2>Oscar Car Rental — Collection Report</h2>
+<p>Click the button below to copy the report card to your clipboard, then paste it directly into your email (Ctrl+V / Cmd+V).</p>
+<button class="btn" onclick="copyCard()">📋 Copy Card for Email</button>
+<div id="status" style="color:#177a3d;font-weight:700;font-size:15px;display:none">✓ Copied! Paste into your email now.</div>
+<div id="card">
+<a href="https://stevendietz.github.io/swrs-intent-decks/clients/oscar-car-rental/" target="_blank">
+<img src="https://stevendietz.github.io/swrs-intent-decks/clients/oscar-car-rental/cover.jpg" alt="Oscar Car Rental Collection Activity &amp; Account Status Report — Southwest Recovery Services — View the full report" width="600">
+</a>
+<p style="font-size:13px;color:#3D3D52;text-align:left;margin-top:8px">
+<a href="https://stevendietz.github.io/swrs-intent-decks/clients/oscar-car-rental/" style="color:#0446F1">View the full report →</a>
+</p>
+</div>
+<span class="fallback" onclick="selectFallback()">Can't copy? Select it manually instead</span>
+<script>
+async function copyCard(){
+  const card=document.getElementById('card');
+  card.style.display='block';
+  const html=card.innerHTML;
+  const plain=`Oscar Car Rental — Collection Activity & Account Status Report\nhttps://stevendietz.github.io/swrs-intent-decks/clients/oscar-car-rental/`;
+  try{
+    await navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([html],{type:'text/html'}),'text/plain':new Blob([plain],{type:'text/plain'})})]);
+    document.getElementById('status').style.display='block';
+  }catch(e){alert('Use the "Select it manually" link below instead.');}
+  card.style.display='none';
+}
+function selectFallback(){
+  const card=document.getElementById('card');
+  card.style.display='block';
+  const range=document.createRange();
+  range.selectNodeContents(card);
+  window.getSelection().removeAllRanges();
+  window.getSelection().addRange(range);
+}
+</script>
+</body></html>
