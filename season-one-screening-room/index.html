@@ -42,7 +42,7 @@
 <header>
   <h1>SWRS <span>Season One</span> Screening Room</h1>
   <p class="tag">Getting your accounts to SWRS is easier than you think.</p>
-  <p class="sub">All 12 client-activation episodes, always current. Press play on any card — each also links to its square (LinkedIn) and vertical (Reels/TikTok/Shorts) cut. Links refreshed 2026&#8209;08&#8209;04; episodes marked RE&#8209;ISSUED carry that day's client edits on brand-new URLs.</p>
+  <p class="sub">All 12 client-activation episodes, always current. Press play on any card — each also links to its square (LinkedIn) and vertical (Reels/TikTok/Shorts) cut. Remastered 2026&#8209;08&#8209;24: every 16:9 master now streams in true 4K (AI-enhanced, original studio audio untouched), with the square and vertical cuts re-derived from the 4K source.</p>
 </header>
 <div class="grid" id="grid"></div>
 <footer>
@@ -52,18 +52,18 @@
 <script>
 const CDN='https://d2ol7oe51mr4n9.cloudfront.net/user_3GWA26vWzl5Frmb0iYCVWS61vFO/';
 const EPS=[
- {n:'EP-001',t:'The Login Curse',len:'0:23',re:true,d:'Victor battles the cursed login — the portal makes it painless.',m:'1137f377-8405-4f5b-9bc9-ea226629afdd',sq:'4f98c131-0efc-42f0-bfe9-3279ded7e28a',vt:'afd2235e-1920-4581-8be7-d0beef06fa4e',th:'16005548-ce4e-45b5-8687-5703041a0889'},
- {n:'EP-002',t:'Forgot Your Password?',len:'0:23',re:false,d:'The password goblin strikes — reset in seconds, no excuses left.',m:'559de9d2-a7d1-4dae-8d0a-0751d3bce91f',sq:'f61c0aab-3b56-4637-a036-048a8b3f7dbe',vt:'28598162-d4bf-40d6-89b3-f85cdc6ba25e',th:'6e567b6d-3f6c-489d-9065-fc60154ee867'},
- {n:'EP-003',t:'Email Works Too',len:'0:23',re:false,d:'No portal required — just email your placements and you’re done.',m:'b1d04e8f-b63d-45b5-aa6d-71b3512eff2e',sq:'665ab053-821f-4d5f-a421-450a40bc4096',vt:'5a4ffe1c-dd72-457f-b221-fc93316b0ec7',th:'699ee6fd-c2bb-4f94-aa7b-61869ba6e601'},
- {n:'EP-004',t:'Three Easy Ways to Send Accounts',len:'0:27',re:true,d:'One: email. Two: the portal. Three: an Excel file — download it right from this email.',m:'6e167935-73e8-4c8e-a64e-9c7213656f3d',sq:'8d73805b-0690-4a75-a85a-2b7201ff6bf6',vt:'7cf9645e-b54a-467d-8492-ce1f6e0219f7',th:'62664138-19da-48a3-a3ed-1a7a148d7d72'},
- {n:'EP-005',t:'How Fast Can We Start?',len:'0:23',re:true,d:'The moment your accounts arrive, we get moving — we start the day you send them.',m:'0d140da4-648c-4df2-ba82-117d103f0ea0',sq:'8a9903fc-23e7-4ef3-bcc4-bbea7fc29c8b',vt:'eea3915a-15d1-4d05-95ca-3f7e853bb3b6',th:'1847d8eb-4208-4858-893a-aef0dcc01385'},
- {n:'EP-006',t:'Meet Your Account Manager',len:'0:23',re:false,d:'Max from Client Success — a real person on your accounts, not a black box.',m:'3f969e20-a67d-4d42-be10-b16f5c0b2ca4',sq:'4c880896-0fe4-4c96-8bf0-184b227b9dcd',vt:'c8a79b58-1649-472a-9315-4ca108e946a5',th:'acfbacc5-3aaf-4e9b-9f1f-5b0e428d7d8d'},
- {n:'EP-007',t:'Sending Excel Files',len:'0:23',re:false,d:'Your messy spreadsheet is fine — send it as-is and we take it from there.',m:'2419078e-7cbc-468c-a3b8-0742bfab09c5',sq:'4043ae09-ed04-4c8f-914c-18c78d2563b0',vt:'68c831f8-694e-4ce2-a3b2-229230e83705',th:'f4b03e80-831b-44f7-b201-e467e1d51aac'},
- {n:'EP-008',t:'Waiting Costs Money',len:'0:27',re:true,d:'“Hey there — you scared me!” Don’t feed the late-fee dragon; place accounts today.',m:'a2ac4fb5-35d4-45e8-886d-8e391330c4c3',sq:'9a85d816-4352-4afb-a282-b08043532b03',vt:'35a54d36-8a51-49c4-9343-4bdec05a8875',th:'f53f3816-9024-4494-91ae-713a5e41d206'},
- {n:'EP-009',t:'What Happens After You Send Accounts?',len:'0:23',re:true,d:'Calls, letters, skip tracing — same day, with every update in your client portal.',m:'a97e3471-41fa-4b46-8ff1-09c6b193f6e3',sq:'26248d99-0630-4847-92e3-605fbe9e83d5',vt:'7dd775b4-03fb-4a70-8674-6fe9582c3985',th:'6b39653f-0683-4f62-b2a4-b758fd571379'},
- {n:'EP-010',t:'Frequently Asked Questions',len:'0:23',re:true,d:'“I have a few questions. Maybe fifty.” Fees, timelines, updates — answered in one call.',m:'34aab7b0-82ed-4f1a-99ad-e17e3893b07f',sq:'4d8369db-0ee8-4b24-90f7-069a616d99c8',vt:'3446c648-3c4f-4b04-acef-0e2c8c55e19e',th:'b046a72f-0f10-4424-b633-284701fc6051'},
- {n:'EP-011',t:'Your First Recovery',len:'0:23',re:true,d:'That money isn’t gone — it’s just waiting. Your first recovery, posted to your account.',m:'22c72257-6118-4b2c-817b-0ee28cc86b3b',sq:'5594e2a3-ab7f-49b5-a5f6-3d127e8a5529',vt:'2649b7d2-24fa-44a4-9b33-284325136dbe',th:'394f61da-c6d6-459f-b622-457418e51c9d'},
- {n:'EP-012',t:'Welcome to the SWRS Family',len:'0:29',re:true,d:'Season finale — real people, working your accounts every day. The SWRS family will be here to support your collection needs.',m:'81dd59d7-2c93-4ca4-bc7f-51e19a1c7ff2',sq:'1db50afb-cf01-43da-b883-89be52be06e8',vt:'e36a5b93-3c2e-4a4b-9886-0f97aff00427',th:'c25eccc2-2513-49dd-a9a6-82fcb50c0158'},
+ {n:'EP-001',t:'The Login Curse',len:'0:23',re:true,d:'Victor battles the cursed login — the portal makes it painless.',m:'0a5f1bfd-b973-436d-b405-2f718321d313',sq:'666c1192-600e-4b5a-96a2-111df35c7eff',vt:'c6e12ae0-381f-4a6c-a44a-b51ff48e7074',th:'16005548-ce4e-45b5-8687-5703041a0889'},
+ {n:'EP-002',t:'Forgot Your Password?',len:'0:23',re:false,d:'The password goblin strikes — reset in seconds, no excuses left.',m:'f328685b-dc74-452c-b2f6-7403d2960205',sq:'f6d248ee-97ad-479b-839b-42dad6f5a9db',vt:'c8816def-44ed-4e4e-833c-2f5c5fdbe2bd',th:'6e567b6d-3f6c-489d-9065-fc60154ee867'},
+ {n:'EP-003',t:'Email Works Too',len:'0:23',re:false,d:'No portal required — just email your placements and you’re done.',m:'a396cb81-04bb-4d23-bc76-a5531f3d6926',sq:'40ac0767-edcb-48f9-b9dc-9051758f0f61',vt:'9219b74a-17ab-42c2-9b70-314594de52c2',th:'699ee6fd-c2bb-4f94-aa7b-61869ba6e601'},
+ {n:'EP-004',t:'Three Easy Ways to Send Accounts',len:'0:27',re:true,d:'One: email. Two: the portal. Three: an Excel file — download it right from this email.',m:'2c6d7e6c-9b81-4c7d-9b2e-7384be2e0d7b',sq:'70a46e7c-bece-48b7-9ebe-5fb456bde0ed',vt:'e11eef1d-a7e9-4ea3-8c3f-d7dd20ba187b',th:'62664138-19da-48a3-a3ed-1a7a148d7d72'},
+ {n:'EP-005',t:'How Fast Can We Start?',len:'0:23',re:true,d:'The moment your accounts arrive, we get moving — we start the day you send them.',m:'1f18c6f8-2aef-4355-8d60-08d238c25641',sq:'fe5cc336-c691-42ac-ba39-4cd54c906bad',vt:'f65c4047-257a-4d3d-bddc-56a7ec47d6d6',th:'1847d8eb-4208-4858-893a-aef0dcc01385'},
+ {n:'EP-006',t:'Meet Your Account Manager',len:'0:23',re:false,d:'Your account manager — a real person on your accounts, not a black box.',m:'aa8cf4e6-a319-49ad-97f3-0260cf4f953b',sq:'dae7e41c-b6a2-452f-a185-8d813b7fdbdb',vt:'ed11ea0a-4909-4c59-a727-0b6801ab6e06',th:'acfbacc5-3aaf-4e9b-9f1f-5b0e428d7d8d'},
+ {n:'EP-007',t:'Sending Excel Files',len:'0:23',re:false,d:'Your messy spreadsheet is fine — send it as-is and we take it from there.',m:'22e8e1fe-5ea5-44ea-98fe-e4670f34e17b',sq:'9efbb26f-9efd-47f9-9471-99ea5505ee25',vt:'6fd27afa-a5c1-4ea6-9f7a-f6283a2028f2',th:'f4b03e80-831b-44f7-b201-e467e1d51aac'},
+ {n:'EP-008',t:'Waiting Costs Money',len:'0:27',re:true,d:'“Hey there — you scared me!” Don’t feed the late-fee dragon; place accounts today.',m:'b2498ff8-3f89-45ae-93d6-7e7dbe5ec41b',sq:'8ee450ea-cec5-42cf-b937-46b5bd42a6bd',vt:'ec79d369-f6fa-432a-afc9-f967e15e7457',th:'f53f3816-9024-4494-91ae-713a5e41d206'},
+ {n:'EP-009',t:'What Happens After You Send Accounts?',len:'0:23',re:true,d:'Calls, letters, skip tracing — same day, with every update in your client portal.',m:'21119224-380f-48c5-af0e-4a1ed50a0bf9',sq:'17c69ac1-283a-4ac5-a4c4-1f37312dadef',vt:'36ae6a8a-214e-4abc-b875-cba97b34c3e0',th:'6b39653f-0683-4f62-b2a4-b758fd571379'},
+ {n:'EP-010',t:'Frequently Asked Questions',len:'0:23',re:true,d:'“I have a few questions. Maybe fifty.” Fees, timelines, updates — answered in one call.',m:'ae617456-bad2-4a54-9916-7fa0039d0566',sq:'2133d5ce-0ae3-4aa4-802f-36f806c336c3',vt:'d9140812-badd-4229-9365-9643a61d971b',th:'b046a72f-0f10-4424-b633-284701fc6051'},
+ {n:'EP-011',t:'Your First Recovery',len:'0:23',re:true,d:'That money isn’t gone — it’s just waiting. Your first recovery, posted to your account.',m:'685933ec-e741-4d4c-9772-65dd51f2bd00',sq:'94aa482d-4b14-40f1-b212-06b9d97c42b5',vt:'5cab5c5d-3c6a-4a4b-bc74-7b414bce310b',th:'394f61da-c6d6-459f-b622-457418e51c9d'},
+ {n:'EP-012',t:'Welcome to the SWRS Family',len:'0:29',re:true,d:'Season finale — real people, working your accounts every day. The SWRS family will be here to support your collection needs.',m:'30c6a4ff-2314-4faa-989a-acdf29ab70df',sq:'aa0394ab-481e-4afd-b389-dd120cc839ff',vt:'eddafd75-fd83-4475-ad09-9acf70dace6c',th:'c25eccc2-2513-49dd-a9a6-82fcb50c0158'},
 ];
 const grid=document.getElementById('grid');
 for(const e of EPS){
@@ -71,11 +71,11 @@ for(const e of EPS){
   card.innerHTML=`
     <video controls preload="none" playsinline poster="${CDN+e.th}.jpg" src="${CDN+e.m}.mp4"></video>
     <div class="meta">
-      <div class="ep-row"><span class="ep-num">${e.n}</span><span class="ep-len">${e.len}</span>${e.re?'<span class="badge-new">RE-ISSUED 08/04</span>':''}</div>
+      <div class="ep-row"><span class="ep-num">${e.n}</span><span class="ep-len">${e.len}</span><span class="badge-new">4K REMASTER</span></div>
       <h2>${e.t}</h2>
       <p>${e.d}</p>
       <div class="fmts">
-        <a href="${CDN+e.m}.mp4" target="_blank" rel="noopener">16:9 master</a>
+        <a href="${CDN+e.m}.mp4" target="_blank" rel="noopener">16:9 4K master</a>
         <a href="${CDN+e.sq}.mp4" target="_blank" rel="noopener">1:1 square</a>
         <a href="${CDN+e.vt}.mp4" target="_blank" rel="noopener">9:16 vertical</a>
       </div>
