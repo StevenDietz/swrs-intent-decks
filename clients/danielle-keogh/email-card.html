@@ -1,0 +1,31 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Copy report card — Danielle Keogh</title>
+<style>
+body{font-family:'Segoe UI',Arial,sans-serif;background:#f4f6fb;color:#1a1a2e;margin:0;padding:40px 20px;text-align:center}
+h1{font-size:20px;color:#070731} p{color:#5b5b73;font-size:14px}
+#src{max-width:620px;margin:24px auto} #src img{width:100%;border-radius:8px;display:block}
+button{background:#0446F1;color:#fff;border:0;border-radius:8px;padding:14px 30px;
+font-size:16px;font-weight:700;cursor:pointer} #ok{color:#0d7a44;font-weight:700;height:22px;margin-top:12px}
+</style></head><body>
+<h1>Danielle Keogh — Collection Activity Report</h1>
+<p>Click the button, then paste (Ctrl+V) into Outlook. The image keeps its link.</p>
+<button onclick="copyCard()">Copy linked image</button>
+<div id="ok"></div>
+<div id="src"><a href="https://stevendietz.github.io/swrs-intent-decks/clients/danielle-keogh/"><img src="cover.jpg" alt="Collection Activity Report"></a></div>
+<script>
+async function copyCard(){
+  const html = '<a href="https://stevendietz.github.io/swrs-intent-decks/clients/danielle-keogh/"><img src="https://stevendietz.github.io/swrs-intent-decks/clients/danielle-keogh/cover.jpg" width="600" style="display:block;border-radius:8px;border:0"></a>';
+  try{
+    await navigator.clipboard.write([new ClipboardItem({
+      'text/html': new Blob([html],{type:'text/html'}),
+      'text/plain': new Blob(['https://stevendietz.github.io/swrs-intent-decks/clients/danielle-keogh/'],{type:'text/plain'})
+    })]);
+    document.getElementById('ok').textContent='Copied — paste into Outlook.';
+  }catch(e){
+    const r=document.createRange(); r.selectNode(document.getElementById('src'));
+    getSelection().removeAllRanges(); getSelection().addRange(r); document.execCommand('copy');
+    document.getElementById('ok').textContent='Copied — paste into Outlook.';
+  }
+}
+</script></body></html>
