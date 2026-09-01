@@ -1,0 +1,24 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<meta property="og:title" content="Collection Activity Report — Maincourt Apartments LLC">
+<meta property="og:image" content="https://stevendietz.github.io/swrs-intent-decks/clients/maincourt-apartments/cover.jpg">
+<meta property="og:url" content="https://stevendietz.github.io/swrs-intent-decks/clients/maincourt-apartments/">
+<title>Copy report card for email</title>
+<style>body{font-family:Arial,sans-serif;max-width:760px;margin:40px auto;padding:0 18px;color:#070731}
+button{background:#0446F1;color:#fff;border:0;padding:12px 26px;border-radius:6px;font-size:16px;cursor:pointer}
+#ok{color:#0f7b3d;font-weight:700;margin-left:14px}</style></head><body>
+<h2>Maincourt Apartments — Collection Activity Report</h2>
+<p>Click the button, then paste into Outlook. The image keeps its link.</p>
+<button onclick="cp()">Copy card to clipboard</button><span id="ok"></span>
+<div id="src" style="margin-top:26px">
+<a href="https://stevendietz.github.io/swrs-intent-decks/clients/maincourt-apartments/"><img src="https://stevendietz.github.io/swrs-intent-decks/clients/maincourt-apartments/cover.jpg" width="600" style="border:0;border-radius:8px;display:block"
+ alt="Maincourt Apartments Collection Activity Report — Southwest Recovery Services"></a>
+</div>
+<script>
+function cp(){
+ const h=document.getElementById('src').innerHTML;
+ navigator.clipboard.write([new ClipboardItem({
+   'text/html': new Blob([h],{type:'text/html'}),
+   'text/plain': new Blob(['https://stevendietz.github.io/swrs-intent-decks/clients/maincourt-apartments/'],{type:'text/plain'})})])
+  .then(()=>document.getElementById('ok').textContent='Copied — paste into Outlook');
+}
+</script></body></html>
