@@ -53,6 +53,60 @@
 const CDN='https://pub-ef2640c40a20490bace8ff6664f3f9c3.r2.dev/'  /* 2026-09-22: 16:9 masters + posters now on SWRS-owned Cloudflare R2 */
   const CDN_SOCIAL='https://d2ol7oe51mr4n9.cloudfront.net/user_3GWA26vWzl5Frmb0iYCVWS61vFO/'  /* square + vertical social cuts still on the vendor CDN - not yet migrated */;
 const EPS=[
+ {n:'SPOT',t:'Ya, We Don\'t Do That',len:'0:30',re:false,d:'Live-action brand film. The old idea of collections isn\'t how we work — professional recovery that protects the relationship. Our strongest all-purpose piece: clients, re-engagement, prospects.',m:'ya-we-dont-do-that',th:'ya-we-dont-do-that'},
+ {n:'FEATURE',t:'The Collections Myth',len:'0:47',re:false,d:'The misconception that quietly costs businesses their recoverable receivables — and what actually gets the money back.',m:'collections-myth-p1',th:'collections-myth-p1'},
+ {n:'M1-R1',t:'Series 1 Reel 1',len:'0:59',re:false,d:'Short-form vertical reel.',m:'sd-m1-r1',th:'sd-m1-r1'},
+ {n:'M1-R2',t:'Series 1 Reel 2',len:'0:49',re:false,d:'Short-form vertical reel.',m:'sd-m1-r2',th:'sd-m1-r2'},
+ {n:'M1-R3',t:'Series 1 Reel 3',len:'0:39',re:false,d:'Short-form vertical reel.',m:'sd-m1-r3',th:'sd-m1-r3'},
+ {n:'M1-R4',t:'Series 1 Reel 4',len:'0:35',re:false,d:'Short-form vertical reel.',m:'sd-m1-r4',th:'sd-m1-r4'},
+ {n:'M1-R5',t:'Series 1 Reel 5',len:'0:37',re:false,d:'Short-form vertical reel.',m:'sd-m1-r5',th:'sd-m1-r5'},
+ {n:'M1-R6',t:'Series 1 Reel 6',len:'0:38',re:false,d:'Short-form vertical reel.',m:'sd-m1-r6',th:'sd-m1-r6'},
+ {n:'M1-R7',t:'Series 1 Reel 7',len:'0:37',re:false,d:'Short-form vertical reel.',m:'sd-m1-r7',th:'sd-m1-r7'},
+ {n:'M1-R8',t:'Series 1 Reel 8',len:'0:37',re:false,d:'Short-form vertical reel.',m:'sd-m1-r8',th:'sd-m1-r8'},
+ {n:'M1-R9',t:'Series 1 Reel 9',len:'0:42',re:false,d:'Short-form vertical reel.',m:'sd-m1-r9',th:'sd-m1-r9'},
+ {n:'M1-R10',t:'Series 1 Reel 10',len:'0:42',re:false,d:'Short-form vertical reel.',m:'sd-m1-r10',th:'sd-m1-r10'},
+ {n:'M1-R11',t:'Series 1 Reel 11',len:'0:38',re:false,d:'Short-form vertical reel.',m:'sd-m1-r11',th:'sd-m1-r11'},
+ {n:'M1-R12',t:'Series 1 Reel 12',len:'0:40',re:false,d:'Short-form vertical reel.',m:'sd-m1-r12',th:'sd-m1-r12'},
+ {n:'M1-R13',t:'Series 1 Reel 13',len:'0:44',re:false,d:'Short-form vertical reel.',m:'sd-m1-r13',th:'sd-m1-r13'},
+ {n:'M1-R14',t:'Series 1 Reel 14',len:'0:45',re:false,d:'Short-form vertical reel.',m:'sd-m1-r14',th:'sd-m1-r14'},
+ {n:'M1-R15',t:'Series 1 Reel 15',len:'0:38',re:false,d:'Short-form vertical reel.',m:'sd-m1-r15',th:'sd-m1-r15'},
+ {n:'M1-R16',t:'Series 1 Reel 16',len:'0:41',re:false,d:'Short-form vertical reel.',m:'sd-m1-r16',th:'sd-m1-r16'},
+ {n:'M2-R1',t:'Series 2 Reel 1',len:'1:03',re:false,d:'Short-form vertical reel.',m:'sd-m2-r1',th:'sd-m2-r1'},
+ {n:'M2-R2',t:'Series 2 Reel 2',len:'1:14',re:false,d:'Short-form vertical reel.',m:'sd-m2-r2',th:'sd-m2-r2'},
+ {n:'M2-R3',t:'Series 2 Reel 3',len:'0:59',re:false,d:'Short-form vertical reel.',m:'sd-m2-r3',th:'sd-m2-r3'},
+ {n:'M2-R4',t:'Series 2 Reel 4',len:'0:58',re:false,d:'Short-form vertical reel.',m:'sd-m2-r4',th:'sd-m2-r4'},
+ {n:'M2-R5',t:'Series 2 Reel 5',len:'1:01',re:false,d:'Short-form vertical reel.',m:'sd-m2-r5',th:'sd-m2-r5'},
+ {n:'M2-R6',t:'Series 2 Reel 6',len:'1:10',re:false,d:'Short-form vertical reel.',m:'sd-m2-r6',th:'sd-m2-r6'},
+ {n:'M2-R7',t:'Series 2 Reel 7',len:'1:08',re:false,d:'Short-form vertical reel.',m:'sd-m2-r7',th:'sd-m2-r7'},
+ {n:'M2-R8',t:'Series 2 Reel 8',len:'1:13',re:false,d:'Short-form vertical reel.',m:'sd-m2-r8',th:'sd-m2-r8'},
+ {n:'M2-R9',t:'Series 2 Reel 9',len:'1:03',re:false,d:'Short-form vertical reel.',m:'sd-m2-r9',th:'sd-m2-r9'},
+ {n:'M2-R10',t:'Series 2 Reel 10',len:'1:38',re:false,d:'Short-form vertical reel.',m:'sd-m2-r10',th:'sd-m2-r10'},
+ {n:'M2-R11',t:'Series 2 Reel 11',len:'1:10',re:false,d:'Short-form vertical reel.',m:'sd-m2-r11',th:'sd-m2-r11'},
+ {n:'M2-R12',t:'Series 2 Reel 12',len:'1:08',re:false,d:'Short-form vertical reel.',m:'sd-m2-r12',th:'sd-m2-r12'},
+ {n:'M2-R13',t:'Series 2 Reel 13',len:'1:02',re:false,d:'Short-form vertical reel.',m:'sd-m2-r13',th:'sd-m2-r13'},
+ {n:'M2-R14',t:'Series 2 Reel 14',len:'1:01',re:false,d:'Short-form vertical reel.',m:'sd-m2-r14',th:'sd-m2-r14'},
+ {n:'M2-R15',t:'Series 2 Reel 15',len:'1:02',re:false,d:'Short-form vertical reel.',m:'sd-m2-r15',th:'sd-m2-r15'},
+ {n:'M2-R16',t:'Series 2 Reel 16',len:'1:09',re:false,d:'Short-form vertical reel.',m:'sd-m2-r16',th:'sd-m2-r16'},
+ {n:'M1-S1',t:'Series 1 Spot 1',len:'0:49',re:false,d:'Paid-social spot.',m:'sd-m1-ad1',th:'sd-m1-ad1'},
+ {n:'M1-S2',t:'Series 1 Spot 2',len:'0:50',re:false,d:'Paid-social spot.',m:'sd-m1-ad2',th:'sd-m1-ad2'},
+ {n:'M1-S3',t:'Series 1 Spot 3',len:'0:50',re:false,d:'Paid-social spot.',m:'sd-m1-ad3',th:'sd-m1-ad3'},
+ {n:'M1-S4',t:'Series 1 Spot 4',len:'0:49',re:false,d:'Paid-social spot.',m:'sd-m1-ad4',th:'sd-m1-ad4'},
+ {n:'M1-S5',t:'Series 1 Spot 5',len:'0:50',re:false,d:'Paid-social spot.',m:'sd-m1-ad5',th:'sd-m1-ad5'},
+ {n:'M1-S6',t:'Series 1 Spot 6',len:'0:51',re:false,d:'Paid-social spot.',m:'sd-m1-ad6',th:'sd-m1-ad6'},
+ {n:'M1-S7',t:'Series 1 Spot 7',len:'0:51',re:false,d:'Paid-social spot.',m:'sd-m1-ad7',th:'sd-m1-ad7'},
+ {n:'M1-S8',t:'Series 1 Spot 8',len:'0:52',re:false,d:'Paid-social spot.',m:'sd-m1-ad8',th:'sd-m1-ad8'},
+ {n:'M1-S9',t:'Series 1 Spot 9',len:'0:51',re:false,d:'Paid-social spot.',m:'sd-m1-ad9',th:'sd-m1-ad9'},
+ {n:'M1-S10',t:'Series 1 Spot 10',len:'0:50',re:false,d:'Paid-social spot.',m:'sd-m1-ad10',th:'sd-m1-ad10'},
+ {n:'M2-S1',t:'Series 2 Spot 1',len:'0:46',re:false,d:'Paid-social spot.',m:'sd-m2-ad1',th:'sd-m2-ad1'},
+ {n:'M2-S2',t:'Series 2 Spot 2',len:'0:47',re:false,d:'Paid-social spot.',m:'sd-m2-ad2',th:'sd-m2-ad2'},
+ {n:'M2-S3',t:'Series 2 Spot 3',len:'0:46',re:false,d:'Paid-social spot.',m:'sd-m2-ad3',th:'sd-m2-ad3'},
+ {n:'M2-S4',t:'Series 2 Spot 4',len:'0:45',re:false,d:'Paid-social spot.',m:'sd-m2-ad4',th:'sd-m2-ad4'},
+ {n:'M2-S5',t:'Series 2 Spot 5',len:'0:46',re:false,d:'Paid-social spot.',m:'sd-m2-ad5',th:'sd-m2-ad5'},
+ {n:'M2-S6',t:'Series 2 Spot 6',len:'0:43',re:false,d:'Paid-social spot.',m:'sd-m2-ad6',th:'sd-m2-ad6'},
+ {n:'M2-S7',t:'Series 2 Spot 7',len:'0:41',re:false,d:'Paid-social spot.',m:'sd-m2-ad7',th:'sd-m2-ad7'},
+ {n:'M2-S8',t:'Series 2 Spot 8',len:'0:41',re:false,d:'Paid-social spot.',m:'sd-m2-ad8',th:'sd-m2-ad8'},
+ {n:'M2-S9',t:'Series 2 Spot 9',len:'0:41',re:false,d:'Paid-social spot.',m:'sd-m2-ad9',th:'sd-m2-ad9'},
+ {n:'M2-S10',t:'Series 2 Spot 10',len:'0:41',re:false,d:'Paid-social spot.',m:'sd-m2-ad10',th:'sd-m2-ad10'},
  {n:'EP-001',t:'The Login Curse',len:'0:23',re:true,d:'Victor battles the cursed login — the portal makes it painless.',m:'ep-001',sq:'ecf56efe-90bf-4595-a6db-1a71431298ea',vt:'8c101c7e-945e-4b58-91f2-412bab86296b',th:'ep-001'},
  {n:'EP-002',t:'Forgot Your Password?',len:'0:23',re:false,d:'The password goblin strikes — reset in seconds, no excuses left.',m:'ep-002',sq:'7e03ecc5-de89-4fe2-bc5f-6e430c90f7eb',vt:'c088cd5c-a768-4a28-a8e1-587c92efffa0',th:'ep-002'},
  {n:'EP-003',t:'Email Works Too',len:'0:23',re:false,d:'No portal required — just email your placements and you’re done.',m:'ep-003',sq:'f5684945-c736-45c3-80fd-720a4be34a56',vt:'b29550cc-f6f6-4342-8d0d-8fbf745666b2',th:'ep-003'},
@@ -108,13 +162,13 @@ for(const e of EPS){
   card.innerHTML=`
     <video controls preload="none" playsinline poster="${CDN+e.th}.jpg" src="${CDN+e.m}.mp4"></video>
     <div class="meta">
-      <div class="ep-row"><span class="ep-num">${e.n}</span><span class="ep-len">${e.len}</span><span class="badge-new">4K REMASTER</span></div>
+      <div class="ep-row"><span class="ep-num">${e.n}</span><span class="ep-len">${e.len}</span>${e.sq?'<span class="badge-new">4K REMASTER</span>':''}</div>
       <h2>${e.t}</h2>
       <p>${e.d}</p>
       <div class="fmts">
-        <a href="${CDN+e.m}.mp4" target="_blank" rel="noopener">16:9 4K master</a>
-        <a href="${CDN_SOCIAL+e.sq}.mp4" target="_blank" rel="noopener">1:1 square</a>
-        <a href="${CDN_SOCIAL+e.vt}.mp4" target="_blank" rel="noopener">9:16 vertical</a>
+        <a href="${CDN+e.m}.mp4" target="_blank" rel="noopener">${e.sq?'16:9 4K master':'Download MP4'}</a>
+        ${e.sq?`<a href="${CDN_SOCIAL+e.sq}.mp4" target="_blank" rel="noopener">1:1 square</a>`:''}
+        ${e.vt?`<a href="${CDN_SOCIAL+e.vt}.mp4" target="_blank" rel="noopener">9:16 vertical</a>`:''}
       </div>
     </div>`;
   grid.appendChild(card);
