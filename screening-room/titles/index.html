@@ -1,0 +1,105 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SWRS — Title the Reels</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#070B97;--bg:#0a0e2a;--card:#131a45;--ink:#fff;--mut:#aab2d8;--blue:#3d7bff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Fira Sans',Arial,sans-serif}
+header{background:var(--navy);padding:18px 24px;position:sticky;top:0;z-index:20;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+header img{height:30px}
+h1{font-size:19px;margin:0;font-weight:700}
+.stat{margin-left:auto;font-size:14px;color:#cfd006;font-weight:700}
+
+.wrap{max-width:1180px;margin:0 auto;padding:22px 16px 90px}
+.intro{color:var(--mut);font-size:15px;line-height:1.6;margin:0 0 20px}
+.card{background:var(--card);border-radius:14px;padding:16px;margin:0 0 18px;display:grid;grid-template-columns:400px 1fr;gap:18px}
+@media(max-width:860px){.card{grid-template-columns:1fr}}
+video{width:100%;border-radius:10px;background:#000;display:block;cursor:pointer}
+.tag{display:inline-block;background:var(--blue);color:#fff;font-size:11px;font-weight:700;padding:3px 9px;border-radius:20px;margin-right:8px}
+.slug{color:var(--mut);font-size:12px}
+label{display:block;font-size:12px;color:var(--mut);margin:12px 0 4px;font-weight:600;letter-spacing:.3px}
+input,textarea{width:100%;background:#0a0f33;border:1px solid #2a3570;color:#fff;border-radius:8px;padding:11px 12px;font-size:15px;font-family:inherit}
+input:focus,textarea:focus{outline:none;border-color:var(--blue)}
+textarea{min-height:62px;resize:vertical}
+.done input{border-color:#2f9e63}
+.foot{position:fixed;left:0;right:0;bottom:0;background:#070B97;padding:12px 20px;display:flex;gap:12px;align-items:center;z-index:30}
+button{background:#0446F1;color:#fff;border:0;border-radius:8px;padding:11px 20px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer}
+button.alt{background:#fff;color:#0446F1}
+.msg{color:#cfe0ff;font-size:13px}
+</style></head><body>
+<header>
+  <img src="https://stevendietz.github.io/swrs-landings/swrs-logo-white-2x.png" alt="SWRS">
+  <h1>Title the Reels &amp; Spots</h1>
+  <div class="stat" id="stat"></div>
+</header>
+<div class="wrap">
+<p class="intro">Play each clip, type a title, move on. Your work saves in this browser automatically &mdash; you can close the tab and come back.
+When you're done (or partway), press <b>Copy all</b> at the bottom and paste the result back to Claude. Blank rows keep their current title.</p>
+<div id="list"></div>
+</div>
+<div class="foot">
+  <button onclick="copyAll()">Copy all</button>
+  <button class="alt" onclick="dl()">Download CSV</button>
+  <span class="msg" id="msg">Saved automatically as you type.</span>
+</div>
+<script>
+const R2="https://pub-ef2640c40a20490bace8ff6664f3f9c3.r2.dev/";
+const ITEMS=[{"slug": "ya-we-dont-do-that", "cur": "Ya, We Don't Do That", "kind": "Brand spot"}, {"slug": "collections-myth-p1", "cur": "The Collections Myth", "kind": "Feature"}, {"slug": "sd-m1-r1", "cur": "Series 1 Reel 1", "kind": "Reel"}, {"slug": "sd-m1-r2", "cur": "Series 1 Reel 2", "kind": "Reel"}, {"slug": "sd-m1-r3", "cur": "Series 1 Reel 3", "kind": "Reel"}, {"slug": "sd-m1-r4", "cur": "Series 1 Reel 4", "kind": "Reel"}, {"slug": "sd-m1-r5", "cur": "Series 1 Reel 5", "kind": "Reel"}, {"slug": "sd-m1-r6", "cur": "Series 1 Reel 6", "kind": "Reel"}, {"slug": "sd-m1-r7", "cur": "Series 1 Reel 7", "kind": "Reel"}, {"slug": "sd-m1-r8", "cur": "Series 1 Reel 8", "kind": "Reel"}, {"slug": "sd-m1-r9", "cur": "Series 1 Reel 9", "kind": "Reel"}, {"slug": "sd-m1-r10", "cur": "Series 1 Reel 10", "kind": "Reel"}, {"slug": "sd-m1-r11", "cur": "Series 1 Reel 11", "kind": "Reel"}, {"slug": "sd-m1-r12", "cur": "Series 1 Reel 12", "kind": "Reel"}, {"slug": "sd-m1-r13", "cur": "Series 1 Reel 13", "kind": "Reel"}, {"slug": "sd-m1-r14", "cur": "Series 1 Reel 14", "kind": "Reel"}, {"slug": "sd-m1-r15", "cur": "Series 1 Reel 15", "kind": "Reel"}, {"slug": "sd-m1-r16", "cur": "Series 1 Reel 16", "kind": "Reel"}, {"slug": "sd-m2-r1", "cur": "Series 2 Reel 1", "kind": "Reel"}, {"slug": "sd-m2-r2", "cur": "Series 2 Reel 2", "kind": "Reel"}, {"slug": "sd-m2-r3", "cur": "Series 2 Reel 3", "kind": "Reel"}, {"slug": "sd-m2-r4", "cur": "Series 2 Reel 4", "kind": "Reel"}, {"slug": "sd-m2-r5", "cur": "Series 2 Reel 5", "kind": "Reel"}, {"slug": "sd-m2-r6", "cur": "Series 2 Reel 6", "kind": "Reel"}, {"slug": "sd-m2-r7", "cur": "Series 2 Reel 7", "kind": "Reel"}, {"slug": "sd-m2-r8", "cur": "Series 2 Reel 8", "kind": "Reel"}, {"slug": "sd-m2-r9", "cur": "Series 2 Reel 9", "kind": "Reel"}, {"slug": "sd-m2-r10", "cur": "Series 2 Reel 10", "kind": "Reel"}, {"slug": "sd-m2-r11", "cur": "Series 2 Reel 11", "kind": "Reel"}, {"slug": "sd-m2-r12", "cur": "Series 2 Reel 12", "kind": "Reel"}, {"slug": "sd-m2-r13", "cur": "Series 2 Reel 13", "kind": "Reel"}, {"slug": "sd-m2-r14", "cur": "Series 2 Reel 14", "kind": "Reel"}, {"slug": "sd-m2-r15", "cur": "Series 2 Reel 15", "kind": "Reel"}, {"slug": "sd-m2-r16", "cur": "Series 2 Reel 16", "kind": "Reel"}, {"slug": "sd-m1-ad1", "cur": "Series 1 Spot 1", "kind": "Spot"}, {"slug": "sd-m1-ad2", "cur": "Series 1 Spot 2", "kind": "Spot"}, {"slug": "sd-m1-ad3", "cur": "Series 1 Spot 3", "kind": "Spot"}, {"slug": "sd-m1-ad4", "cur": "Series 1 Spot 4", "kind": "Spot"}, {"slug": "sd-m1-ad5", "cur": "Series 1 Spot 5", "kind": "Spot"}, {"slug": "sd-m1-ad6", "cur": "Series 1 Spot 6", "kind": "Spot"}, {"slug": "sd-m1-ad7", "cur": "Series 1 Spot 7", "kind": "Spot"}, {"slug": "sd-m1-ad8", "cur": "Series 1 Spot 8", "kind": "Spot"}, {"slug": "sd-m1-ad9", "cur": "Series 1 Spot 9", "kind": "Spot"}, {"slug": "sd-m1-ad10", "cur": "Series 1 Spot 10", "kind": "Spot"}, {"slug": "sd-m2-ad1", "cur": "Series 2 Spot 1", "kind": "Spot"}, {"slug": "sd-m2-ad2", "cur": "Series 2 Spot 2", "kind": "Spot"}, {"slug": "sd-m2-ad3", "cur": "Series 2 Spot 3", "kind": "Spot"}, {"slug": "sd-m2-ad4", "cur": "Series 2 Spot 4", "kind": "Spot"}, {"slug": "sd-m2-ad5", "cur": "Series 2 Spot 5", "kind": "Spot"}, {"slug": "sd-m2-ad6", "cur": "Series 2 Spot 6", "kind": "Spot"}, {"slug": "sd-m2-ad7", "cur": "Series 2 Spot 7", "kind": "Spot"}, {"slug": "sd-m2-ad8", "cur": "Series 2 Spot 8", "kind": "Spot"}, {"slug": "sd-m2-ad9", "cur": "Series 2 Spot 9", "kind": "Spot"}, {"slug": "sd-m2-ad10", "cur": "Series 2 Spot 10", "kind": "Spot"}];
+const SEED={"sd-m1-r1": {"t": "Ethical Collections vs Aggressive Tactics", "d": ""}};
+const KEY="swrs_titles_v1";
+let data={};
+try{ data=JSON.parse(localStorage.getItem(KEY)||"{}"); }catch(e){ data={}; }
+for(const k in SEED){ if(!data[k]) data[k]=SEED[k]; }
+function save(){ try{localStorage.setItem(KEY,JSON.stringify(data));}catch(e){} stat(); }
+function stat(){
+  const n=ITEMS.filter(i=>(data[i.slug]||{}).t).length;
+  document.getElementById('stat').textContent=n+" of "+ITEMS.length+" titled";
+}
+const list=document.getElementById('list');
+ITEMS.forEach(i=>{
+  const d=data[i.slug]||{};
+  const el=document.createElement('div'); el.className='card'+(d.t?' done':'');
+  el.innerHTML=`<div><video controls playsinline preload="none" poster="${R2+i.slug}.jpg" src="${R2+i.slug}.mp4"></video></div>
+  <div><span class="tag">${i.kind}</span><span class="slug">${i.slug} &mdash; currently &ldquo;${i.cur}&rdquo;</span>
+  <label>TITLE</label><input data-s="${i.slug}" data-f="t" value="${(d.t||'').replace(/"/g,'&quot;')}" placeholder="e.g. Why Aging Invoices Get Harder to Collect">
+  <label>DESCRIPTION (optional)</label><textarea data-s="${i.slug}" data-f="d" placeholder="One or two sentences shown under the video.">${d.d||''}</textarea></div>`;
+  list.appendChild(el);
+});
+document.addEventListener('input',e=>{
+  const s=e.target.getAttribute('data-s'); if(!s) return;
+  const f=e.target.getAttribute('data-f');
+  data[s]=data[s]||{}; data[s][f]=e.target.value;
+  e.target.closest('.card').classList.toggle('done', !!(data[s].t));
+  save();
+});
+/* click the picture to play (poster has no painted button, but keep it convenient) */
+document.addEventListener('click',e=>{
+  const v=e.target; if(!v||v.tagName!=='VIDEO'||!v.paused) return;
+  const r=v.getBoundingClientRect(); if(e.clientY>r.bottom-80) return;
+  v.play().catch(()=>{});
+});
+document.addEventListener('play',e=>{
+  document.querySelectorAll('video').forEach(v=>{ if(v!==e.target) v.pause(); });
+},true);
+function rows(){
+  return ITEMS.filter(i=>(data[i.slug]||{}).t).map(i=>({slug:i.slug,title:data[i.slug].t,desc:(data[i.slug].d||'')}));
+}
+function copyAll(){
+  const r=rows();
+  if(!r.length){ document.getElementById('msg').textContent="Nothing titled yet."; return; }
+  const txt=r.map(x=>x.slug+" | "+x.title+(x.desc?" | "+x.desc:"")).join("\n");
+  navigator.clipboard.writeText(txt).then(()=>{
+    document.getElementById('msg').textContent="Copied "+r.length+" titles — paste them to Claude.";
+  },()=>{ prompt("Copy this:",txt); });
+}
+function dl(){
+  const r=rows();
+  const csv="slug,title,description\n"+r.map(x=>`"${x.slug}","${x.title.replace(/"/g,'""')}","${(x.desc||'').replace(/"/g,'""')}"`).join("\n");
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));
+  a.download="swrs_reel_titles.csv"; a.click();
+}
+stat();
+</script></body></html>
